@@ -1,0 +1,15 @@
+
+// Unique{{.DataTypeCap}} func
+// Returns a slice without duplicates
+func Unique{{.DataTypeCap}}(input []{{.DataType}}) []{{.DataType}} {
+	u := make([]{{.DataType}}, 0, len(input))
+	m := make(map[{{.DataType}}]bool)
+
+	for _, val := range input {
+		if _, ok := m[val]; !ok {
+			m[val] = true
+			u = append(u, val)
+		}
+	}
+	return u
+}

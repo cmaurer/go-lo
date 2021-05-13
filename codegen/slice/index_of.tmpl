@@ -1,0 +1,11 @@
+
+// IndexOf{{.DataTypeCap}} func
+// Returns an int for the position where the element was found in the slice
+func IndexOf{{.DataTypeCap}}(element {{.DataType}}, input []{{.DataType}}) int {
+	for k, v := range input {
+		if element == v {
+			return k
+		}
+	}
+	return -1
+}
