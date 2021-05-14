@@ -2,4 +2,4 @@ dist
 /vendor
 build/
 
-generated/
+generated/dist/
