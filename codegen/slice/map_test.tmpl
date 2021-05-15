@@ -1,0 +1,36 @@
+
+
+
+var map{{.DataTypeCap}}Tests = []struct {
+	name     string
+	input    []{{.DataType}}
+	element  {{.DataType}}
+	expected []{{.DataType}}
+}{
+
+	{
+		name: "basic example",
+		input: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+			{{dataTypeGenerator  .DataType 2}},
+			{{dataTypeGenerator  .DataType 3}},
+		},
+		expected: []{{.DataType}}{
+            {{dataTypeGenerator  .DataType 1}}+{{dataTypeGenerator  .DataType 1}},
+            {{dataTypeGenerator  .DataType 2}}+{{dataTypeGenerator  .DataType 2}},
+            {{dataTypeGenerator  .DataType 3}}+{{dataTypeGenerator  .DataType 3}},
+        },
+	},
+}
+
+func TestMap{{.DataTypeCap}}(t *testing.T) {
+	for _, tt := range map{{.DataTypeCap}}Tests {
+		t.Run(tt.name, func(t *testing.T) {
+            output := Map{{.DataTypeCap}}(tt.input, func(in {{.DataType}}) {{.DataType}} {
+                return in + in
+            })
+			assert.Equal(t, output, tt.expected)
+		})
+	}
+
+}

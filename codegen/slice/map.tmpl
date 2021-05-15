@@ -1,0 +1,10 @@
+
+// Map{{.DataTypeCap}} func
+// Returns a new slice containing the results from applying the func to each element in the slice.
+func Map{{.DataTypeCap}}(input []{{.DataType}}, f func({{.DataType}}) {{.DataType}}) []{{.DataType}} {
+    inputMap := make([]{{.DataType}}, len(input))
+    for i, value := range input {
+        inputMap[i] = f(value)
+    }
+    return inputMap
+}
