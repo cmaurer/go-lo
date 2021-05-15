@@ -102,3 +102,34 @@ Returns an int for the position where the element was found in the slice
     // output == 1
 
 ```
+
+## Flatten
+
+Combines two slices into one slice
+
+```go
+    input1 := []string{
+        "test1",
+        "test2",
+        "test3",
+    }
+
+    input2 := []string{
+        "test1",
+        "test2",
+        "test3",
+    }
+
+    output := FlattenString(input1, input2)
+
+    /* output == 
+    []string{
+        "test1",
+        "test2",
+        "test3",
+        "test1",
+        "test2",
+        "test3",
+    }
+    */
+```

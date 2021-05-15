@@ -77,6 +77,26 @@ func generateCode(cwd string, outputDir string, operations *types.Operations) {
 			return
 		}
 
+		if len(operation.Imports) > 0 {
+			_, err = f.WriteString("import (\n\n")
+			if err != nil {
+				fmt.Println(err)
+				return
+			}
+			for _, imprt := range operation.Imports {
+				_, err = f.WriteString(fmt.Sprintf("\"%s\"\n", imprt))
+				if err != nil {
+					fmt.Println(err)
+					return
+				}
+			}
+			_, err = f.WriteString(")\n\n")
+			if err != nil {
+				fmt.Println(err)
+				return
+			}
+		}
+
 		templateFile, err := ioutil.ReadFile(templateFileName)
 		if err != nil {
 			fmt.Println(err)

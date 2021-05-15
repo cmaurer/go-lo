@@ -17,4 +17,5 @@ type Operation struct {
 	Template     string     `json:"template"`
 	TestTemplate string     `json:"test_template"`
 	Datatypes    []Datatype `json:"datatypes"`
+	Imports      []string   `json:"imports"`
 }
