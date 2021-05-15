@@ -5,3 +5,5 @@ build/
 generated/dist/
 
 coverage.txt
+
+.dccache

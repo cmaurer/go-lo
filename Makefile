@@ -21,8 +21,11 @@ test:
 		echo $$dir && cd $$dir && go test . -coverpkg=./... -covermode=atomic -coverprofile=./coverage.txt -v -count 1; \
 	done
 
-build:
+lint:
+	@for dir in $(SRC_DIRS); do \
+		golint $$dir/...; \
+	done
+	golint codegen/...
 
 
-
-.PHONY: generate copy-generated test build
+.PHONY: generate copy-generated test build lint

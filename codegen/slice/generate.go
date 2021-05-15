@@ -56,7 +56,11 @@ func main() {
 		}
 		defer f.Close()
 
-		f.WriteString(fmt.Sprintf("package %s\n\n", packageName))
+		_, err = f.WriteString(fmt.Sprintf("package %s\n\n", packageName))
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
 
 		templateFile, err := ioutil.ReadFile(templateFileName)
 		if err != nil {
