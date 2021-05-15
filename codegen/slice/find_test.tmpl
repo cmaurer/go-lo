@@ -1,9 +1,10 @@
 
 var find{{.DataTypeCap}}Tests = []struct {
-	name     string
-	input    []{{.DataType}}
-	equalTo  {{.DataType}}
-	expected {{.DataType}}
+	name     	string
+	input    	[]{{.DataType}}
+	equalTo  	{{.DataType}}
+	expected 	{{.DataType}}
+	shouldBeNil bool
 }{
 
 	{
@@ -15,6 +16,7 @@ var find{{.DataTypeCap}}Tests = []struct {
 		},
         equalTo: {{dataTypeGenerator  .DataType 2}},
 		expected: {{dataTypeGenerator  .DataType 2}},
+		shouldBeNil: false,
 	},
 	{
 		name: "more than one element",
@@ -26,6 +28,19 @@ var find{{.DataTypeCap}}Tests = []struct {
 		},
         equalTo: {{dataTypeGenerator  .DataType 2}},
 		expected: {{dataTypeGenerator  .DataType 2}},
+		shouldBeNil: false,
+	},
+	{
+		name: "not found",
+		input: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+			{{dataTypeGenerator  .DataType 2}},
+			{{dataTypeGenerator  .DataType 3}},
+			{{dataTypeGenerator  .DataType 2}},
+		},
+        equalTo: {{dataTypeGenerator  .DataType 8}},
+		expected: {{dataTypeGenerator  .DataType 8}},
+		shouldBeNil: true,
 	},
 }
 
@@ -35,7 +50,11 @@ func TestFind{{.DataTypeCap}}(t *testing.T) {
             output := Find{{.DataTypeCap}}(tt.input, func(in {{.DataType}}) bool {
                 return in == tt.equalTo
             })
-			assert.Equal(t, tt.expected, *output)
+			if tt.shouldBeNil == true {
+				assert.Nil(t, output)
+			} else {
+				assert.Equal(t, tt.expected, *output)
+			}
 		})
 	}
 

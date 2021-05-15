@@ -7,10 +7,11 @@ import (
 )
 		
 var findStringTests = []struct {
-	name     string
-	input    []string
-	equalTo  string
-	expected string
+	name     	string
+	input    	[]string
+	equalTo  	string
+	expected 	string
+	shouldBeNil bool
 }{
 
 	{
@@ -22,6 +23,7 @@ var findStringTests = []struct {
 		},
         equalTo: "test2",
 		expected: "test2",
+		shouldBeNil: false,
 	},
 	{
 		name: "more than one element",
@@ -33,6 +35,19 @@ var findStringTests = []struct {
 		},
         equalTo: "test2",
 		expected: "test2",
+		shouldBeNil: false,
+	},
+	{
+		name: "not found",
+		input: []string{
+			"test1",
+			"test2",
+			"test3",
+			"test2",
+		},
+        equalTo: "test8",
+		expected: "test8",
+		shouldBeNil: true,
 	},
 }
 
@@ -42,17 +57,22 @@ func TestFindString(t *testing.T) {
             output := FindString(tt.input, func(in string) bool {
                 return in == tt.equalTo
             })
-			assert.Equal(t, tt.expected, *output)
+			if tt.shouldBeNil == true {
+				assert.Nil(t, output)
+			} else {
+				assert.Equal(t, tt.expected, *output)
+			}
 		})
 	}
 
 }
 
 var findIntTests = []struct {
-	name     string
-	input    []int
-	equalTo  int
-	expected int
+	name     	string
+	input    	[]int
+	equalTo  	int
+	expected 	int
+	shouldBeNil bool
 }{
 
 	{
@@ -64,6 +84,7 @@ var findIntTests = []struct {
 		},
         equalTo: 2,
 		expected: 2,
+		shouldBeNil: false,
 	},
 	{
 		name: "more than one element",
@@ -75,6 +96,19 @@ var findIntTests = []struct {
 		},
         equalTo: 2,
 		expected: 2,
+		shouldBeNil: false,
+	},
+	{
+		name: "not found",
+		input: []int{
+			1,
+			2,
+			3,
+			2,
+		},
+        equalTo: 8,
+		expected: 8,
+		shouldBeNil: true,
 	},
 }
 
@@ -84,17 +118,22 @@ func TestFindInt(t *testing.T) {
             output := FindInt(tt.input, func(in int) bool {
                 return in == tt.equalTo
             })
-			assert.Equal(t, tt.expected, *output)
+			if tt.shouldBeNil == true {
+				assert.Nil(t, output)
+			} else {
+				assert.Equal(t, tt.expected, *output)
+			}
 		})
 	}
 
 }
 
 var findInt8Tests = []struct {
-	name     string
-	input    []int8
-	equalTo  int8
-	expected int8
+	name     	string
+	input    	[]int8
+	equalTo  	int8
+	expected 	int8
+	shouldBeNil bool
 }{
 
 	{
@@ -106,6 +145,7 @@ var findInt8Tests = []struct {
 		},
         equalTo: 2,
 		expected: 2,
+		shouldBeNil: false,
 	},
 	{
 		name: "more than one element",
@@ -117,6 +157,19 @@ var findInt8Tests = []struct {
 		},
         equalTo: 2,
 		expected: 2,
+		shouldBeNil: false,
+	},
+	{
+		name: "not found",
+		input: []int8{
+			1,
+			2,
+			3,
+			2,
+		},
+        equalTo: 8,
+		expected: 8,
+		shouldBeNil: true,
 	},
 }
 
@@ -126,17 +179,22 @@ func TestFindInt8(t *testing.T) {
             output := FindInt8(tt.input, func(in int8) bool {
                 return in == tt.equalTo
             })
-			assert.Equal(t, tt.expected, *output)
+			if tt.shouldBeNil == true {
+				assert.Nil(t, output)
+			} else {
+				assert.Equal(t, tt.expected, *output)
+			}
 		})
 	}
 
 }
 
 var findInt16Tests = []struct {
-	name     string
-	input    []int16
-	equalTo  int16
-	expected int16
+	name     	string
+	input    	[]int16
+	equalTo  	int16
+	expected 	int16
+	shouldBeNil bool
 }{
 
 	{
@@ -148,6 +206,7 @@ var findInt16Tests = []struct {
 		},
         equalTo: 2,
 		expected: 2,
+		shouldBeNil: false,
 	},
 	{
 		name: "more than one element",
@@ -159,6 +218,19 @@ var findInt16Tests = []struct {
 		},
         equalTo: 2,
 		expected: 2,
+		shouldBeNil: false,
+	},
+	{
+		name: "not found",
+		input: []int16{
+			1,
+			2,
+			3,
+			2,
+		},
+        equalTo: 8,
+		expected: 8,
+		shouldBeNil: true,
 	},
 }
 
@@ -168,17 +240,22 @@ func TestFindInt16(t *testing.T) {
             output := FindInt16(tt.input, func(in int16) bool {
                 return in == tt.equalTo
             })
-			assert.Equal(t, tt.expected, *output)
+			if tt.shouldBeNil == true {
+				assert.Nil(t, output)
+			} else {
+				assert.Equal(t, tt.expected, *output)
+			}
 		})
 	}
 
 }
 
 var findInt32Tests = []struct {
-	name     string
-	input    []int32
-	equalTo  int32
-	expected int32
+	name     	string
+	input    	[]int32
+	equalTo  	int32
+	expected 	int32
+	shouldBeNil bool
 }{
 
 	{
@@ -190,6 +267,7 @@ var findInt32Tests = []struct {
 		},
         equalTo: 2,
 		expected: 2,
+		shouldBeNil: false,
 	},
 	{
 		name: "more than one element",
@@ -201,6 +279,19 @@ var findInt32Tests = []struct {
 		},
         equalTo: 2,
 		expected: 2,
+		shouldBeNil: false,
+	},
+	{
+		name: "not found",
+		input: []int32{
+			1,
+			2,
+			3,
+			2,
+		},
+        equalTo: 8,
+		expected: 8,
+		shouldBeNil: true,
 	},
 }
 
@@ -210,17 +301,22 @@ func TestFindInt32(t *testing.T) {
             output := FindInt32(tt.input, func(in int32) bool {
                 return in == tt.equalTo
             })
-			assert.Equal(t, tt.expected, *output)
+			if tt.shouldBeNil == true {
+				assert.Nil(t, output)
+			} else {
+				assert.Equal(t, tt.expected, *output)
+			}
 		})
 	}
 
 }
 
 var findInt64Tests = []struct {
-	name     string
-	input    []int64
-	equalTo  int64
-	expected int64
+	name     	string
+	input    	[]int64
+	equalTo  	int64
+	expected 	int64
+	shouldBeNil bool
 }{
 
 	{
@@ -232,6 +328,7 @@ var findInt64Tests = []struct {
 		},
         equalTo: 2,
 		expected: 2,
+		shouldBeNil: false,
 	},
 	{
 		name: "more than one element",
@@ -243,6 +340,19 @@ var findInt64Tests = []struct {
 		},
         equalTo: 2,
 		expected: 2,
+		shouldBeNil: false,
+	},
+	{
+		name: "not found",
+		input: []int64{
+			1,
+			2,
+			3,
+			2,
+		},
+        equalTo: 8,
+		expected: 8,
+		shouldBeNil: true,
 	},
 }
 
@@ -252,17 +362,22 @@ func TestFindInt64(t *testing.T) {
             output := FindInt64(tt.input, func(in int64) bool {
                 return in == tt.equalTo
             })
-			assert.Equal(t, tt.expected, *output)
+			if tt.shouldBeNil == true {
+				assert.Nil(t, output)
+			} else {
+				assert.Equal(t, tt.expected, *output)
+			}
 		})
 	}
 
 }
 
 var findUintTests = []struct {
-	name     string
-	input    []uint
-	equalTo  uint
-	expected uint
+	name     	string
+	input    	[]uint
+	equalTo  	uint
+	expected 	uint
+	shouldBeNil bool
 }{
 
 	{
@@ -274,6 +389,7 @@ var findUintTests = []struct {
 		},
         equalTo: 2,
 		expected: 2,
+		shouldBeNil: false,
 	},
 	{
 		name: "more than one element",
@@ -285,6 +401,19 @@ var findUintTests = []struct {
 		},
         equalTo: 2,
 		expected: 2,
+		shouldBeNil: false,
+	},
+	{
+		name: "not found",
+		input: []uint{
+			1,
+			2,
+			3,
+			2,
+		},
+        equalTo: 8,
+		expected: 8,
+		shouldBeNil: true,
 	},
 }
 
@@ -294,17 +423,22 @@ func TestFindUint(t *testing.T) {
             output := FindUint(tt.input, func(in uint) bool {
                 return in == tt.equalTo
             })
-			assert.Equal(t, tt.expected, *output)
+			if tt.shouldBeNil == true {
+				assert.Nil(t, output)
+			} else {
+				assert.Equal(t, tt.expected, *output)
+			}
 		})
 	}
 
 }
 
 var findUint8Tests = []struct {
-	name     string
-	input    []uint8
-	equalTo  uint8
-	expected uint8
+	name     	string
+	input    	[]uint8
+	equalTo  	uint8
+	expected 	uint8
+	shouldBeNil bool
 }{
 
 	{
@@ -316,6 +450,7 @@ var findUint8Tests = []struct {
 		},
         equalTo: 2,
 		expected: 2,
+		shouldBeNil: false,
 	},
 	{
 		name: "more than one element",
@@ -327,6 +462,19 @@ var findUint8Tests = []struct {
 		},
         equalTo: 2,
 		expected: 2,
+		shouldBeNil: false,
+	},
+	{
+		name: "not found",
+		input: []uint8{
+			1,
+			2,
+			3,
+			2,
+		},
+        equalTo: 8,
+		expected: 8,
+		shouldBeNil: true,
 	},
 }
 
@@ -336,17 +484,22 @@ func TestFindUint8(t *testing.T) {
             output := FindUint8(tt.input, func(in uint8) bool {
                 return in == tt.equalTo
             })
-			assert.Equal(t, tt.expected, *output)
+			if tt.shouldBeNil == true {
+				assert.Nil(t, output)
+			} else {
+				assert.Equal(t, tt.expected, *output)
+			}
 		})
 	}
 
 }
 
 var findUint16Tests = []struct {
-	name     string
-	input    []uint16
-	equalTo  uint16
-	expected uint16
+	name     	string
+	input    	[]uint16
+	equalTo  	uint16
+	expected 	uint16
+	shouldBeNil bool
 }{
 
 	{
@@ -358,6 +511,7 @@ var findUint16Tests = []struct {
 		},
         equalTo: 2,
 		expected: 2,
+		shouldBeNil: false,
 	},
 	{
 		name: "more than one element",
@@ -369,6 +523,19 @@ var findUint16Tests = []struct {
 		},
         equalTo: 2,
 		expected: 2,
+		shouldBeNil: false,
+	},
+	{
+		name: "not found",
+		input: []uint16{
+			1,
+			2,
+			3,
+			2,
+		},
+        equalTo: 8,
+		expected: 8,
+		shouldBeNil: true,
 	},
 }
 
@@ -378,17 +545,22 @@ func TestFindUint16(t *testing.T) {
             output := FindUint16(tt.input, func(in uint16) bool {
                 return in == tt.equalTo
             })
-			assert.Equal(t, tt.expected, *output)
+			if tt.shouldBeNil == true {
+				assert.Nil(t, output)
+			} else {
+				assert.Equal(t, tt.expected, *output)
+			}
 		})
 	}
 
 }
 
 var findUint32Tests = []struct {
-	name     string
-	input    []uint32
-	equalTo  uint32
-	expected uint32
+	name     	string
+	input    	[]uint32
+	equalTo  	uint32
+	expected 	uint32
+	shouldBeNil bool
 }{
 
 	{
@@ -400,6 +572,7 @@ var findUint32Tests = []struct {
 		},
         equalTo: 2,
 		expected: 2,
+		shouldBeNil: false,
 	},
 	{
 		name: "more than one element",
@@ -411,6 +584,19 @@ var findUint32Tests = []struct {
 		},
         equalTo: 2,
 		expected: 2,
+		shouldBeNil: false,
+	},
+	{
+		name: "not found",
+		input: []uint32{
+			1,
+			2,
+			3,
+			2,
+		},
+        equalTo: 8,
+		expected: 8,
+		shouldBeNil: true,
 	},
 }
 
@@ -420,17 +606,22 @@ func TestFindUint32(t *testing.T) {
             output := FindUint32(tt.input, func(in uint32) bool {
                 return in == tt.equalTo
             })
-			assert.Equal(t, tt.expected, *output)
+			if tt.shouldBeNil == true {
+				assert.Nil(t, output)
+			} else {
+				assert.Equal(t, tt.expected, *output)
+			}
 		})
 	}
 
 }
 
 var findFloat32Tests = []struct {
-	name     string
-	input    []float32
-	equalTo  float32
-	expected float32
+	name     	string
+	input    	[]float32
+	equalTo  	float32
+	expected 	float32
+	shouldBeNil bool
 }{
 
 	{
@@ -442,6 +633,7 @@ var findFloat32Tests = []struct {
 		},
         equalTo: 2.2,
 		expected: 2.2,
+		shouldBeNil: false,
 	},
 	{
 		name: "more than one element",
@@ -453,6 +645,19 @@ var findFloat32Tests = []struct {
 		},
         equalTo: 2.2,
 		expected: 2.2,
+		shouldBeNil: false,
+	},
+	{
+		name: "not found",
+		input: []float32{
+			1.1,
+			2.2,
+			3.3,
+			2.2,
+		},
+        equalTo: 8.8,
+		expected: 8.8,
+		shouldBeNil: true,
 	},
 }
 
@@ -462,17 +667,22 @@ func TestFindFloat32(t *testing.T) {
             output := FindFloat32(tt.input, func(in float32) bool {
                 return in == tt.equalTo
             })
-			assert.Equal(t, tt.expected, *output)
+			if tt.shouldBeNil == true {
+				assert.Nil(t, output)
+			} else {
+				assert.Equal(t, tt.expected, *output)
+			}
 		})
 	}
 
 }
 
 var findFloat64Tests = []struct {
-	name     string
-	input    []float64
-	equalTo  float64
-	expected float64
+	name     	string
+	input    	[]float64
+	equalTo  	float64
+	expected 	float64
+	shouldBeNil bool
 }{
 
 	{
@@ -484,6 +694,7 @@ var findFloat64Tests = []struct {
 		},
         equalTo: 2.2,
 		expected: 2.2,
+		shouldBeNil: false,
 	},
 	{
 		name: "more than one element",
@@ -495,6 +706,19 @@ var findFloat64Tests = []struct {
 		},
         equalTo: 2.2,
 		expected: 2.2,
+		shouldBeNil: false,
+	},
+	{
+		name: "not found",
+		input: []float64{
+			1.1,
+			2.2,
+			3.3,
+			2.2,
+		},
+        equalTo: 8.8,
+		expected: 8.8,
+		shouldBeNil: true,
 	},
 }
 
@@ -504,17 +728,22 @@ func TestFindFloat64(t *testing.T) {
             output := FindFloat64(tt.input, func(in float64) bool {
                 return in == tt.equalTo
             })
-			assert.Equal(t, tt.expected, *output)
+			if tt.shouldBeNil == true {
+				assert.Nil(t, output)
+			} else {
+				assert.Equal(t, tt.expected, *output)
+			}
 		})
 	}
 
 }
 
 var findComplex64Tests = []struct {
-	name     string
-	input    []complex64
-	equalTo  complex64
-	expected complex64
+	name     	string
+	input    	[]complex64
+	equalTo  	complex64
+	expected 	complex64
+	shouldBeNil bool
 }{
 
 	{
@@ -526,6 +755,7 @@ var findComplex64Tests = []struct {
 		},
         equalTo: (4.8+3.14i),
 		expected: (4.8+3.14i),
+		shouldBeNil: false,
 	},
 	{
 		name: "more than one element",
@@ -537,6 +767,19 @@ var findComplex64Tests = []struct {
 		},
         equalTo: (4.8+3.14i),
 		expected: (4.8+3.14i),
+		shouldBeNil: false,
+	},
+	{
+		name: "not found",
+		input: []complex64{
+			(2.4+3.14i),
+			(4.8+3.14i),
+			(7.2+3.14i),
+			(4.8+3.14i),
+		},
+        equalTo: (19.2+3.14i),
+		expected: (19.2+3.14i),
+		shouldBeNil: true,
 	},
 }
 
@@ -546,17 +789,22 @@ func TestFindComplex64(t *testing.T) {
             output := FindComplex64(tt.input, func(in complex64) bool {
                 return in == tt.equalTo
             })
-			assert.Equal(t, tt.expected, *output)
+			if tt.shouldBeNil == true {
+				assert.Nil(t, output)
+			} else {
+				assert.Equal(t, tt.expected, *output)
+			}
 		})
 	}
 
 }
 
 var findComplex128Tests = []struct {
-	name     string
-	input    []complex128
-	equalTo  complex128
-	expected complex128
+	name     	string
+	input    	[]complex128
+	equalTo  	complex128
+	expected 	complex128
+	shouldBeNil bool
 }{
 
 	{
@@ -568,6 +816,7 @@ var findComplex128Tests = []struct {
 		},
         equalTo: (4.8+3.14i),
 		expected: (4.8+3.14i),
+		shouldBeNil: false,
 	},
 	{
 		name: "more than one element",
@@ -579,6 +828,19 @@ var findComplex128Tests = []struct {
 		},
         equalTo: (4.8+3.14i),
 		expected: (4.8+3.14i),
+		shouldBeNil: false,
+	},
+	{
+		name: "not found",
+		input: []complex128{
+			(2.4+3.14i),
+			(4.8+3.14i),
+			(7.199999999999999+3.14i),
+			(4.8+3.14i),
+		},
+        equalTo: (19.2+3.14i),
+		expected: (19.2+3.14i),
+		shouldBeNil: true,
 	},
 }
 
@@ -588,7 +850,11 @@ func TestFindComplex128(t *testing.T) {
             output := FindComplex128(tt.input, func(in complex128) bool {
                 return in == tt.equalTo
             })
-			assert.Equal(t, tt.expected, *output)
+			if tt.shouldBeNil == true {
+				assert.Nil(t, output)
+			} else {
+				assert.Equal(t, tt.expected, *output)
+			}
 		})
 	}
 
