@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/cmaurer/go-lo/compare/v0.2.0...v0.3.0) (2021-05-15)
+
+
+### Features
+
+* adding filter ([4767731](https://github.com/cmaurer/go-lo/commit/4767731213e23083287acf306d90520fd0750b5b))
+
+
+
 # [0.2.0](https://github.com/cmaurer/go-lo/compare/v0.1.0...v0.2.0) (2021-05-15)
 
 
