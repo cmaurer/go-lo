@@ -1,0 +1,8 @@
+
+// Each{{.DataTypeCap}} func
+// Iterates over input slice, invoking function f on each element.
+func Each{{.DataTypeCap}}(input []{{.DataType}}, f func({{.DataType}})) {
+    for _, value := range input {
+        f(value)
+    }
+}

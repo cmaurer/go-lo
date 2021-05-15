@@ -1,0 +1,30 @@
+
+var each{{.DataTypeCap}}Tests = []struct {
+	name     string
+	input    []{{.DataType}}
+	expected int
+}{
+
+	{
+		name: "basic example",
+		input: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+			{{dataTypeGenerator  .DataType 2}},
+			{{dataTypeGenerator  .DataType 3}},
+		},
+        expected: 3,
+	},
+}
+
+func TestEach{{.DataTypeCap}}(t *testing.T) {
+	for _, tt := range each{{.DataTypeCap}}Tests {
+		t.Run(tt.name, func(t *testing.T) {
+            expectedCount := 0
+            Each{{.DataTypeCap}}(tt.input, func(in {{.DataType}}) {
+                expectedCount = expectedCount + 1
+            })
+            assert.Equal(t, expectedCount, tt.expected)
+		})
+	}
+
+}

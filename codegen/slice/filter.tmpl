@@ -1,6 +1,6 @@
 
 // Filter{{.DataTypeCap}} func
-// Returns a new slice containing the results that the function returns truthy for.
+// Returns a new slice containing all elements that the function returns truthy for.
 func Filter{{.DataTypeCap}}(input []{{.DataType}}, f func({{.DataType}}) bool) []{{.DataType}} {
     var output []{{.DataType}}
     for _, value := range input {
