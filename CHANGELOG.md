@@ -1,4 +1,13 @@
-# 0.1.0 (2021-05-15)
+# [0.2.0](https://github.com/cmaurer/go-lo/compare/v0.1.0...v0.2.0) (2021-05-15)
+
+
+### Features
+
+* adding maps ([c10d5a0](https://github.com/cmaurer/go-lo/commit/c10d5a02b053a8a8e15ff090104ec5c6114f0e43))
+
+
+
+# [0.1.0](https://github.com/cmaurer/go-lo/compare/adf6b4922287dad8db44098319fcd11a667a5bc2...v0.1.0) (2021-05-15)
 
 
 ### Bug Fixes
