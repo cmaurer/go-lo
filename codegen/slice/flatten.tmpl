@@ -1,0 +1,12 @@
+
+// Flatten{{.DataTypeCap}} func
+// Returns a new concatenated slice from one or more provided slices.
+func Flatten{{.DataTypeCap}}(input ...[]{{.DataType}}) []{{.DataType}} {
+    var output []{{.DataType}}
+    for _, in := range input {
+        for _, inn := range in {
+            output = append(output, inn)
+        }
+    }
+    return output
+}

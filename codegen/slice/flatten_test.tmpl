@@ -1,0 +1,40 @@
+
+var flatten{{.DataTypeCap}}Tests = []struct {
+	name     string
+	input1   []{{.DataType}}
+	input2   []{{.DataType}}
+	expected []{{.DataType}}
+}{
+
+	{
+		name: "basic example",
+		input1: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+			{{dataTypeGenerator  .DataType 2}},
+			{{dataTypeGenerator  .DataType 3}},
+		},
+		input2: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+			{{dataTypeGenerator  .DataType 2}},
+			{{dataTypeGenerator  .DataType 3}},
+		},
+		expected: []{{.DataType}}{
+            {{dataTypeGenerator  .DataType 1}},
+            {{dataTypeGenerator  .DataType 2}},
+            {{dataTypeGenerator  .DataType 3}},
+            {{dataTypeGenerator  .DataType 1}},
+            {{dataTypeGenerator  .DataType 2}},
+            {{dataTypeGenerator  .DataType 3}},
+        },
+	},
+}
+
+func TestFlatten{{.DataTypeCap}}(t *testing.T) {
+	for _, tt := range flatten{{.DataTypeCap}}Tests {
+		t.Run(tt.name, func(t *testing.T) {
+            output := Flatten{{.DataTypeCap}}(tt.input1, tt.input2)
+			assert.Equal(t, tt.expected, output)
+		})
+	}
+
+}
