@@ -11,7 +11,6 @@ import (
 var mapStringTests = []struct {
 	name     string
 	input    []string
-	element  string
 	expected []string
 }{
 
@@ -47,7 +46,6 @@ func TestMapString(t *testing.T) {
 var mapIntTests = []struct {
 	name     string
 	input    []int
-	element  int
 	expected []int
 }{
 
@@ -83,7 +81,6 @@ func TestMapInt(t *testing.T) {
 var mapInt8Tests = []struct {
 	name     string
 	input    []int8
-	element  int8
 	expected []int8
 }{
 
@@ -119,7 +116,6 @@ func TestMapInt8(t *testing.T) {
 var mapInt16Tests = []struct {
 	name     string
 	input    []int16
-	element  int16
 	expected []int16
 }{
 
@@ -155,7 +151,6 @@ func TestMapInt16(t *testing.T) {
 var mapInt32Tests = []struct {
 	name     string
 	input    []int32
-	element  int32
 	expected []int32
 }{
 
@@ -191,7 +186,6 @@ func TestMapInt32(t *testing.T) {
 var mapInt64Tests = []struct {
 	name     string
 	input    []int64
-	element  int64
 	expected []int64
 }{
 
@@ -227,7 +221,6 @@ func TestMapInt64(t *testing.T) {
 var mapUintTests = []struct {
 	name     string
 	input    []uint
-	element  uint
 	expected []uint
 }{
 
@@ -263,7 +256,6 @@ func TestMapUint(t *testing.T) {
 var mapUint8Tests = []struct {
 	name     string
 	input    []uint8
-	element  uint8
 	expected []uint8
 }{
 
@@ -299,7 +291,6 @@ func TestMapUint8(t *testing.T) {
 var mapUint16Tests = []struct {
 	name     string
 	input    []uint16
-	element  uint16
 	expected []uint16
 }{
 
@@ -335,7 +326,6 @@ func TestMapUint16(t *testing.T) {
 var mapUint32Tests = []struct {
 	name     string
 	input    []uint32
-	element  uint32
 	expected []uint32
 }{
 
@@ -371,7 +361,6 @@ func TestMapUint32(t *testing.T) {
 var mapFloat32Tests = []struct {
 	name     string
 	input    []float32
-	element  float32
 	expected []float32
 }{
 
@@ -407,7 +396,6 @@ func TestMapFloat32(t *testing.T) {
 var mapFloat64Tests = []struct {
 	name     string
 	input    []float64
-	element  float64
 	expected []float64
 }{
 
@@ -443,7 +431,6 @@ func TestMapFloat64(t *testing.T) {
 var mapComplex64Tests = []struct {
 	name     string
 	input    []complex64
-	element  complex64
 	expected []complex64
 }{
 
@@ -479,7 +466,6 @@ func TestMapComplex64(t *testing.T) {
 var mapComplex128Tests = []struct {
 	name     string
 	input    []complex128
-	element  complex128
 	expected []complex128
 }{
 

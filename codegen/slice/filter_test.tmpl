@@ -1,0 +1,47 @@
+
+var filter{{.DataTypeCap}}Tests = []struct {
+	name     string
+	input    []{{.DataType}}
+	equalTo  {{.DataType}}
+	expected []{{.DataType}}
+}{
+
+	{
+		name: "basic example",
+		input: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+			{{dataTypeGenerator  .DataType 2}},
+			{{dataTypeGenerator  .DataType 3}},
+		},
+        equalTo: {{dataTypeGenerator  .DataType 2}},
+		expected: []{{.DataType}}{
+            {{dataTypeGenerator  .DataType 2}},
+        },
+	},
+	{
+		name: "more than one element",
+		input: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+			{{dataTypeGenerator  .DataType 2}},
+			{{dataTypeGenerator  .DataType 3}},
+			{{dataTypeGenerator  .DataType 2}},
+		},
+        equalTo: {{dataTypeGenerator  .DataType 2}},
+		expected: []{{.DataType}}{
+            {{dataTypeGenerator  .DataType 2}},
+            {{dataTypeGenerator  .DataType 2}},
+        },
+	},
+}
+
+func TestFilter{{.DataTypeCap}}(t *testing.T) {
+	for _, tt := range filter{{.DataTypeCap}}Tests {
+		t.Run(tt.name, func(t *testing.T) {
+            output := Filter{{.DataTypeCap}}(tt.input, func(in {{.DataType}}) bool {
+                return in == tt.equalTo
+            })
+			assert.Equal(t, tt.expected, output)
+		})
+	}
+
+}
