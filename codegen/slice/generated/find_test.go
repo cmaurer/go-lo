@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 )
-
+		
 var findStringTests = []struct {
 	name     string
 	input    []string
@@ -20,7 +20,7 @@ var findStringTests = []struct {
 			"test2",
 			"test3",
 		},
-		equalTo:  "test2",
+        equalTo: "test2",
 		expected: "test2",
 	},
 	{
@@ -31,7 +31,7 @@ var findStringTests = []struct {
 			"test3",
 			"test2",
 		},
-		equalTo:  "test2",
+        equalTo: "test2",
 		expected: "test2",
 	},
 }
@@ -39,9 +39,9 @@ var findStringTests = []struct {
 func TestFindString(t *testing.T) {
 	for _, tt := range findStringTests {
 		t.Run(tt.name, func(t *testing.T) {
-			output := FindString(tt.input, func(in string) bool {
-				return in == tt.equalTo
-			})
+            output := FindString(tt.input, func(in string) bool {
+                return in == tt.equalTo
+            })
 			assert.Equal(t, tt.expected, *output)
 		})
 	}
@@ -62,7 +62,7 @@ var findIntTests = []struct {
 			2,
 			3,
 		},
-		equalTo:  2,
+        equalTo: 2,
 		expected: 2,
 	},
 	{
@@ -73,7 +73,7 @@ var findIntTests = []struct {
 			3,
 			2,
 		},
-		equalTo:  2,
+        equalTo: 2,
 		expected: 2,
 	},
 }
@@ -81,9 +81,9 @@ var findIntTests = []struct {
 func TestFindInt(t *testing.T) {
 	for _, tt := range findIntTests {
 		t.Run(tt.name, func(t *testing.T) {
-			output := FindInt(tt.input, func(in int) bool {
-				return in == tt.equalTo
-			})
+            output := FindInt(tt.input, func(in int) bool {
+                return in == tt.equalTo
+            })
 			assert.Equal(t, tt.expected, *output)
 		})
 	}
@@ -104,7 +104,7 @@ var findInt8Tests = []struct {
 			2,
 			3,
 		},
-		equalTo:  2,
+        equalTo: 2,
 		expected: 2,
 	},
 	{
@@ -115,7 +115,7 @@ var findInt8Tests = []struct {
 			3,
 			2,
 		},
-		equalTo:  2,
+        equalTo: 2,
 		expected: 2,
 	},
 }
@@ -123,9 +123,9 @@ var findInt8Tests = []struct {
 func TestFindInt8(t *testing.T) {
 	for _, tt := range findInt8Tests {
 		t.Run(tt.name, func(t *testing.T) {
-			output := FindInt8(tt.input, func(in int8) bool {
-				return in == tt.equalTo
-			})
+            output := FindInt8(tt.input, func(in int8) bool {
+                return in == tt.equalTo
+            })
 			assert.Equal(t, tt.expected, *output)
 		})
 	}
@@ -146,7 +146,7 @@ var findInt16Tests = []struct {
 			2,
 			3,
 		},
-		equalTo:  2,
+        equalTo: 2,
 		expected: 2,
 	},
 	{
@@ -157,7 +157,7 @@ var findInt16Tests = []struct {
 			3,
 			2,
 		},
-		equalTo:  2,
+        equalTo: 2,
 		expected: 2,
 	},
 }
@@ -165,9 +165,9 @@ var findInt16Tests = []struct {
 func TestFindInt16(t *testing.T) {
 	for _, tt := range findInt16Tests {
 		t.Run(tt.name, func(t *testing.T) {
-			output := FindInt16(tt.input, func(in int16) bool {
-				return in == tt.equalTo
-			})
+            output := FindInt16(tt.input, func(in int16) bool {
+                return in == tt.equalTo
+            })
 			assert.Equal(t, tt.expected, *output)
 		})
 	}
@@ -188,7 +188,7 @@ var findInt32Tests = []struct {
 			2,
 			3,
 		},
-		equalTo:  2,
+        equalTo: 2,
 		expected: 2,
 	},
 	{
@@ -199,7 +199,7 @@ var findInt32Tests = []struct {
 			3,
 			2,
 		},
-		equalTo:  2,
+        equalTo: 2,
 		expected: 2,
 	},
 }
@@ -207,9 +207,9 @@ var findInt32Tests = []struct {
 func TestFindInt32(t *testing.T) {
 	for _, tt := range findInt32Tests {
 		t.Run(tt.name, func(t *testing.T) {
-			output := FindInt32(tt.input, func(in int32) bool {
-				return in == tt.equalTo
-			})
+            output := FindInt32(tt.input, func(in int32) bool {
+                return in == tt.equalTo
+            })
 			assert.Equal(t, tt.expected, *output)
 		})
 	}
@@ -230,7 +230,7 @@ var findInt64Tests = []struct {
 			2,
 			3,
 		},
-		equalTo:  2,
+        equalTo: 2,
 		expected: 2,
 	},
 	{
@@ -241,7 +241,7 @@ var findInt64Tests = []struct {
 			3,
 			2,
 		},
-		equalTo:  2,
+        equalTo: 2,
 		expected: 2,
 	},
 }
@@ -249,9 +249,9 @@ var findInt64Tests = []struct {
 func TestFindInt64(t *testing.T) {
 	for _, tt := range findInt64Tests {
 		t.Run(tt.name, func(t *testing.T) {
-			output := FindInt64(tt.input, func(in int64) bool {
-				return in == tt.equalTo
-			})
+            output := FindInt64(tt.input, func(in int64) bool {
+                return in == tt.equalTo
+            })
 			assert.Equal(t, tt.expected, *output)
 		})
 	}
@@ -272,7 +272,7 @@ var findUintTests = []struct {
 			2,
 			3,
 		},
-		equalTo:  2,
+        equalTo: 2,
 		expected: 2,
 	},
 	{
@@ -283,7 +283,7 @@ var findUintTests = []struct {
 			3,
 			2,
 		},
-		equalTo:  2,
+        equalTo: 2,
 		expected: 2,
 	},
 }
@@ -291,9 +291,9 @@ var findUintTests = []struct {
 func TestFindUint(t *testing.T) {
 	for _, tt := range findUintTests {
 		t.Run(tt.name, func(t *testing.T) {
-			output := FindUint(tt.input, func(in uint) bool {
-				return in == tt.equalTo
-			})
+            output := FindUint(tt.input, func(in uint) bool {
+                return in == tt.equalTo
+            })
 			assert.Equal(t, tt.expected, *output)
 		})
 	}
@@ -314,7 +314,7 @@ var findUint8Tests = []struct {
 			2,
 			3,
 		},
-		equalTo:  2,
+        equalTo: 2,
 		expected: 2,
 	},
 	{
@@ -325,7 +325,7 @@ var findUint8Tests = []struct {
 			3,
 			2,
 		},
-		equalTo:  2,
+        equalTo: 2,
 		expected: 2,
 	},
 }
@@ -333,9 +333,9 @@ var findUint8Tests = []struct {
 func TestFindUint8(t *testing.T) {
 	for _, tt := range findUint8Tests {
 		t.Run(tt.name, func(t *testing.T) {
-			output := FindUint8(tt.input, func(in uint8) bool {
-				return in == tt.equalTo
-			})
+            output := FindUint8(tt.input, func(in uint8) bool {
+                return in == tt.equalTo
+            })
 			assert.Equal(t, tt.expected, *output)
 		})
 	}
@@ -356,7 +356,7 @@ var findUint16Tests = []struct {
 			2,
 			3,
 		},
-		equalTo:  2,
+        equalTo: 2,
 		expected: 2,
 	},
 	{
@@ -367,7 +367,7 @@ var findUint16Tests = []struct {
 			3,
 			2,
 		},
-		equalTo:  2,
+        equalTo: 2,
 		expected: 2,
 	},
 }
@@ -375,9 +375,9 @@ var findUint16Tests = []struct {
 func TestFindUint16(t *testing.T) {
 	for _, tt := range findUint16Tests {
 		t.Run(tt.name, func(t *testing.T) {
-			output := FindUint16(tt.input, func(in uint16) bool {
-				return in == tt.equalTo
-			})
+            output := FindUint16(tt.input, func(in uint16) bool {
+                return in == tt.equalTo
+            })
 			assert.Equal(t, tt.expected, *output)
 		})
 	}
@@ -398,7 +398,7 @@ var findUint32Tests = []struct {
 			2,
 			3,
 		},
-		equalTo:  2,
+        equalTo: 2,
 		expected: 2,
 	},
 	{
@@ -409,7 +409,7 @@ var findUint32Tests = []struct {
 			3,
 			2,
 		},
-		equalTo:  2,
+        equalTo: 2,
 		expected: 2,
 	},
 }
@@ -417,9 +417,9 @@ var findUint32Tests = []struct {
 func TestFindUint32(t *testing.T) {
 	for _, tt := range findUint32Tests {
 		t.Run(tt.name, func(t *testing.T) {
-			output := FindUint32(tt.input, func(in uint32) bool {
-				return in == tt.equalTo
-			})
+            output := FindUint32(tt.input, func(in uint32) bool {
+                return in == tt.equalTo
+            })
 			assert.Equal(t, tt.expected, *output)
 		})
 	}
@@ -440,7 +440,7 @@ var findFloat32Tests = []struct {
 			2.2,
 			3.3,
 		},
-		equalTo:  2.2,
+        equalTo: 2.2,
 		expected: 2.2,
 	},
 	{
@@ -451,7 +451,7 @@ var findFloat32Tests = []struct {
 			3.3,
 			2.2,
 		},
-		equalTo:  2.2,
+        equalTo: 2.2,
 		expected: 2.2,
 	},
 }
@@ -459,9 +459,9 @@ var findFloat32Tests = []struct {
 func TestFindFloat32(t *testing.T) {
 	for _, tt := range findFloat32Tests {
 		t.Run(tt.name, func(t *testing.T) {
-			output := FindFloat32(tt.input, func(in float32) bool {
-				return in == tt.equalTo
-			})
+            output := FindFloat32(tt.input, func(in float32) bool {
+                return in == tt.equalTo
+            })
 			assert.Equal(t, tt.expected, *output)
 		})
 	}
@@ -482,7 +482,7 @@ var findFloat64Tests = []struct {
 			2.2,
 			3.3,
 		},
-		equalTo:  2.2,
+        equalTo: 2.2,
 		expected: 2.2,
 	},
 	{
@@ -493,7 +493,7 @@ var findFloat64Tests = []struct {
 			3.3,
 			2.2,
 		},
-		equalTo:  2.2,
+        equalTo: 2.2,
 		expected: 2.2,
 	},
 }
@@ -501,9 +501,9 @@ var findFloat64Tests = []struct {
 func TestFindFloat64(t *testing.T) {
 	for _, tt := range findFloat64Tests {
 		t.Run(tt.name, func(t *testing.T) {
-			output := FindFloat64(tt.input, func(in float64) bool {
-				return in == tt.equalTo
-			})
+            output := FindFloat64(tt.input, func(in float64) bool {
+                return in == tt.equalTo
+            })
 			assert.Equal(t, tt.expected, *output)
 		})
 	}
@@ -520,32 +520,32 @@ var findComplex64Tests = []struct {
 	{
 		name: "basic example",
 		input: []complex64{
-			(2.4 + 3.14i),
-			(4.8 + 3.14i),
-			(7.2 + 3.14i),
+			(2.4+3.14i),
+			(4.8+3.14i),
+			(7.2+3.14i),
 		},
-		equalTo:  (4.8 + 3.14i),
-		expected: (4.8 + 3.14i),
+        equalTo: (4.8+3.14i),
+		expected: (4.8+3.14i),
 	},
 	{
 		name: "more than one element",
 		input: []complex64{
-			(2.4 + 3.14i),
-			(4.8 + 3.14i),
-			(7.2 + 3.14i),
-			(4.8 + 3.14i),
+			(2.4+3.14i),
+			(4.8+3.14i),
+			(7.2+3.14i),
+			(4.8+3.14i),
 		},
-		equalTo:  (4.8 + 3.14i),
-		expected: (4.8 + 3.14i),
+        equalTo: (4.8+3.14i),
+		expected: (4.8+3.14i),
 	},
 }
 
 func TestFindComplex64(t *testing.T) {
 	for _, tt := range findComplex64Tests {
 		t.Run(tt.name, func(t *testing.T) {
-			output := FindComplex64(tt.input, func(in complex64) bool {
-				return in == tt.equalTo
-			})
+            output := FindComplex64(tt.input, func(in complex64) bool {
+                return in == tt.equalTo
+            })
 			assert.Equal(t, tt.expected, *output)
 		})
 	}
@@ -562,32 +562,32 @@ var findComplex128Tests = []struct {
 	{
 		name: "basic example",
 		input: []complex128{
-			(2.4 + 3.14i),
-			(4.8 + 3.14i),
-			(7.199999999999999 + 3.14i),
+			(2.4+3.14i),
+			(4.8+3.14i),
+			(7.199999999999999+3.14i),
 		},
-		equalTo:  (4.8 + 3.14i),
-		expected: (4.8 + 3.14i),
+        equalTo: (4.8+3.14i),
+		expected: (4.8+3.14i),
 	},
 	{
 		name: "more than one element",
 		input: []complex128{
-			(2.4 + 3.14i),
-			(4.8 + 3.14i),
-			(7.199999999999999 + 3.14i),
-			(4.8 + 3.14i),
+			(2.4+3.14i),
+			(4.8+3.14i),
+			(7.199999999999999+3.14i),
+			(4.8+3.14i),
 		},
-		equalTo:  (4.8 + 3.14i),
-		expected: (4.8 + 3.14i),
+        equalTo: (4.8+3.14i),
+		expected: (4.8+3.14i),
 	},
 }
 
 func TestFindComplex128(t *testing.T) {
 	for _, tt := range findComplex128Tests {
 		t.Run(tt.name, func(t *testing.T) {
-			output := FindComplex128(tt.input, func(in complex128) bool {
-				return in == tt.equalTo
-			})
+            output := FindComplex128(tt.input, func(in complex128) bool {
+                return in == tt.equalTo
+            })
 			assert.Equal(t, tt.expected, *output)
 		})
 	}
