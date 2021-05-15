@@ -1,3 +1,13 @@
+# [0.5.0](https://github.com/cmaurer/go-lo/compare/v0.4.0...v0.5.0) (2021-05-15)
+
+
+### Features
+
+* added flatten ([86df0a7](https://github.com/cmaurer/go-lo/commit/86df0a7aa2da3ac24d2924765a8eec10b442736e))
+* added flatten ([04e7d5a](https://github.com/cmaurer/go-lo/commit/04e7d5acac99aadaddb410422eaae189b96e9520))
+
+
+
 # [0.4.0](https://github.com/cmaurer/go-lo/compare/v0.3.0...v0.4.0) (2021-05-15)
 
 
