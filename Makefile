@@ -18,11 +18,11 @@ copy-generated:
 
 test:
 	@for dir in $(SRC_DIRS); do \
-		echo $$dir && cd $$dir && go test . -coverpkg=./... -covermode=atomic -coverprofile=./coverage.txt -v -count 1; \
+		echo $$dir && cd $$dir && go test ./slice/... -coverpkg=./... -covermode=atomic -coverprofile=./coverage.txt -v -count 1; \
 	done
 
 fmt:
-	@go fmt ./slice
+	@gofmt -s -w ./slice/*.go
 
 lint:
 	@for dir in $(SRC_DIRS); do \
