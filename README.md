@@ -2,6 +2,8 @@
 
 A collection of common datatype functions for slices.
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/cmaurer/go-lo)](https://goreportcard.com/report/github.com/cmaurer/go-lo)
+
 ## Each
 
 Iterates over each element in a slice, invoking a function on each element.

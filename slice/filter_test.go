@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 )
-		
+
 var filterStringTests = []struct {
 	name     string
 	input    []string
@@ -20,10 +20,10 @@ var filterStringTests = []struct {
 			"test2",
 			"test3",
 		},
-        equalTo: "test2",
+		equalTo: "test2",
 		expected: []string{
-            "test2",
-        },
+			"test2",
+		},
 	},
 	{
 		name: "more than one element",
@@ -33,20 +33,20 @@ var filterStringTests = []struct {
 			"test3",
 			"test2",
 		},
-        equalTo: "test2",
+		equalTo: "test2",
 		expected: []string{
-            "test2",
-            "test2",
-        },
+			"test2",
+			"test2",
+		},
 	},
 }
 
 func TestFilterString(t *testing.T) {
 	for _, tt := range filterStringTests {
 		t.Run(tt.name, func(t *testing.T) {
-            output := FilterString(tt.input, func(in string) bool {
-                return in == tt.equalTo
-            })
+			output := FilterString(tt.input, func(in string) bool {
+				return in == tt.equalTo
+			})
 			assert.Equal(t, tt.expected, output)
 		})
 	}
@@ -67,10 +67,10 @@ var filterIntTests = []struct {
 			2,
 			3,
 		},
-        equalTo: 2,
+		equalTo: 2,
 		expected: []int{
-            2,
-        },
+			2,
+		},
 	},
 	{
 		name: "more than one element",
@@ -80,20 +80,20 @@ var filterIntTests = []struct {
 			3,
 			2,
 		},
-        equalTo: 2,
+		equalTo: 2,
 		expected: []int{
-            2,
-            2,
-        },
+			2,
+			2,
+		},
 	},
 }
 
 func TestFilterInt(t *testing.T) {
 	for _, tt := range filterIntTests {
 		t.Run(tt.name, func(t *testing.T) {
-            output := FilterInt(tt.input, func(in int) bool {
-                return in == tt.equalTo
-            })
+			output := FilterInt(tt.input, func(in int) bool {
+				return in == tt.equalTo
+			})
 			assert.Equal(t, tt.expected, output)
 		})
 	}
@@ -114,10 +114,10 @@ var filterInt8Tests = []struct {
 			2,
 			3,
 		},
-        equalTo: 2,
+		equalTo: 2,
 		expected: []int8{
-            2,
-        },
+			2,
+		},
 	},
 	{
 		name: "more than one element",
@@ -127,20 +127,20 @@ var filterInt8Tests = []struct {
 			3,
 			2,
 		},
-        equalTo: 2,
+		equalTo: 2,
 		expected: []int8{
-            2,
-            2,
-        },
+			2,
+			2,
+		},
 	},
 }
 
 func TestFilterInt8(t *testing.T) {
 	for _, tt := range filterInt8Tests {
 		t.Run(tt.name, func(t *testing.T) {
-            output := FilterInt8(tt.input, func(in int8) bool {
-                return in == tt.equalTo
-            })
+			output := FilterInt8(tt.input, func(in int8) bool {
+				return in == tt.equalTo
+			})
 			assert.Equal(t, tt.expected, output)
 		})
 	}
@@ -161,10 +161,10 @@ var filterInt16Tests = []struct {
 			2,
 			3,
 		},
-        equalTo: 2,
+		equalTo: 2,
 		expected: []int16{
-            2,
-        },
+			2,
+		},
 	},
 	{
 		name: "more than one element",
@@ -174,20 +174,20 @@ var filterInt16Tests = []struct {
 			3,
 			2,
 		},
-        equalTo: 2,
+		equalTo: 2,
 		expected: []int16{
-            2,
-            2,
-        },
+			2,
+			2,
+		},
 	},
 }
 
 func TestFilterInt16(t *testing.T) {
 	for _, tt := range filterInt16Tests {
 		t.Run(tt.name, func(t *testing.T) {
-            output := FilterInt16(tt.input, func(in int16) bool {
-                return in == tt.equalTo
-            })
+			output := FilterInt16(tt.input, func(in int16) bool {
+				return in == tt.equalTo
+			})
 			assert.Equal(t, tt.expected, output)
 		})
 	}
@@ -208,10 +208,10 @@ var filterInt32Tests = []struct {
 			2,
 			3,
 		},
-        equalTo: 2,
+		equalTo: 2,
 		expected: []int32{
-            2,
-        },
+			2,
+		},
 	},
 	{
 		name: "more than one element",
@@ -221,20 +221,20 @@ var filterInt32Tests = []struct {
 			3,
 			2,
 		},
-        equalTo: 2,
+		equalTo: 2,
 		expected: []int32{
-            2,
-            2,
-        },
+			2,
+			2,
+		},
 	},
 }
 
 func TestFilterInt32(t *testing.T) {
 	for _, tt := range filterInt32Tests {
 		t.Run(tt.name, func(t *testing.T) {
-            output := FilterInt32(tt.input, func(in int32) bool {
-                return in == tt.equalTo
-            })
+			output := FilterInt32(tt.input, func(in int32) bool {
+				return in == tt.equalTo
+			})
 			assert.Equal(t, tt.expected, output)
 		})
 	}
@@ -255,10 +255,10 @@ var filterInt64Tests = []struct {
 			2,
 			3,
 		},
-        equalTo: 2,
+		equalTo: 2,
 		expected: []int64{
-            2,
-        },
+			2,
+		},
 	},
 	{
 		name: "more than one element",
@@ -268,20 +268,20 @@ var filterInt64Tests = []struct {
 			3,
 			2,
 		},
-        equalTo: 2,
+		equalTo: 2,
 		expected: []int64{
-            2,
-            2,
-        },
+			2,
+			2,
+		},
 	},
 }
 
 func TestFilterInt64(t *testing.T) {
 	for _, tt := range filterInt64Tests {
 		t.Run(tt.name, func(t *testing.T) {
-            output := FilterInt64(tt.input, func(in int64) bool {
-                return in == tt.equalTo
-            })
+			output := FilterInt64(tt.input, func(in int64) bool {
+				return in == tt.equalTo
+			})
 			assert.Equal(t, tt.expected, output)
 		})
 	}
@@ -302,10 +302,10 @@ var filterUintTests = []struct {
 			2,
 			3,
 		},
-        equalTo: 2,
+		equalTo: 2,
 		expected: []uint{
-            2,
-        },
+			2,
+		},
 	},
 	{
 		name: "more than one element",
@@ -315,20 +315,20 @@ var filterUintTests = []struct {
 			3,
 			2,
 		},
-        equalTo: 2,
+		equalTo: 2,
 		expected: []uint{
-            2,
-            2,
-        },
+			2,
+			2,
+		},
 	},
 }
 
 func TestFilterUint(t *testing.T) {
 	for _, tt := range filterUintTests {
 		t.Run(tt.name, func(t *testing.T) {
-            output := FilterUint(tt.input, func(in uint) bool {
-                return in == tt.equalTo
-            })
+			output := FilterUint(tt.input, func(in uint) bool {
+				return in == tt.equalTo
+			})
 			assert.Equal(t, tt.expected, output)
 		})
 	}
@@ -349,10 +349,10 @@ var filterUint8Tests = []struct {
 			2,
 			3,
 		},
-        equalTo: 2,
+		equalTo: 2,
 		expected: []uint8{
-            2,
-        },
+			2,
+		},
 	},
 	{
 		name: "more than one element",
@@ -362,20 +362,20 @@ var filterUint8Tests = []struct {
 			3,
 			2,
 		},
-        equalTo: 2,
+		equalTo: 2,
 		expected: []uint8{
-            2,
-            2,
-        },
+			2,
+			2,
+		},
 	},
 }
 
 func TestFilterUint8(t *testing.T) {
 	for _, tt := range filterUint8Tests {
 		t.Run(tt.name, func(t *testing.T) {
-            output := FilterUint8(tt.input, func(in uint8) bool {
-                return in == tt.equalTo
-            })
+			output := FilterUint8(tt.input, func(in uint8) bool {
+				return in == tt.equalTo
+			})
 			assert.Equal(t, tt.expected, output)
 		})
 	}
@@ -396,10 +396,10 @@ var filterUint16Tests = []struct {
 			2,
 			3,
 		},
-        equalTo: 2,
+		equalTo: 2,
 		expected: []uint16{
-            2,
-        },
+			2,
+		},
 	},
 	{
 		name: "more than one element",
@@ -409,20 +409,20 @@ var filterUint16Tests = []struct {
 			3,
 			2,
 		},
-        equalTo: 2,
+		equalTo: 2,
 		expected: []uint16{
-            2,
-            2,
-        },
+			2,
+			2,
+		},
 	},
 }
 
 func TestFilterUint16(t *testing.T) {
 	for _, tt := range filterUint16Tests {
 		t.Run(tt.name, func(t *testing.T) {
-            output := FilterUint16(tt.input, func(in uint16) bool {
-                return in == tt.equalTo
-            })
+			output := FilterUint16(tt.input, func(in uint16) bool {
+				return in == tt.equalTo
+			})
 			assert.Equal(t, tt.expected, output)
 		})
 	}
@@ -443,10 +443,10 @@ var filterUint32Tests = []struct {
 			2,
 			3,
 		},
-        equalTo: 2,
+		equalTo: 2,
 		expected: []uint32{
-            2,
-        },
+			2,
+		},
 	},
 	{
 		name: "more than one element",
@@ -456,20 +456,20 @@ var filterUint32Tests = []struct {
 			3,
 			2,
 		},
-        equalTo: 2,
+		equalTo: 2,
 		expected: []uint32{
-            2,
-            2,
-        },
+			2,
+			2,
+		},
 	},
 }
 
 func TestFilterUint32(t *testing.T) {
 	for _, tt := range filterUint32Tests {
 		t.Run(tt.name, func(t *testing.T) {
-            output := FilterUint32(tt.input, func(in uint32) bool {
-                return in == tt.equalTo
-            })
+			output := FilterUint32(tt.input, func(in uint32) bool {
+				return in == tt.equalTo
+			})
 			assert.Equal(t, tt.expected, output)
 		})
 	}
@@ -490,10 +490,10 @@ var filterFloat32Tests = []struct {
 			2.2,
 			3.3,
 		},
-        equalTo: 2.2,
+		equalTo: 2.2,
 		expected: []float32{
-            2.2,
-        },
+			2.2,
+		},
 	},
 	{
 		name: "more than one element",
@@ -503,20 +503,20 @@ var filterFloat32Tests = []struct {
 			3.3,
 			2.2,
 		},
-        equalTo: 2.2,
+		equalTo: 2.2,
 		expected: []float32{
-            2.2,
-            2.2,
-        },
+			2.2,
+			2.2,
+		},
 	},
 }
 
 func TestFilterFloat32(t *testing.T) {
 	for _, tt := range filterFloat32Tests {
 		t.Run(tt.name, func(t *testing.T) {
-            output := FilterFloat32(tt.input, func(in float32) bool {
-                return in == tt.equalTo
-            })
+			output := FilterFloat32(tt.input, func(in float32) bool {
+				return in == tt.equalTo
+			})
 			assert.Equal(t, tt.expected, output)
 		})
 	}
@@ -537,10 +537,10 @@ var filterFloat64Tests = []struct {
 			2.2,
 			3.3,
 		},
-        equalTo: 2.2,
+		equalTo: 2.2,
 		expected: []float64{
-            2.2,
-        },
+			2.2,
+		},
 	},
 	{
 		name: "more than one element",
@@ -550,20 +550,20 @@ var filterFloat64Tests = []struct {
 			3.3,
 			2.2,
 		},
-        equalTo: 2.2,
+		equalTo: 2.2,
 		expected: []float64{
-            2.2,
-            2.2,
-        },
+			2.2,
+			2.2,
+		},
 	},
 }
 
 func TestFilterFloat64(t *testing.T) {
 	for _, tt := range filterFloat64Tests {
 		t.Run(tt.name, func(t *testing.T) {
-            output := FilterFloat64(tt.input, func(in float64) bool {
-                return in == tt.equalTo
-            })
+			output := FilterFloat64(tt.input, func(in float64) bool {
+				return in == tt.equalTo
+			})
 			assert.Equal(t, tt.expected, output)
 		})
 	}
@@ -580,37 +580,37 @@ var filterComplex64Tests = []struct {
 	{
 		name: "basic example",
 		input: []complex64{
-			(2.4+3.14i),
-			(4.8+3.14i),
-			(7.2+3.14i),
+			(2.4 + 3.14i),
+			(4.8 + 3.14i),
+			(7.2 + 3.14i),
 		},
-        equalTo: (4.8+3.14i),
+		equalTo: (4.8 + 3.14i),
 		expected: []complex64{
-            (4.8+3.14i),
-        },
+			(4.8 + 3.14i),
+		},
 	},
 	{
 		name: "more than one element",
 		input: []complex64{
-			(2.4+3.14i),
-			(4.8+3.14i),
-			(7.2+3.14i),
-			(4.8+3.14i),
+			(2.4 + 3.14i),
+			(4.8 + 3.14i),
+			(7.2 + 3.14i),
+			(4.8 + 3.14i),
 		},
-        equalTo: (4.8+3.14i),
+		equalTo: (4.8 + 3.14i),
 		expected: []complex64{
-            (4.8+3.14i),
-            (4.8+3.14i),
-        },
+			(4.8 + 3.14i),
+			(4.8 + 3.14i),
+		},
 	},
 }
 
 func TestFilterComplex64(t *testing.T) {
 	for _, tt := range filterComplex64Tests {
 		t.Run(tt.name, func(t *testing.T) {
-            output := FilterComplex64(tt.input, func(in complex64) bool {
-                return in == tt.equalTo
-            })
+			output := FilterComplex64(tt.input, func(in complex64) bool {
+				return in == tt.equalTo
+			})
 			assert.Equal(t, tt.expected, output)
 		})
 	}
@@ -627,37 +627,37 @@ var filterComplex128Tests = []struct {
 	{
 		name: "basic example",
 		input: []complex128{
-			(2.4+3.14i),
-			(4.8+3.14i),
-			(7.199999999999999+3.14i),
+			(2.4 + 3.14i),
+			(4.8 + 3.14i),
+			(7.199999999999999 + 3.14i),
 		},
-        equalTo: (4.8+3.14i),
+		equalTo: (4.8 + 3.14i),
 		expected: []complex128{
-            (4.8+3.14i),
-        },
+			(4.8 + 3.14i),
+		},
 	},
 	{
 		name: "more than one element",
 		input: []complex128{
-			(2.4+3.14i),
-			(4.8+3.14i),
-			(7.199999999999999+3.14i),
-			(4.8+3.14i),
+			(2.4 + 3.14i),
+			(4.8 + 3.14i),
+			(7.199999999999999 + 3.14i),
+			(4.8 + 3.14i),
 		},
-        equalTo: (4.8+3.14i),
+		equalTo: (4.8 + 3.14i),
 		expected: []complex128{
-            (4.8+3.14i),
-            (4.8+3.14i),
-        },
+			(4.8 + 3.14i),
+			(4.8 + 3.14i),
+		},
 	},
 }
 
 func TestFilterComplex128(t *testing.T) {
 	for _, tt := range filterComplex128Tests {
 		t.Run(tt.name, func(t *testing.T) {
-            output := FilterComplex128(tt.input, func(in complex128) bool {
-                return in == tt.equalTo
-            })
+			output := FilterComplex128(tt.input, func(in complex128) bool {
+				return in == tt.equalTo
+			})
 			assert.Equal(t, tt.expected, output)
 		})
 	}

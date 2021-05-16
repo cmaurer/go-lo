@@ -1,6 +1,5 @@
 package slice
 
-
 // IndexOfString func
 // Returns an int for the position where the element was found in the slice
 func IndexOfString(element string, input []string) int {

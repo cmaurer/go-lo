@@ -3,7 +3,7 @@
 
 SRC_DIRS := slice
 
-all: generate copy-generated test
+all: generate copy-generated lint fmt test
 
 dirs:
 	@echo $(SRC_DIRS)
@@ -21,6 +21,9 @@ test:
 		echo $$dir && cd $$dir && go test . -coverpkg=./... -covermode=atomic -coverprofile=./coverage.txt -v -count 1; \
 	done
 
+fmt:
+	@go fmt ./slice
+
 lint:
 	@for dir in $(SRC_DIRS); do \
 		golint $$dir/...; \
@@ -28,4 +31,4 @@ lint:
 	golint codegen/...
 
 
-.PHONY: generate copy-generated test build lint
+.PHONY: generate copy-generated test build lint fmt

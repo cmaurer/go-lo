@@ -1,6 +1,5 @@
 package slice
 
-
 // UniqueString func
 // Returns a slice without duplicates
 func UniqueString(input []string) []string {

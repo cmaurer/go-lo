@@ -5,7 +5,6 @@ import (
 
 	"github.com/stretchr/testify/assert"
 )
-		
 
 var indexOfStringTests = []struct {
 	name     string
@@ -60,7 +59,6 @@ func TestIndexOfString(t *testing.T) {
 
 }
 
-
 var indexOfIntTests = []struct {
 	name     string
 	input    []int
@@ -113,7 +111,6 @@ func TestIndexOfInt(t *testing.T) {
 	}
 
 }
-
 
 var indexOfInt8Tests = []struct {
 	name     string
@@ -168,7 +165,6 @@ func TestIndexOfInt8(t *testing.T) {
 
 }
 
-
 var indexOfInt16Tests = []struct {
 	name     string
 	input    []int16
@@ -221,7 +217,6 @@ func TestIndexOfInt16(t *testing.T) {
 	}
 
 }
-
 
 var indexOfInt32Tests = []struct {
 	name     string
@@ -276,7 +271,6 @@ func TestIndexOfInt32(t *testing.T) {
 
 }
 
-
 var indexOfInt64Tests = []struct {
 	name     string
 	input    []int64
@@ -329,7 +323,6 @@ func TestIndexOfInt64(t *testing.T) {
 	}
 
 }
-
 
 var indexOfUintTests = []struct {
 	name     string
@@ -384,7 +377,6 @@ func TestIndexOfUint(t *testing.T) {
 
 }
 
-
 var indexOfUint8Tests = []struct {
 	name     string
 	input    []uint8
@@ -437,7 +429,6 @@ func TestIndexOfUint8(t *testing.T) {
 	}
 
 }
-
 
 var indexOfUint16Tests = []struct {
 	name     string
@@ -492,7 +483,6 @@ func TestIndexOfUint16(t *testing.T) {
 
 }
 
-
 var indexOfUint32Tests = []struct {
 	name     string
 	input    []uint32
@@ -545,7 +535,6 @@ func TestIndexOfUint32(t *testing.T) {
 	}
 
 }
-
 
 var indexOfFloat32Tests = []struct {
 	name     string
@@ -600,7 +589,6 @@ func TestIndexOfFloat32(t *testing.T) {
 
 }
 
-
 var indexOfFloat64Tests = []struct {
 	name     string
 	input    []float64
@@ -654,7 +642,6 @@ func TestIndexOfFloat64(t *testing.T) {
 
 }
 
-
 var indexOfComplex64Tests = []struct {
 	name     string
 	input    []complex64
@@ -665,35 +652,35 @@ var indexOfComplex64Tests = []struct {
 	{
 		name: "basic example",
 		input: []complex64{
-			(2.4+3.14i),
-			(4.8+3.14i),
-			(7.2+3.14i),
+			(2.4 + 3.14i),
+			(4.8 + 3.14i),
+			(7.2 + 3.14i),
 		},
-		element:  (4.8+3.14i),
+		element:  (4.8 + 3.14i),
 		expected: 1,
 	},
 	{
 		name: "basic example with more elements",
 		input: []complex64{
-			(2.4+3.14i),
-			(4.8+3.14i),
-			(7.2+3.14i),
-			(9.6+3.14i),
-			(12+3.14i),
+			(2.4 + 3.14i),
+			(4.8 + 3.14i),
+			(7.2 + 3.14i),
+			(9.6 + 3.14i),
+			(12 + 3.14i),
 		},
-		element:  (12+3.14i),
+		element:  (12 + 3.14i),
 		expected: 4,
 	},
 	{
 		name: "not found",
 		input: []complex64{
-			(2.4+3.14i),
-			(4.8+3.14i),
-			(7.2+3.14i),
-			(9.6+3.14i),
-			(12+3.14i),
+			(2.4 + 3.14i),
+			(4.8 + 3.14i),
+			(7.2 + 3.14i),
+			(9.6 + 3.14i),
+			(12 + 3.14i),
 		},
-		element:  (24+3.14i),
+		element:  (24 + 3.14i),
 		expected: -1,
 	},
 }
@@ -708,7 +695,6 @@ func TestIndexOfComplex64(t *testing.T) {
 
 }
 
-
 var indexOfComplex128Tests = []struct {
 	name     string
 	input    []complex128
@@ -719,35 +705,35 @@ var indexOfComplex128Tests = []struct {
 	{
 		name: "basic example",
 		input: []complex128{
-			(2.4+3.14i),
-			(4.8+3.14i),
-			(7.199999999999999+3.14i),
+			(2.4 + 3.14i),
+			(4.8 + 3.14i),
+			(7.199999999999999 + 3.14i),
 		},
-		element:  (4.8+3.14i),
+		element:  (4.8 + 3.14i),
 		expected: 1,
 	},
 	{
 		name: "basic example with more elements",
 		input: []complex128{
-			(2.4+3.14i),
-			(4.8+3.14i),
-			(7.199999999999999+3.14i),
-			(9.6+3.14i),
-			(12+3.14i),
+			(2.4 + 3.14i),
+			(4.8 + 3.14i),
+			(7.199999999999999 + 3.14i),
+			(9.6 + 3.14i),
+			(12 + 3.14i),
 		},
-		element:  (12+3.14i),
+		element:  (12 + 3.14i),
 		expected: 4,
 	},
 	{
 		name: "not found",
 		input: []complex128{
-			(2.4+3.14i),
-			(4.8+3.14i),
-			(7.199999999999999+3.14i),
-			(9.6+3.14i),
-			(12+3.14i),
+			(2.4 + 3.14i),
+			(4.8 + 3.14i),
+			(7.199999999999999 + 3.14i),
+			(9.6 + 3.14i),
+			(12 + 3.14i),
 		},
-		element:  (24+3.14i),
+		element:  (24 + 3.14i),
 		expected: -1,
 	},
 }
