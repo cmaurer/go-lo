@@ -3,6 +3,7 @@
 A collection of common datatype functions for slices.
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/cmaurer/go-lo)](https://goreportcard.com/report/github.com/cmaurer/go-lo)
+[![Tests](https://github.com/cmaurer/go-lo/workflows/tests/badge.svg)](https://goreportcard.com/report/github.com/cmaurer/go-lo)
 
 ## Each
 
