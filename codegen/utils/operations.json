@@ -1,0 +1,180 @@
+{
+    "operations": [
+        {
+            "name": "if",
+            "template": "if.tmpl",
+            "test_template": "if_test.tmpl",
+            "datatypes": [
+                {
+                    "data_type_cap": "String",
+                    "data_type": "string",
+                    "test_data_p1": "\"p1\"",
+                    "test_data_p2": "\"p2\"",
+                    "is_ptr_test": false
+                },
+                {
+                    "data_type_cap": "StringPtr",
+                    "data_type": "*string",
+                    "test_data_p1": "\"p1\"",
+                    "test_data_p2": "nil",
+                    "is_ptr_test": true
+                },
+                {
+                    "data_type_cap": "Int",
+                    "data_type": "int",
+                    "test_data_p1": "int(1)",
+                    "test_data_p2": "int(2)",
+                    "is_ptr_test": false
+                },
+                {
+                    "data_type_cap": "IntPtr",
+                    "data_type": "*int",
+                    "test_data_p1": "int(1)",
+                    "test_data_p2": "nil",
+                    "is_ptr_test": true
+                },
+                {
+                    "data_type_cap": "Int8",
+                    "data_type": "int8",
+                    "test_data_p1": "int8(2)",
+                    "test_data_p2": "int8(3)",
+                    "is_ptr_test": false
+                },
+                {
+                    "data_type_cap": "Int8Ptr",
+                    "data_type": "*int8",
+                    "test_data_p1": "int8(2)",
+                    "test_data_p2": "nil",
+                    "is_ptr_test": true
+                },
+                {
+                    "data_type_cap": "Int16",
+                    "data_type": "int16",
+                    "test_data_p1": "int16(4)",
+                    "test_data_p2": "int16(5)",
+                    "is_ptr_test": false
+                },
+                {
+                    "data_type_cap": "Int16Ptr",
+                    "data_type": "*int16",
+                    "test_data_p1": "int16(4)",
+                    "test_data_p2": "nil",
+                    "is_ptr_test": true
+                },
+                {
+                    "data_type_cap": "Int32",
+                    "data_type": "int32",
+                    "test_data_p1": "int32(6)",
+                    "test_data_p2": "int32(7)",
+                    "is_ptr_test": false
+                },
+                {
+                    "data_type_cap": "Int32Ptr",
+                    "data_type": "*int32",
+                    "test_data_p1": "int32(6)",
+                    "test_data_p2": "nil",
+                    "is_ptr_test": true
+                },
+                {
+                    "data_type_cap": "Int64",
+                    "data_type": "int64",
+                    "test_data_p1": "int64(10)",
+                    "test_data_p2": "int64(11)",
+                    "is_ptr_test": false
+                },
+                {
+                    "data_type_cap": "Int64Ptr",
+                    "data_type": "*int64",
+                    "test_data_p1": "int64(10)",
+                    "test_data_p2": "nil",
+                    "is_ptr_test": true
+                },
+                {
+                    "data_type_cap": "Uint",
+                    "data_type": "uint",
+                    "test_data_p1": "uint(1)",
+                    "test_data_p2": "uint(2)",
+                    "is_ptr_test": false
+                },
+                {
+                    "data_type_cap": "UintPtr",
+                    "data_type": "*uint",
+                    "test_data_p1": "uint(1)",
+                    "test_data_p2": "nil",
+                    "is_ptr_test": true
+                },
+                {
+                    "data_type_cap": "Uint8",
+                    "data_type": "uint8",
+                    "test_data_p1": "uint8(2)",
+                    "test_data_p2": "uint8(3)",
+                    "is_ptr_test": false
+                },
+                {
+                    "data_type_cap": "Uint8Ptr",
+                    "data_type": "*uint8",
+                    "test_data_p1": "uint8(2)",
+                    "test_data_p2": "nil",
+                    "is_ptr_test": true
+                },
+                {
+                    "data_type_cap": "Uint16",
+                    "data_type": "uint16",
+                    "test_data_p1": "uint16(4)",
+                    "test_data_p2": "uint16(5)",
+                    "is_ptr_test": false
+                },
+                {
+                    "data_type_cap": "Uint16Ptr",
+                    "data_type": "*uint16",
+                    "test_data_p1": "uint16(4)",
+                    "test_data_p2": "nil",
+                    "is_ptr_test": true
+                },
+                {
+                    "data_type_cap": "Uint32",
+                    "data_type": "uint32",
+                    "test_data_p1": "uint32(6)",
+                    "test_data_p2": "uint32(7)",
+                    "is_ptr_test": false
+                },
+                {
+                    "data_type_cap": "Uint32Ptr",
+                    "data_type": "*uint32",
+                    "test_data_p1": "uint32(6)",
+                    "test_data_p2": "nil",
+                    "is_ptr_test": true
+                },
+                {
+                    "data_type_cap": "Float32",
+                    "data_type": "float32",
+                    "test_data_p1": "float32(8)",
+                    "test_data_p2": "float32(7)",
+                    "is_ptr_test": false
+                },
+                {
+                    "data_type_cap": "Float32Ptr",
+                    "data_type": "*float32",
+                    "test_data_p1": "float32(8)",
+                    "test_data_p2": "nil",
+                    "is_ptr_test": true
+                },
+                {
+                    "data_type_cap": "Float64",
+                    "data_type": "float64",
+                    "test_data_p1": "float64(9)",
+                    "test_data_p2": "float64(8)",
+                    "is_ptr_test": false
+                },
+                {
+                    "data_type_cap": "Float64Ptr",
+                    "data_type": "*float64",
+                    "test_data_p1": "float64(9)",
+                    "test_data_p2": "nil",
+                    "is_ptr_test": true
+                }
+
+            ]
+        }
+    ]
+}

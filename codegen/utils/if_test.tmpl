@@ -1,0 +1,14 @@
+
+func TestIf{{.DataTypeCap}}(t *testing.T) {
+{{ if .IsPtrTest }}
+ 
+    p1 := {{.TestDataP1}}
+
+	assert.Equal(t, If{{.DataTypeCap}}(true, &p1, {{.TestDataP2}}), &p1)
+	assert.Nil(t, If{{.DataTypeCap}}(false, &p1, nil))
+
+{{ else }}    
+	assert.Equal(t, If{{.DataTypeCap}}(true, {{.TestDataP1}}, {{.TestDataP2}}), {{.TestDataP1}})
+	assert.Equal(t, If{{.DataTypeCap}}(false, {{.TestDataP1}}, {{.TestDataP2}}), {{.TestDataP2}})
+{{ end }}
+}

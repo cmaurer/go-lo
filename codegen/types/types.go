@@ -9,6 +9,9 @@ type Operations struct {
 type Datatype struct {
 	DataTypeCap string `json:"data_type_cap"`
 	DataType    string `json:"data_type"`
+	TestDataP1  string `json:"test_data_p1"`
+	TestDataP2  string `json:"test_data_p2"`
+	IsPtrTest   bool   `json:"is_ptr_test"`
 }
 
 // Operation struct

@@ -7,3 +7,5 @@ generated/dist/
 coverage.txt
 
 .dccache
+
+local-test

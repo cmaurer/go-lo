@@ -20,6 +20,7 @@ func main() {
 		if dirEntry.Type().IsDir() {
 			if strings.LastIndex(dirEntry.Name(), "types") == -1 {
 				path := fmt.Sprintf("./%s/%s", "codegen", dirEntry.Name())
+				fmt.Println(path)
 				cmd := exec.Command("go", "run", path, path)
 				var out bytes.Buffer
 				cmd.Stdout = &out

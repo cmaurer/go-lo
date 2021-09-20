@@ -1,0 +1,9 @@
+
+// If{{.DataTypeCap}} func
+// If the `b` parameter is true, then the p1 value will be returned, otherwise the p2 value will be returned.
+func If{{.DataTypeCap}}(b bool, p1 {{.DataType}}, p2 {{.DataType}}) {{.DataType}} {
+	if b {
+		return p1
+	}
+	return p2
+}

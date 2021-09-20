@@ -136,3 +136,27 @@ Combines two slices into one slice
     }
     */
 ```
+
+## Map
+
+Combines two slices into one slice
+
+```go
+    input1 := []string{
+        "test1",
+        "test2",
+        "test3",
+    }
+
+    output := MapString(input1, func(in string) string {
+        return in + in
+    })
+
+    /* output == 
+    []string{
+        "test1test1",
+        "test2test2",
+        "test3test3",
+    }
+    */
+```
