@@ -1,3 +1,12 @@
+# [0.6.0](https://github.com/cmaurer/go-lo/compare/v0.5.3...v0.6.0) (2021-09-20)
+
+
+### Features
+
+* adding if utils methods.  i.e. ternary functions ([c0098a9](https://github.com/cmaurer/go-lo/commit/c0098a98f1b58c589c86f34b7522132271c49537))
+
+
+
 ## [0.5.3](https://github.com/cmaurer/go-lo/compare/v0.5.2...v0.5.3) (2021-05-17)
 
 
@@ -32,15 +41,6 @@
 
 * added flatten ([86df0a7](https://github.com/cmaurer/go-lo/commit/86df0a7aa2da3ac24d2924765a8eec10b442736e))
 * added flatten ([04e7d5a](https://github.com/cmaurer/go-lo/commit/04e7d5acac99aadaddb410422eaae189b96e9520))
-
-
-
-# [0.4.0](https://github.com/cmaurer/go-lo/compare/v0.3.0...v0.4.0) (2021-05-15)
-
-
-### Features
-
-* adding each and find ([d26cc55](https://github.com/cmaurer/go-lo/commit/d26cc55edf45de01fe552161e8f65780e706b816))
 
 
 
