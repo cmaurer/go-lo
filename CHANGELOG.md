@@ -1,3 +1,12 @@
+# [0.7.0](https://github.com/cmaurer/go-lo/compare/v0.6.0...v0.7.0) (2021-10-23)
+
+
+### Features
+
+* adding ([ade6600](https://github.com/cmaurer/go-lo/commit/ade660011b06f594bb83f95d3118f594716c8289))
+
+
+
 # [0.6.0](https://github.com/cmaurer/go-lo/compare/v0.5.3...v0.6.0) (2021-09-20)
 
 
@@ -31,16 +40,6 @@
 ### Bug Fixes
 
 * adding fmt based on goreportcard ([44b293e](https://github.com/cmaurer/go-lo/commit/44b293e13b62fcba9da24c3453fb050d61987993))
-
-
-
-# [0.5.0](https://github.com/cmaurer/go-lo/compare/v0.4.0...v0.5.0) (2021-05-15)
-
-
-### Features
-
-* added flatten ([86df0a7](https://github.com/cmaurer/go-lo/commit/86df0a7aa2da3ac24d2924765a8eec10b442736e))
-* added flatten ([04e7d5a](https://github.com/cmaurer/go-lo/commit/04e7d5acac99aadaddb410422eaae189b96e9520))
 
 
 
