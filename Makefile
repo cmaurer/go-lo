@@ -37,7 +37,7 @@ lint:
 
 # https://github.com/securego/gosec
 sec:
-	@gosec ./...
+	@gosec -exclude-dir codegen ./...
 
 # https://github.com/fzipp/gocyclo
 cyclo-top-10:

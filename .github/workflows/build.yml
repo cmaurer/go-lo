@@ -6,9 +6,39 @@ on:
     pull_request:
       - main
 jobs:
+  go-generate:
+    name: Generate
+    runs-on: ubuntu-latest
+    env:
+      GO111MODULE: on
+    strategy:
+      matrix:
+        go-version: [1.16, 1.17]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: ${{ matrix.go-version }}
+      - name: Generate
+        run: go run -v ./codegen
+      - name: Copy Generated
+        run: |
+          SRC_DIRS := slice utils
+          for dir in $(SRC_DIRS); do \
+            (echo $dir && cd $dir && go test . -coverpkg=./... -covermode=atomic -coverprofile=./coverage.txt -v -count 1;) \
+          done
+
   go-tests:
     name: Go Tests
     runs-on: ubuntu-latest
+    env:
+      GO111MODULE: on
+    needs:
+      - go-generate
     strategy:
       matrix:
         go-version: [1.16, 1.17]
@@ -26,6 +56,8 @@ jobs:
           go test ./slice/... -v -count 1
   go-sec:
     runs-on: ubuntu-latest
+    needs:
+      - go-generate
     env:
       GO111MODULE: on
     steps:
@@ -34,9 +66,14 @@ jobs:
       - name: Run Gosec Security Scanner
         uses: securego/gosec@master
         with:
-          args: ./...
+          args: -exclude-dir codegen ./...
   goreleaser:
     runs-on: ubuntu-latest
+    env:
+      GO111MODULE: on
+    needs:
+      - go-tests
+      - go-sec
     steps:
       - name: Checkout
         uses: actions/checkout@v2
