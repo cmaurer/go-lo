@@ -31,7 +31,6 @@ jobs:
           for dir in $(SRC_DIRS); do \
             (echo $dir && cd $dir && go test . -coverpkg=./... -covermode=atomic -coverprofile=./coverage.txt -v -count 1;) \
           done
-
   go-tests:
     name: Go Tests
     runs-on: ubuntu-latest

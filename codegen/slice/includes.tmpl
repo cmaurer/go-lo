@@ -1,0 +1,12 @@
+
+// Includes{{.DataTypeCap}} func
+// Returns true if the input contains the one or more of the values 
+func Includes{{.DataTypeCap}}(input []{{.DataType}}, values ...{{.DataType}}) bool {
+    for _, value := range values {
+      idx := IndexOf{{.DataTypeCap}}(value, input)
+      if idx > -1 {
+        return true
+      }
+    }
+    return false
+}

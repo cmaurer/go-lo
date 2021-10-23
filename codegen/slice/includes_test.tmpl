@@ -1,0 +1,37 @@
+
+var includes{{.DataTypeCap}}Tests = []struct {
+	name     	string
+	input    	[]{{.DataType}}
+	included  	{{.DataType}}
+	expected 	bool
+}{
+	{
+		name: "should be true",
+		input: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+			{{dataTypeGenerator  .DataType 2}},
+			{{dataTypeGenerator  .DataType 3}},
+		},
+        included: {{dataTypeGenerator  .DataType 2}},
+		expected: true,
+	},
+	{
+		name: "should be false",
+		input: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+			{{dataTypeGenerator  .DataType 2}},
+		},
+        included: {{dataTypeGenerator  .DataType 3}},
+		expected: false,
+	},
+}
+
+func TestIncludes{{.DataTypeCap}}(t *testing.T) {
+	for _, tt := range includes{{.DataTypeCap}}Tests {
+		t.Run(tt.name, func(t *testing.T) {
+            included := Includes{{.DataTypeCap}}(tt.input, tt.included)
+            assert.Equal(t, tt.expected, included)
+		})
+	}
+
+}
