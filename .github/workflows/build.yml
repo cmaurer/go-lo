@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GO111MODULE: on
+      SRC_DIRS: slice utils
     strategy:
       matrix:
         go-version: [1.16, 1.17]
@@ -27,7 +28,6 @@ jobs:
         run: go run -v ./codegen
       - name: Copy Generated
         run: |
-          SRC_DIRS := slice utils
           for dir in $(SRC_DIRS); do \
             (echo $dir && cd $dir && go test . -coverpkg=./... -covermode=atomic -coverprofile=./coverage.txt -v -count 1;) \
           done
