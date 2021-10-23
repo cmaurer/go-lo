@@ -1,0 +1,49 @@
+
+var remove{{.DataTypeCap}}Tests = []struct {
+	name     	string
+	input    	[]{{.DataType}}
+	equalTo  	{{.DataType}}
+	expected 	[]{{.DataType}}
+}{
+
+	{
+		name: "basic example",
+		input: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+			{{dataTypeGenerator  .DataType 2}},
+			{{dataTypeGenerator  .DataType 3}},
+		},
+        equalTo: {{dataTypeGenerator  .DataType 2}},
+		expected: []{{.DataType}}{ {{dataTypeGenerator  .DataType 1}}, {{dataTypeGenerator  .DataType 3}} },
+	},
+	{
+		name: "remove all",
+		input: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+		},
+        equalTo: {{dataTypeGenerator  .DataType 1}},
+		expected: []{{.DataType}}{},
+	},
+	{
+		name: "remove none",
+		input: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+			{{dataTypeGenerator  .DataType 2}},
+		},
+        equalTo: {{dataTypeGenerator  .DataType 3}},
+		expected: []{{.DataType}}{ {{dataTypeGenerator  .DataType 1}}, {{dataTypeGenerator  .DataType 2}} },
+	},
+
+}
+
+func TestRemove{{.DataTypeCap}}(t *testing.T) {
+	for _, tt := range remove{{.DataTypeCap}}Tests {
+		t.Run(tt.name, func(t *testing.T) {
+            output := Remove{{.DataTypeCap}}(tt.input, func(in {{.DataType}}) bool {
+                return in == tt.equalTo
+            })
+            assert.Equal(t, tt.expected, output)
+		})
+	}
+
+}

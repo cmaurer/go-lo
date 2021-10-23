@@ -1,0 +1,11 @@
+// Remove{{.DataTypeCap}} func
+// Removes each element that the function returns truthy for and returns a slice with the the items removed.
+func Remove{{.DataTypeCap}}(input []{{.DataType}}, f func({{.DataType}}) bool) []{{.DataType}} {
+    output := []{{.DataType}}{}
+    for _, value := range input {
+        if !f(value) {
+            output = append(output, value)
+        }
+    }
+    return output
+}

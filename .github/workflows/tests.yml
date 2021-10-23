@@ -1,10 +1,17 @@
 name: tests
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
+    pull_request:
+      - master
 jobs:
   go-tests:
     name: Go Tests
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        go-version: [1.16, 1.17]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -13,8 +20,18 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v2
         with:
-          go-version: 1.16
+          go-version: ${{ matrix.go-version }}
       - name: Test
         run: |
           go test ./slice/... -v -count 1
-
+  go-sec:
+    runs-on: ubuntu-latest
+    env:
+      GO111MODULE: on
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v2
+      - name: Run Gosec Security Scanner
+        uses: securego/gosec@master
+        with:
+          args: ./...

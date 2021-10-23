@@ -1,15 +1,18 @@
 
 .EXPORT_ALL_VARIABLES:
-
+GO111MODULE := on
 SRC_DIRS := slice utils
 
-all: generate copy-generated lint fmt test
+all: generate copy-generated lint fmt sec test
 
 dirs:
 	@echo $(SRC_DIRS)
 
+get:
+	@go get -u .
+
 generate:
-	go run -v ./codegen
+	@go run -v ./codegen
 
 copy-generated:
 	@for dir in $(SRC_DIRS); do \
@@ -26,12 +29,18 @@ fmt:
 		gofmt -s -w ./$$dir/*.go; \
 	done
 
-
 lint:
 	@for dir in $(SRC_DIRS); do \
 		golint $$dir/...; \
 	done
 	golint codegen/...
 
+# https://github.com/securego/gosec
+sec:
+	@gosec ./...
 
-.PHONY: generate copy-generated test build lint fmt
+# https://github.com/fzipp/gocyclo
+cyclo-top-10:
+	@gocyclo -top 10 -ignore "codegen" .
+
+.PHONY: get generate copy-generated test build lint fmt sec cyclo-top-10
