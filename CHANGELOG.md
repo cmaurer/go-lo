@@ -1,3 +1,12 @@
+## [0.8.3](https://github.com/cmaurer/go-lo/compare/v0.8.2...v0.8.3) (2021-10-24)
+
+
+### Bug Fixes
+
+* adding benchmark tests ([829535d](https://github.com/cmaurer/go-lo/commit/829535d51f131ef3ba168a7b220314d435d83c3e))
+
+
+
 ## [0.8.2](https://github.com/cmaurer/go-lo/compare/v0.8.1...v0.8.2) (2021-10-24)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * adding ([ade6600](https://github.com/cmaurer/go-lo/commit/ade660011b06f594bb83f95d3118f594716c8289))
-
-
-
-# [0.6.0](https://github.com/cmaurer/go-lo/compare/v0.5.3...v0.6.0) (2021-09-20)
-
-
-### Features
-
-* adding if utils methods.  i.e. ternary functions ([c0098a9](https://github.com/cmaurer/go-lo/commit/c0098a98f1b58c589c86f34b7522132271c49537))
 
 
 
