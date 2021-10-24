@@ -1,3 +1,12 @@
+## [0.8.2](https://github.com/cmaurer/go-lo/compare/v0.8.1...v0.8.2) (2021-10-24)
+
+
+### Bug Fixes
+
+* removed snyk iac file ([b0cae12](https://github.com/cmaurer/go-lo/commit/b0cae128aa62a6aed1385fb9b6595b930912c69f))
+
+
+
 ## [0.8.1](https://github.com/cmaurer/go-lo/compare/v0.8.0...v0.8.1) (2021-10-24)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * adding if utils methods.  i.e. ternary functions ([c0098a9](https://github.com/cmaurer/go-lo/commit/c0098a98f1b58c589c86f34b7522132271c49537))
-
-
-
-## [0.5.3](https://github.com/cmaurer/go-lo/compare/v0.5.2...v0.5.3) (2021-05-17)
-
-
-### Bug Fixes
-
-* fixing documentation issues ([326b77f](https://github.com/cmaurer/go-lo/commit/326b77ff93a6d31c473782f56a47d0aa8fe90d65))
 
 
 
