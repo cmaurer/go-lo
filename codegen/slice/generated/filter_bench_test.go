@@ -41,9 +41,11 @@ var filterBenchStringTests = []struct {
 
 func BenchmarkTestFilterString(b *testing.B) {
 	for _, tt := range filterBenchStringTests {
-		FilterString(tt.input, func(in string) bool {
-			return in == tt.equalTo
-		})
+	    for i := 0; i < b.N; i++ {
+			FilterString(tt.input, func(in string) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -85,9 +87,11 @@ var filterBenchIntTests = []struct {
 
 func BenchmarkTestFilterInt(b *testing.B) {
 	for _, tt := range filterBenchIntTests {
-		FilterInt(tt.input, func(in int) bool {
-			return in == tt.equalTo
-		})
+	    for i := 0; i < b.N; i++ {
+			FilterInt(tt.input, func(in int) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -129,9 +133,11 @@ var filterBenchInt8Tests = []struct {
 
 func BenchmarkTestFilterInt8(b *testing.B) {
 	for _, tt := range filterBenchInt8Tests {
-		FilterInt8(tt.input, func(in int8) bool {
-			return in == tt.equalTo
-		})
+	    for i := 0; i < b.N; i++ {
+			FilterInt8(tt.input, func(in int8) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -173,9 +179,11 @@ var filterBenchInt16Tests = []struct {
 
 func BenchmarkTestFilterInt16(b *testing.B) {
 	for _, tt := range filterBenchInt16Tests {
-		FilterInt16(tt.input, func(in int16) bool {
-			return in == tt.equalTo
-		})
+	    for i := 0; i < b.N; i++ {
+			FilterInt16(tt.input, func(in int16) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -217,9 +225,11 @@ var filterBenchInt32Tests = []struct {
 
 func BenchmarkTestFilterInt32(b *testing.B) {
 	for _, tt := range filterBenchInt32Tests {
-		FilterInt32(tt.input, func(in int32) bool {
-			return in == tt.equalTo
-		})
+	    for i := 0; i < b.N; i++ {
+			FilterInt32(tt.input, func(in int32) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -261,9 +271,11 @@ var filterBenchInt64Tests = []struct {
 
 func BenchmarkTestFilterInt64(b *testing.B) {
 	for _, tt := range filterBenchInt64Tests {
-		FilterInt64(tt.input, func(in int64) bool {
-			return in == tt.equalTo
-		})
+	    for i := 0; i < b.N; i++ {
+			FilterInt64(tt.input, func(in int64) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -305,9 +317,11 @@ var filterBenchUintTests = []struct {
 
 func BenchmarkTestFilterUint(b *testing.B) {
 	for _, tt := range filterBenchUintTests {
-		FilterUint(tt.input, func(in uint) bool {
-			return in == tt.equalTo
-		})
+	    for i := 0; i < b.N; i++ {
+			FilterUint(tt.input, func(in uint) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -349,9 +363,11 @@ var filterBenchUint8Tests = []struct {
 
 func BenchmarkTestFilterUint8(b *testing.B) {
 	for _, tt := range filterBenchUint8Tests {
-		FilterUint8(tt.input, func(in uint8) bool {
-			return in == tt.equalTo
-		})
+	    for i := 0; i < b.N; i++ {
+			FilterUint8(tt.input, func(in uint8) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -393,9 +409,11 @@ var filterBenchUint16Tests = []struct {
 
 func BenchmarkTestFilterUint16(b *testing.B) {
 	for _, tt := range filterBenchUint16Tests {
-		FilterUint16(tt.input, func(in uint16) bool {
-			return in == tt.equalTo
-		})
+	    for i := 0; i < b.N; i++ {
+			FilterUint16(tt.input, func(in uint16) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -437,9 +455,11 @@ var filterBenchUint32Tests = []struct {
 
 func BenchmarkTestFilterUint32(b *testing.B) {
 	for _, tt := range filterBenchUint32Tests {
-		FilterUint32(tt.input, func(in uint32) bool {
-			return in == tt.equalTo
-		})
+	    for i := 0; i < b.N; i++ {
+			FilterUint32(tt.input, func(in uint32) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -481,9 +501,11 @@ var filterBenchFloat32Tests = []struct {
 
 func BenchmarkTestFilterFloat32(b *testing.B) {
 	for _, tt := range filterBenchFloat32Tests {
-		FilterFloat32(tt.input, func(in float32) bool {
-			return in == tt.equalTo
-		})
+	    for i := 0; i < b.N; i++ {
+			FilterFloat32(tt.input, func(in float32) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -525,9 +547,11 @@ var filterBenchFloat64Tests = []struct {
 
 func BenchmarkTestFilterFloat64(b *testing.B) {
 	for _, tt := range filterBenchFloat64Tests {
-		FilterFloat64(tt.input, func(in float64) bool {
-			return in == tt.equalTo
-		})
+	    for i := 0; i < b.N; i++ {
+			FilterFloat64(tt.input, func(in float64) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -569,9 +593,11 @@ var filterBenchComplex64Tests = []struct {
 
 func BenchmarkTestFilterComplex64(b *testing.B) {
 	for _, tt := range filterBenchComplex64Tests {
-		FilterComplex64(tt.input, func(in complex64) bool {
-			return in == tt.equalTo
-		})
+	    for i := 0; i < b.N; i++ {
+			FilterComplex64(tt.input, func(in complex64) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -613,9 +639,11 @@ var filterBenchComplex128Tests = []struct {
 
 func BenchmarkTestFilterComplex128(b *testing.B) {
 	for _, tt := range filterBenchComplex128Tests {
-		FilterComplex128(tt.input, func(in complex128) bool {
-			return in == tt.equalTo
-		})
+	    for i := 0; i < b.N; i++ {
+			FilterComplex128(tt.input, func(in complex128) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }

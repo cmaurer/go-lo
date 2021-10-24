@@ -45,6 +45,8 @@ var indexOfBench{{.DataTypeCap}}Tests = []struct {
 
 func BenchmarkTestIndexOf{{.DataTypeCap}}(b *testing.B) {
 	for _, tt := range indexOfBench{{.DataTypeCap}}Tests {
-		IndexOf{{.DataTypeCap}}(tt.element, tt.input)
+	    for i := 0; i < b.N; i++ {
+			IndexOf{{.DataTypeCap}}(tt.element, tt.input)
+		}
 	}
 }

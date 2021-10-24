@@ -53,8 +53,8 @@ var uniqueBenchStringTests = []struct {
 }
 
 func BenchmarkTestUniqueString(b *testing.B) {
-    for i := 0; i < b.N; i++ {
-		for _, tt := range uniqueBenchStringTests {
+	for _, tt := range uniqueBenchStringTests {
+		for i := 0; i < b.N; i++ {
 			UniqueString(tt.input)
 		}
 	}
@@ -109,8 +109,8 @@ var uniqueBenchIntTests = []struct {
 }
 
 func BenchmarkTestUniqueInt(b *testing.B) {
-    for i := 0; i < b.N; i++ {
-		for _, tt := range uniqueBenchIntTests {
+	for _, tt := range uniqueBenchIntTests {
+		for i := 0; i < b.N; i++ {
 			UniqueInt(tt.input)
 		}
 	}
@@ -165,8 +165,8 @@ var uniqueBenchInt8Tests = []struct {
 }
 
 func BenchmarkTestUniqueInt8(b *testing.B) {
-    for i := 0; i < b.N; i++ {
-		for _, tt := range uniqueBenchInt8Tests {
+	for _, tt := range uniqueBenchInt8Tests {
+		for i := 0; i < b.N; i++ {
 			UniqueInt8(tt.input)
 		}
 	}
@@ -221,8 +221,8 @@ var uniqueBenchInt16Tests = []struct {
 }
 
 func BenchmarkTestUniqueInt16(b *testing.B) {
-    for i := 0; i < b.N; i++ {
-		for _, tt := range uniqueBenchInt16Tests {
+	for _, tt := range uniqueBenchInt16Tests {
+		for i := 0; i < b.N; i++ {
 			UniqueInt16(tt.input)
 		}
 	}
@@ -277,8 +277,8 @@ var uniqueBenchInt32Tests = []struct {
 }
 
 func BenchmarkTestUniqueInt32(b *testing.B) {
-    for i := 0; i < b.N; i++ {
-		for _, tt := range uniqueBenchInt32Tests {
+	for _, tt := range uniqueBenchInt32Tests {
+		for i := 0; i < b.N; i++ {
 			UniqueInt32(tt.input)
 		}
 	}
@@ -333,8 +333,8 @@ var uniqueBenchInt64Tests = []struct {
 }
 
 func BenchmarkTestUniqueInt64(b *testing.B) {
-    for i := 0; i < b.N; i++ {
-		for _, tt := range uniqueBenchInt64Tests {
+	for _, tt := range uniqueBenchInt64Tests {
+		for i := 0; i < b.N; i++ {
 			UniqueInt64(tt.input)
 		}
 	}
@@ -389,8 +389,8 @@ var uniqueBenchUintTests = []struct {
 }
 
 func BenchmarkTestUniqueUint(b *testing.B) {
-    for i := 0; i < b.N; i++ {
-		for _, tt := range uniqueBenchUintTests {
+	for _, tt := range uniqueBenchUintTests {
+		for i := 0; i < b.N; i++ {
 			UniqueUint(tt.input)
 		}
 	}
@@ -445,8 +445,8 @@ var uniqueBenchUint8Tests = []struct {
 }
 
 func BenchmarkTestUniqueUint8(b *testing.B) {
-    for i := 0; i < b.N; i++ {
-		for _, tt := range uniqueBenchUint8Tests {
+	for _, tt := range uniqueBenchUint8Tests {
+		for i := 0; i < b.N; i++ {
 			UniqueUint8(tt.input)
 		}
 	}
@@ -501,8 +501,8 @@ var uniqueBenchUint16Tests = []struct {
 }
 
 func BenchmarkTestUniqueUint16(b *testing.B) {
-    for i := 0; i < b.N; i++ {
-		for _, tt := range uniqueBenchUint16Tests {
+	for _, tt := range uniqueBenchUint16Tests {
+		for i := 0; i < b.N; i++ {
 			UniqueUint16(tt.input)
 		}
 	}
@@ -557,8 +557,8 @@ var uniqueBenchUint32Tests = []struct {
 }
 
 func BenchmarkTestUniqueUint32(b *testing.B) {
-    for i := 0; i < b.N; i++ {
-		for _, tt := range uniqueBenchUint32Tests {
+	for _, tt := range uniqueBenchUint32Tests {
+		for i := 0; i < b.N; i++ {
 			UniqueUint32(tt.input)
 		}
 	}
@@ -613,8 +613,8 @@ var uniqueBenchFloat32Tests = []struct {
 }
 
 func BenchmarkTestUniqueFloat32(b *testing.B) {
-    for i := 0; i < b.N; i++ {
-		for _, tt := range uniqueBenchFloat32Tests {
+	for _, tt := range uniqueBenchFloat32Tests {
+		for i := 0; i < b.N; i++ {
 			UniqueFloat32(tt.input)
 		}
 	}
@@ -669,8 +669,8 @@ var uniqueBenchFloat64Tests = []struct {
 }
 
 func BenchmarkTestUniqueFloat64(b *testing.B) {
-    for i := 0; i < b.N; i++ {
-		for _, tt := range uniqueBenchFloat64Tests {
+	for _, tt := range uniqueBenchFloat64Tests {
+		for i := 0; i < b.N; i++ {
 			UniqueFloat64(tt.input)
 		}
 	}
@@ -725,8 +725,8 @@ var uniqueBenchComplex64Tests = []struct {
 }
 
 func BenchmarkTestUniqueComplex64(b *testing.B) {
-    for i := 0; i < b.N; i++ {
-		for _, tt := range uniqueBenchComplex64Tests {
+	for _, tt := range uniqueBenchComplex64Tests {
+		for i := 0; i < b.N; i++ {
 			UniqueComplex64(tt.input)
 		}
 	}
@@ -781,8 +781,8 @@ var uniqueBenchComplex128Tests = []struct {
 }
 
 func BenchmarkTestUniqueComplex128(b *testing.B) {
-    for i := 0; i < b.N; i++ {
-		for _, tt := range uniqueBenchComplex128Tests {
+	for _, tt := range uniqueBenchComplex128Tests {
+		for i := 0; i < b.N; i++ {
 			UniqueComplex128(tt.input)
 		}
 	}

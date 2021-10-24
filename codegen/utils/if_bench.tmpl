@@ -1,0 +1,13 @@
+
+func BenchmarkTestIf{{.DataTypeCap}}(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		{{ if .IsPtrTest }}
+			p1 := {{.TestDataP1}}
+			If{{.DataTypeCap}}(true, &p1, {{.TestDataP2}})
+			If{{.DataTypeCap}}(false, &p1, nil)
+		{{ else }}
+			If{{.DataTypeCap}}(true, {{.TestDataP1}}, {{.TestDataP2}})
+			If{{.DataTypeCap}}(false, {{.TestDataP1}}, {{.TestDataP2}})
+		{{ end }}
+	}
+}

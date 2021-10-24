@@ -43,9 +43,11 @@ var removeBenchStringTests = []struct {
 
 func BenchmarkTestRemoveString(b *testing.B) {
 	for _, tt := range removeBenchStringTests {
-		RemoveString(tt.input, func(in string) bool {
-			return in == tt.equalTo
-		})
+		for i := 0; i < b.N; i++ {
+			RemoveString(tt.input, func(in string) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -89,9 +91,11 @@ var removeBenchIntTests = []struct {
 
 func BenchmarkTestRemoveInt(b *testing.B) {
 	for _, tt := range removeBenchIntTests {
-		RemoveInt(tt.input, func(in int) bool {
-			return in == tt.equalTo
-		})
+		for i := 0; i < b.N; i++ {
+			RemoveInt(tt.input, func(in int) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -135,9 +139,11 @@ var removeBenchInt8Tests = []struct {
 
 func BenchmarkTestRemoveInt8(b *testing.B) {
 	for _, tt := range removeBenchInt8Tests {
-		RemoveInt8(tt.input, func(in int8) bool {
-			return in == tt.equalTo
-		})
+		for i := 0; i < b.N; i++ {
+			RemoveInt8(tt.input, func(in int8) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -181,9 +187,11 @@ var removeBenchInt16Tests = []struct {
 
 func BenchmarkTestRemoveInt16(b *testing.B) {
 	for _, tt := range removeBenchInt16Tests {
-		RemoveInt16(tt.input, func(in int16) bool {
-			return in == tt.equalTo
-		})
+		for i := 0; i < b.N; i++ {
+			RemoveInt16(tt.input, func(in int16) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -227,9 +235,11 @@ var removeBenchInt32Tests = []struct {
 
 func BenchmarkTestRemoveInt32(b *testing.B) {
 	for _, tt := range removeBenchInt32Tests {
-		RemoveInt32(tt.input, func(in int32) bool {
-			return in == tt.equalTo
-		})
+		for i := 0; i < b.N; i++ {
+			RemoveInt32(tt.input, func(in int32) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -273,9 +283,11 @@ var removeBenchInt64Tests = []struct {
 
 func BenchmarkTestRemoveInt64(b *testing.B) {
 	for _, tt := range removeBenchInt64Tests {
-		RemoveInt64(tt.input, func(in int64) bool {
-			return in == tt.equalTo
-		})
+		for i := 0; i < b.N; i++ {
+			RemoveInt64(tt.input, func(in int64) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -319,9 +331,11 @@ var removeBenchUintTests = []struct {
 
 func BenchmarkTestRemoveUint(b *testing.B) {
 	for _, tt := range removeBenchUintTests {
-		RemoveUint(tt.input, func(in uint) bool {
-			return in == tt.equalTo
-		})
+		for i := 0; i < b.N; i++ {
+			RemoveUint(tt.input, func(in uint) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -365,9 +379,11 @@ var removeBenchUint8Tests = []struct {
 
 func BenchmarkTestRemoveUint8(b *testing.B) {
 	for _, tt := range removeBenchUint8Tests {
-		RemoveUint8(tt.input, func(in uint8) bool {
-			return in == tt.equalTo
-		})
+		for i := 0; i < b.N; i++ {
+			RemoveUint8(tt.input, func(in uint8) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -411,9 +427,11 @@ var removeBenchUint16Tests = []struct {
 
 func BenchmarkTestRemoveUint16(b *testing.B) {
 	for _, tt := range removeBenchUint16Tests {
-		RemoveUint16(tt.input, func(in uint16) bool {
-			return in == tt.equalTo
-		})
+		for i := 0; i < b.N; i++ {
+			RemoveUint16(tt.input, func(in uint16) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -457,9 +475,11 @@ var removeBenchUint32Tests = []struct {
 
 func BenchmarkTestRemoveUint32(b *testing.B) {
 	for _, tt := range removeBenchUint32Tests {
-		RemoveUint32(tt.input, func(in uint32) bool {
-			return in == tt.equalTo
-		})
+		for i := 0; i < b.N; i++ {
+			RemoveUint32(tt.input, func(in uint32) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -503,9 +523,11 @@ var removeBenchFloat32Tests = []struct {
 
 func BenchmarkTestRemoveFloat32(b *testing.B) {
 	for _, tt := range removeBenchFloat32Tests {
-		RemoveFloat32(tt.input, func(in float32) bool {
-			return in == tt.equalTo
-		})
+		for i := 0; i < b.N; i++ {
+			RemoveFloat32(tt.input, func(in float32) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -549,9 +571,11 @@ var removeBenchFloat64Tests = []struct {
 
 func BenchmarkTestRemoveFloat64(b *testing.B) {
 	for _, tt := range removeBenchFloat64Tests {
-		RemoveFloat64(tt.input, func(in float64) bool {
-			return in == tt.equalTo
-		})
+		for i := 0; i < b.N; i++ {
+			RemoveFloat64(tt.input, func(in float64) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -595,9 +619,11 @@ var removeBenchComplex64Tests = []struct {
 
 func BenchmarkTestRemoveComplex64(b *testing.B) {
 	for _, tt := range removeBenchComplex64Tests {
-		RemoveComplex64(tt.input, func(in complex64) bool {
-			return in == tt.equalTo
-		})
+		for i := 0; i < b.N; i++ {
+			RemoveComplex64(tt.input, func(in complex64) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -641,9 +667,11 @@ var removeBenchComplex128Tests = []struct {
 
 func BenchmarkTestRemoveComplex128(b *testing.B) {
 	for _, tt := range removeBenchComplex128Tests {
-		RemoveComplex128(tt.input, func(in complex128) bool {
-			return in == tt.equalTo
-		})
+		for i := 0; i < b.N; i++ {
+			RemoveComplex128(tt.input, func(in complex128) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }

@@ -51,9 +51,11 @@ var findBenchStringTests = []struct {
 
 func BenchmarkTestFindString(b *testing.B) {
 	for _, tt := range findStringTests {
-		FindString(tt.input, func(in string) bool {
-			return in == tt.equalTo
-		})
+    	for i := 0; i < b.N; i++ {
+			FindString(tt.input, func(in string) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -105,9 +107,11 @@ var findBenchIntTests = []struct {
 
 func BenchmarkTestFindInt(b *testing.B) {
 	for _, tt := range findIntTests {
-		FindInt(tt.input, func(in int) bool {
-			return in == tt.equalTo
-		})
+    	for i := 0; i < b.N; i++ {
+			FindInt(tt.input, func(in int) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -159,9 +163,11 @@ var findBenchInt8Tests = []struct {
 
 func BenchmarkTestFindInt8(b *testing.B) {
 	for _, tt := range findInt8Tests {
-		FindInt8(tt.input, func(in int8) bool {
-			return in == tt.equalTo
-		})
+    	for i := 0; i < b.N; i++ {
+			FindInt8(tt.input, func(in int8) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -213,9 +219,11 @@ var findBenchInt16Tests = []struct {
 
 func BenchmarkTestFindInt16(b *testing.B) {
 	for _, tt := range findInt16Tests {
-		FindInt16(tt.input, func(in int16) bool {
-			return in == tt.equalTo
-		})
+    	for i := 0; i < b.N; i++ {
+			FindInt16(tt.input, func(in int16) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -267,9 +275,11 @@ var findBenchInt32Tests = []struct {
 
 func BenchmarkTestFindInt32(b *testing.B) {
 	for _, tt := range findInt32Tests {
-		FindInt32(tt.input, func(in int32) bool {
-			return in == tt.equalTo
-		})
+    	for i := 0; i < b.N; i++ {
+			FindInt32(tt.input, func(in int32) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -321,9 +331,11 @@ var findBenchInt64Tests = []struct {
 
 func BenchmarkTestFindInt64(b *testing.B) {
 	for _, tt := range findInt64Tests {
-		FindInt64(tt.input, func(in int64) bool {
-			return in == tt.equalTo
-		})
+    	for i := 0; i < b.N; i++ {
+			FindInt64(tt.input, func(in int64) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -375,9 +387,11 @@ var findBenchUintTests = []struct {
 
 func BenchmarkTestFindUint(b *testing.B) {
 	for _, tt := range findUintTests {
-		FindUint(tt.input, func(in uint) bool {
-			return in == tt.equalTo
-		})
+    	for i := 0; i < b.N; i++ {
+			FindUint(tt.input, func(in uint) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -429,9 +443,11 @@ var findBenchUint8Tests = []struct {
 
 func BenchmarkTestFindUint8(b *testing.B) {
 	for _, tt := range findUint8Tests {
-		FindUint8(tt.input, func(in uint8) bool {
-			return in == tt.equalTo
-		})
+    	for i := 0; i < b.N; i++ {
+			FindUint8(tt.input, func(in uint8) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -483,9 +499,11 @@ var findBenchUint16Tests = []struct {
 
 func BenchmarkTestFindUint16(b *testing.B) {
 	for _, tt := range findUint16Tests {
-		FindUint16(tt.input, func(in uint16) bool {
-			return in == tt.equalTo
-		})
+    	for i := 0; i < b.N; i++ {
+			FindUint16(tt.input, func(in uint16) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -537,9 +555,11 @@ var findBenchUint32Tests = []struct {
 
 func BenchmarkTestFindUint32(b *testing.B) {
 	for _, tt := range findUint32Tests {
-		FindUint32(tt.input, func(in uint32) bool {
-			return in == tt.equalTo
-		})
+    	for i := 0; i < b.N; i++ {
+			FindUint32(tt.input, func(in uint32) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -591,9 +611,11 @@ var findBenchFloat32Tests = []struct {
 
 func BenchmarkTestFindFloat32(b *testing.B) {
 	for _, tt := range findFloat32Tests {
-		FindFloat32(tt.input, func(in float32) bool {
-			return in == tt.equalTo
-		})
+    	for i := 0; i < b.N; i++ {
+			FindFloat32(tt.input, func(in float32) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -645,9 +667,11 @@ var findBenchFloat64Tests = []struct {
 
 func BenchmarkTestFindFloat64(b *testing.B) {
 	for _, tt := range findFloat64Tests {
-		FindFloat64(tt.input, func(in float64) bool {
-			return in == tt.equalTo
-		})
+    	for i := 0; i < b.N; i++ {
+			FindFloat64(tt.input, func(in float64) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -699,9 +723,11 @@ var findBenchComplex64Tests = []struct {
 
 func BenchmarkTestFindComplex64(b *testing.B) {
 	for _, tt := range findComplex64Tests {
-		FindComplex64(tt.input, func(in complex64) bool {
-			return in == tt.equalTo
-		})
+    	for i := 0; i < b.N; i++ {
+			FindComplex64(tt.input, func(in complex64) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
@@ -753,9 +779,11 @@ var findBenchComplex128Tests = []struct {
 
 func BenchmarkTestFindComplex128(b *testing.B) {
 	for _, tt := range findComplex128Tests {
-		FindComplex128(tt.input, func(in complex128) bool {
-			return in == tt.equalTo
-		})
+    	for i := 0; i < b.N; i++ {
+			FindComplex128(tt.input, func(in complex128) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }

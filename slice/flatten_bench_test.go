@@ -36,7 +36,9 @@ var flattenBenchStringTests = []struct {
 
 func BenchmarkTestFlattenString(b *testing.B) {
 	for _, tt := range flattenBenchStringTests {
-		FlattenString(tt.input1, tt.input2)
+	    for i := 0; i < b.N; i++ {
+			FlattenString(tt.input1, tt.input2)
+		}
 	}
 
 }
@@ -73,7 +75,9 @@ var flattenBenchIntTests = []struct {
 
 func BenchmarkTestFlattenInt(b *testing.B) {
 	for _, tt := range flattenBenchIntTests {
-		FlattenInt(tt.input1, tt.input2)
+	    for i := 0; i < b.N; i++ {
+			FlattenInt(tt.input1, tt.input2)
+		}
 	}
 
 }
@@ -110,7 +114,9 @@ var flattenBenchInt8Tests = []struct {
 
 func BenchmarkTestFlattenInt8(b *testing.B) {
 	for _, tt := range flattenBenchInt8Tests {
-		FlattenInt8(tt.input1, tt.input2)
+	    for i := 0; i < b.N; i++ {
+			FlattenInt8(tt.input1, tt.input2)
+		}
 	}
 
 }
@@ -147,7 +153,9 @@ var flattenBenchInt16Tests = []struct {
 
 func BenchmarkTestFlattenInt16(b *testing.B) {
 	for _, tt := range flattenBenchInt16Tests {
-		FlattenInt16(tt.input1, tt.input2)
+	    for i := 0; i < b.N; i++ {
+			FlattenInt16(tt.input1, tt.input2)
+		}
 	}
 
 }
@@ -184,7 +192,9 @@ var flattenBenchInt32Tests = []struct {
 
 func BenchmarkTestFlattenInt32(b *testing.B) {
 	for _, tt := range flattenBenchInt32Tests {
-		FlattenInt32(tt.input1, tt.input2)
+	    for i := 0; i < b.N; i++ {
+			FlattenInt32(tt.input1, tt.input2)
+		}
 	}
 
 }
@@ -221,7 +231,9 @@ var flattenBenchInt64Tests = []struct {
 
 func BenchmarkTestFlattenInt64(b *testing.B) {
 	for _, tt := range flattenBenchInt64Tests {
-		FlattenInt64(tt.input1, tt.input2)
+	    for i := 0; i < b.N; i++ {
+			FlattenInt64(tt.input1, tt.input2)
+		}
 	}
 
 }
@@ -258,7 +270,9 @@ var flattenBenchUintTests = []struct {
 
 func BenchmarkTestFlattenUint(b *testing.B) {
 	for _, tt := range flattenBenchUintTests {
-		FlattenUint(tt.input1, tt.input2)
+	    for i := 0; i < b.N; i++ {
+			FlattenUint(tt.input1, tt.input2)
+		}
 	}
 
 }
@@ -295,7 +309,9 @@ var flattenBenchUint8Tests = []struct {
 
 func BenchmarkTestFlattenUint8(b *testing.B) {
 	for _, tt := range flattenBenchUint8Tests {
-		FlattenUint8(tt.input1, tt.input2)
+	    for i := 0; i < b.N; i++ {
+			FlattenUint8(tt.input1, tt.input2)
+		}
 	}
 
 }
@@ -332,7 +348,9 @@ var flattenBenchUint16Tests = []struct {
 
 func BenchmarkTestFlattenUint16(b *testing.B) {
 	for _, tt := range flattenBenchUint16Tests {
-		FlattenUint16(tt.input1, tt.input2)
+	    for i := 0; i < b.N; i++ {
+			FlattenUint16(tt.input1, tt.input2)
+		}
 	}
 
 }
@@ -369,7 +387,9 @@ var flattenBenchUint32Tests = []struct {
 
 func BenchmarkTestFlattenUint32(b *testing.B) {
 	for _, tt := range flattenBenchUint32Tests {
-		FlattenUint32(tt.input1, tt.input2)
+	    for i := 0; i < b.N; i++ {
+			FlattenUint32(tt.input1, tt.input2)
+		}
 	}
 
 }
@@ -406,7 +426,9 @@ var flattenBenchFloat32Tests = []struct {
 
 func BenchmarkTestFlattenFloat32(b *testing.B) {
 	for _, tt := range flattenBenchFloat32Tests {
-		FlattenFloat32(tt.input1, tt.input2)
+	    for i := 0; i < b.N; i++ {
+			FlattenFloat32(tt.input1, tt.input2)
+		}
 	}
 
 }
@@ -443,7 +465,9 @@ var flattenBenchFloat64Tests = []struct {
 
 func BenchmarkTestFlattenFloat64(b *testing.B) {
 	for _, tt := range flattenBenchFloat64Tests {
-		FlattenFloat64(tt.input1, tt.input2)
+	    for i := 0; i < b.N; i++ {
+			FlattenFloat64(tt.input1, tt.input2)
+		}
 	}
 
 }
@@ -480,7 +504,9 @@ var flattenBenchComplex64Tests = []struct {
 
 func BenchmarkTestFlattenComplex64(b *testing.B) {
 	for _, tt := range flattenBenchComplex64Tests {
-		FlattenComplex64(tt.input1, tt.input2)
+	    for i := 0; i < b.N; i++ {
+			FlattenComplex64(tt.input1, tt.input2)
+		}
 	}
 
 }
@@ -517,7 +543,9 @@ var flattenBenchComplex128Tests = []struct {
 
 func BenchmarkTestFlattenComplex128(b *testing.B) {
 	for _, tt := range flattenBenchComplex128Tests {
-		FlattenComplex128(tt.input1, tt.input2)
+	    for i := 0; i < b.N; i++ {
+			FlattenComplex128(tt.input1, tt.input2)
+		}
 	}
 
 }

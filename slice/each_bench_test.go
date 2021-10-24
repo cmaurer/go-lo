@@ -23,10 +23,12 @@ var eachBenchStringTests = []struct {
 
 func BenchmarkTestEachString(b *testing.B) {
 	for _, tt := range eachBenchStringTests {
-		expectedCount := 0
-		EachString(tt.input, func(in string) {
-			expectedCount = expectedCount + 1
-		})
+	    for i := 0; i < b.N; i++ {
+			expectedCount := 0
+			EachString(tt.input, func(in string) {
+				expectedCount = expectedCount + 1
+			})
+		}
 	}
 
 }
@@ -50,10 +52,12 @@ var eachBenchIntTests = []struct {
 
 func BenchmarkTestEachInt(b *testing.B) {
 	for _, tt := range eachBenchIntTests {
-		expectedCount := 0
-		EachInt(tt.input, func(in int) {
-			expectedCount = expectedCount + 1
-		})
+	    for i := 0; i < b.N; i++ {
+			expectedCount := 0
+			EachInt(tt.input, func(in int) {
+				expectedCount = expectedCount + 1
+			})
+		}
 	}
 
 }
@@ -77,10 +81,12 @@ var eachBenchInt8Tests = []struct {
 
 func BenchmarkTestEachInt8(b *testing.B) {
 	for _, tt := range eachBenchInt8Tests {
-		expectedCount := 0
-		EachInt8(tt.input, func(in int8) {
-			expectedCount = expectedCount + 1
-		})
+	    for i := 0; i < b.N; i++ {
+			expectedCount := 0
+			EachInt8(tt.input, func(in int8) {
+				expectedCount = expectedCount + 1
+			})
+		}
 	}
 
 }
@@ -104,10 +110,12 @@ var eachBenchInt16Tests = []struct {
 
 func BenchmarkTestEachInt16(b *testing.B) {
 	for _, tt := range eachBenchInt16Tests {
-		expectedCount := 0
-		EachInt16(tt.input, func(in int16) {
-			expectedCount = expectedCount + 1
-		})
+	    for i := 0; i < b.N; i++ {
+			expectedCount := 0
+			EachInt16(tt.input, func(in int16) {
+				expectedCount = expectedCount + 1
+			})
+		}
 	}
 
 }
@@ -131,10 +139,12 @@ var eachBenchInt32Tests = []struct {
 
 func BenchmarkTestEachInt32(b *testing.B) {
 	for _, tt := range eachBenchInt32Tests {
-		expectedCount := 0
-		EachInt32(tt.input, func(in int32) {
-			expectedCount = expectedCount + 1
-		})
+	    for i := 0; i < b.N; i++ {
+			expectedCount := 0
+			EachInt32(tt.input, func(in int32) {
+				expectedCount = expectedCount + 1
+			})
+		}
 	}
 
 }
@@ -158,10 +168,12 @@ var eachBenchInt64Tests = []struct {
 
 func BenchmarkTestEachInt64(b *testing.B) {
 	for _, tt := range eachBenchInt64Tests {
-		expectedCount := 0
-		EachInt64(tt.input, func(in int64) {
-			expectedCount = expectedCount + 1
-		})
+	    for i := 0; i < b.N; i++ {
+			expectedCount := 0
+			EachInt64(tt.input, func(in int64) {
+				expectedCount = expectedCount + 1
+			})
+		}
 	}
 
 }
@@ -185,10 +197,12 @@ var eachBenchUintTests = []struct {
 
 func BenchmarkTestEachUint(b *testing.B) {
 	for _, tt := range eachBenchUintTests {
-		expectedCount := 0
-		EachUint(tt.input, func(in uint) {
-			expectedCount = expectedCount + 1
-		})
+	    for i := 0; i < b.N; i++ {
+			expectedCount := 0
+			EachUint(tt.input, func(in uint) {
+				expectedCount = expectedCount + 1
+			})
+		}
 	}
 
 }
@@ -212,10 +226,12 @@ var eachBenchUint8Tests = []struct {
 
 func BenchmarkTestEachUint8(b *testing.B) {
 	for _, tt := range eachBenchUint8Tests {
-		expectedCount := 0
-		EachUint8(tt.input, func(in uint8) {
-			expectedCount = expectedCount + 1
-		})
+	    for i := 0; i < b.N; i++ {
+			expectedCount := 0
+			EachUint8(tt.input, func(in uint8) {
+				expectedCount = expectedCount + 1
+			})
+		}
 	}
 
 }
@@ -239,10 +255,12 @@ var eachBenchUint16Tests = []struct {
 
 func BenchmarkTestEachUint16(b *testing.B) {
 	for _, tt := range eachBenchUint16Tests {
-		expectedCount := 0
-		EachUint16(tt.input, func(in uint16) {
-			expectedCount = expectedCount + 1
-		})
+	    for i := 0; i < b.N; i++ {
+			expectedCount := 0
+			EachUint16(tt.input, func(in uint16) {
+				expectedCount = expectedCount + 1
+			})
+		}
 	}
 
 }
@@ -266,10 +284,12 @@ var eachBenchUint32Tests = []struct {
 
 func BenchmarkTestEachUint32(b *testing.B) {
 	for _, tt := range eachBenchUint32Tests {
-		expectedCount := 0
-		EachUint32(tt.input, func(in uint32) {
-			expectedCount = expectedCount + 1
-		})
+	    for i := 0; i < b.N; i++ {
+			expectedCount := 0
+			EachUint32(tt.input, func(in uint32) {
+				expectedCount = expectedCount + 1
+			})
+		}
 	}
 
 }
@@ -293,10 +313,12 @@ var eachBenchFloat32Tests = []struct {
 
 func BenchmarkTestEachFloat32(b *testing.B) {
 	for _, tt := range eachBenchFloat32Tests {
-		expectedCount := 0
-		EachFloat32(tt.input, func(in float32) {
-			expectedCount = expectedCount + 1
-		})
+	    for i := 0; i < b.N; i++ {
+			expectedCount := 0
+			EachFloat32(tt.input, func(in float32) {
+				expectedCount = expectedCount + 1
+			})
+		}
 	}
 
 }
@@ -320,10 +342,12 @@ var eachBenchFloat64Tests = []struct {
 
 func BenchmarkTestEachFloat64(b *testing.B) {
 	for _, tt := range eachBenchFloat64Tests {
-		expectedCount := 0
-		EachFloat64(tt.input, func(in float64) {
-			expectedCount = expectedCount + 1
-		})
+	    for i := 0; i < b.N; i++ {
+			expectedCount := 0
+			EachFloat64(tt.input, func(in float64) {
+				expectedCount = expectedCount + 1
+			})
+		}
 	}
 
 }
@@ -347,10 +371,12 @@ var eachBenchComplex64Tests = []struct {
 
 func BenchmarkTestEachComplex64(b *testing.B) {
 	for _, tt := range eachBenchComplex64Tests {
-		expectedCount := 0
-		EachComplex64(tt.input, func(in complex64) {
-			expectedCount = expectedCount + 1
-		})
+	    for i := 0; i < b.N; i++ {
+			expectedCount := 0
+			EachComplex64(tt.input, func(in complex64) {
+				expectedCount = expectedCount + 1
+			})
+		}
 	}
 
 }
@@ -374,10 +400,12 @@ var eachBenchComplex128Tests = []struct {
 
 func BenchmarkTestEachComplex128(b *testing.B) {
 	for _, tt := range eachBenchComplex128Tests {
-		expectedCount := 0
-		EachComplex128(tt.input, func(in complex128) {
-			expectedCount = expectedCount + 1
-		})
+	    for i := 0; i < b.N; i++ {
+			expectedCount := 0
+			EachComplex128(tt.input, func(in complex128) {
+				expectedCount = expectedCount + 1
+			})
+		}
 	}
 
 }

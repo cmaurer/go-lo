@@ -29,9 +29,11 @@ var mapBenchStringTests = []struct {
 
 func BenchmarkTestMapString(b *testing.B) {
 	for _, tt := range mapBenchStringTests {
-		MapString(tt.input, func(in string) string {
-			return in + in
-		})
+	    for i := 0; i < b.N; i++ {
+			MapString(tt.input, func(in string) string {
+				return in + in
+			})
+		}
 	}
 
 }
@@ -61,9 +63,11 @@ var mapBenchIntTests = []struct {
 
 func BenchmarkTestMapInt(b *testing.B) {
 	for _, tt := range mapBenchIntTests {
-		MapInt(tt.input, func(in int) int {
-			return in + in
-		})
+	    for i := 0; i < b.N; i++ {
+			MapInt(tt.input, func(in int) int {
+				return in + in
+			})
+		}
 	}
 
 }
@@ -93,9 +97,11 @@ var mapBenchInt8Tests = []struct {
 
 func BenchmarkTestMapInt8(b *testing.B) {
 	for _, tt := range mapBenchInt8Tests {
-		MapInt8(tt.input, func(in int8) int8 {
-			return in + in
-		})
+	    for i := 0; i < b.N; i++ {
+			MapInt8(tt.input, func(in int8) int8 {
+				return in + in
+			})
+		}
 	}
 
 }
@@ -125,9 +131,11 @@ var mapBenchInt16Tests = []struct {
 
 func BenchmarkTestMapInt16(b *testing.B) {
 	for _, tt := range mapBenchInt16Tests {
-		MapInt16(tt.input, func(in int16) int16 {
-			return in + in
-		})
+	    for i := 0; i < b.N; i++ {
+			MapInt16(tt.input, func(in int16) int16 {
+				return in + in
+			})
+		}
 	}
 
 }
@@ -157,9 +165,11 @@ var mapBenchInt32Tests = []struct {
 
 func BenchmarkTestMapInt32(b *testing.B) {
 	for _, tt := range mapBenchInt32Tests {
-		MapInt32(tt.input, func(in int32) int32 {
-			return in + in
-		})
+	    for i := 0; i < b.N; i++ {
+			MapInt32(tt.input, func(in int32) int32 {
+				return in + in
+			})
+		}
 	}
 
 }
@@ -189,9 +199,11 @@ var mapBenchInt64Tests = []struct {
 
 func BenchmarkTestMapInt64(b *testing.B) {
 	for _, tt := range mapBenchInt64Tests {
-		MapInt64(tt.input, func(in int64) int64 {
-			return in + in
-		})
+	    for i := 0; i < b.N; i++ {
+			MapInt64(tt.input, func(in int64) int64 {
+				return in + in
+			})
+		}
 	}
 
 }
@@ -221,9 +233,11 @@ var mapBenchUintTests = []struct {
 
 func BenchmarkTestMapUint(b *testing.B) {
 	for _, tt := range mapBenchUintTests {
-		MapUint(tt.input, func(in uint) uint {
-			return in + in
-		})
+	    for i := 0; i < b.N; i++ {
+			MapUint(tt.input, func(in uint) uint {
+				return in + in
+			})
+		}
 	}
 
 }
@@ -253,9 +267,11 @@ var mapBenchUint8Tests = []struct {
 
 func BenchmarkTestMapUint8(b *testing.B) {
 	for _, tt := range mapBenchUint8Tests {
-		MapUint8(tt.input, func(in uint8) uint8 {
-			return in + in
-		})
+	    for i := 0; i < b.N; i++ {
+			MapUint8(tt.input, func(in uint8) uint8 {
+				return in + in
+			})
+		}
 	}
 
 }
@@ -285,9 +301,11 @@ var mapBenchUint16Tests = []struct {
 
 func BenchmarkTestMapUint16(b *testing.B) {
 	for _, tt := range mapBenchUint16Tests {
-		MapUint16(tt.input, func(in uint16) uint16 {
-			return in + in
-		})
+	    for i := 0; i < b.N; i++ {
+			MapUint16(tt.input, func(in uint16) uint16 {
+				return in + in
+			})
+		}
 	}
 
 }
@@ -317,9 +335,11 @@ var mapBenchUint32Tests = []struct {
 
 func BenchmarkTestMapUint32(b *testing.B) {
 	for _, tt := range mapBenchUint32Tests {
-		MapUint32(tt.input, func(in uint32) uint32 {
-			return in + in
-		})
+	    for i := 0; i < b.N; i++ {
+			MapUint32(tt.input, func(in uint32) uint32 {
+				return in + in
+			})
+		}
 	}
 
 }
@@ -349,9 +369,11 @@ var mapBenchFloat32Tests = []struct {
 
 func BenchmarkTestMapFloat32(b *testing.B) {
 	for _, tt := range mapBenchFloat32Tests {
-		MapFloat32(tt.input, func(in float32) float32 {
-			return in + in
-		})
+	    for i := 0; i < b.N; i++ {
+			MapFloat32(tt.input, func(in float32) float32 {
+				return in + in
+			})
+		}
 	}
 
 }
@@ -381,9 +403,11 @@ var mapBenchFloat64Tests = []struct {
 
 func BenchmarkTestMapFloat64(b *testing.B) {
 	for _, tt := range mapBenchFloat64Tests {
-		MapFloat64(tt.input, func(in float64) float64 {
-			return in + in
-		})
+	    for i := 0; i < b.N; i++ {
+			MapFloat64(tt.input, func(in float64) float64 {
+				return in + in
+			})
+		}
 	}
 
 }
@@ -413,9 +437,11 @@ var mapBenchComplex64Tests = []struct {
 
 func BenchmarkTestMapComplex64(b *testing.B) {
 	for _, tt := range mapBenchComplex64Tests {
-		MapComplex64(tt.input, func(in complex64) complex64 {
-			return in + in
-		})
+	    for i := 0; i < b.N; i++ {
+			MapComplex64(tt.input, func(in complex64) complex64 {
+				return in + in
+			})
+		}
 	}
 
 }
@@ -445,9 +471,11 @@ var mapBenchComplex128Tests = []struct {
 
 func BenchmarkTestMapComplex128(b *testing.B) {
 	for _, tt := range mapBenchComplex128Tests {
-		MapComplex128(tt.input, func(in complex128) complex128 {
-			return in + in
-		})
+	    for i := 0; i < b.N; i++ {
+			MapComplex128(tt.input, func(in complex128) complex128 {
+				return in + in
+			})
+		}
 	}
 
 }

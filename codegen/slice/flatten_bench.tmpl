@@ -31,7 +31,9 @@ var flattenBench{{.DataTypeCap}}Tests = []struct {
 
 func BenchmarkTestFlatten{{.DataTypeCap}}(b *testing.B) {
 	for _, tt := range flattenBench{{.DataTypeCap}}Tests {
-		Flatten{{.DataTypeCap}}(tt.input1, tt.input2)
+	    for i := 0; i < b.N; i++ {
+			Flatten{{.DataTypeCap}}(tt.input1, tt.input2)
+		}
 	}
 
 }

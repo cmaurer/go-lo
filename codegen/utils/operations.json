@@ -4,6 +4,7 @@
             "name": "if",
             "template": "if.tmpl",
             "test_template": "if_test.tmpl",
+            "bench_template": "if_bench.tmpl",
             "datatypes": [
                 {
                     "data_type_cap": "String",

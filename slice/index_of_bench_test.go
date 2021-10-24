@@ -50,7 +50,9 @@ var indexOfBenchStringTests = []struct {
 
 func BenchmarkTestIndexOfString(b *testing.B) {
 	for _, tt := range indexOfBenchStringTests {
-		IndexOfString(tt.element, tt.input)
+	    for i := 0; i < b.N; i++ {
+			IndexOfString(tt.element, tt.input)
+		}
 	}
 }
 
@@ -100,7 +102,9 @@ var indexOfBenchIntTests = []struct {
 
 func BenchmarkTestIndexOfInt(b *testing.B) {
 	for _, tt := range indexOfBenchIntTests {
-		IndexOfInt(tt.element, tt.input)
+	    for i := 0; i < b.N; i++ {
+			IndexOfInt(tt.element, tt.input)
+		}
 	}
 }
 
@@ -150,7 +154,9 @@ var indexOfBenchInt8Tests = []struct {
 
 func BenchmarkTestIndexOfInt8(b *testing.B) {
 	for _, tt := range indexOfBenchInt8Tests {
-		IndexOfInt8(tt.element, tt.input)
+	    for i := 0; i < b.N; i++ {
+			IndexOfInt8(tt.element, tt.input)
+		}
 	}
 }
 
@@ -200,7 +206,9 @@ var indexOfBenchInt16Tests = []struct {
 
 func BenchmarkTestIndexOfInt16(b *testing.B) {
 	for _, tt := range indexOfBenchInt16Tests {
-		IndexOfInt16(tt.element, tt.input)
+	    for i := 0; i < b.N; i++ {
+			IndexOfInt16(tt.element, tt.input)
+		}
 	}
 }
 
@@ -250,7 +258,9 @@ var indexOfBenchInt32Tests = []struct {
 
 func BenchmarkTestIndexOfInt32(b *testing.B) {
 	for _, tt := range indexOfBenchInt32Tests {
-		IndexOfInt32(tt.element, tt.input)
+	    for i := 0; i < b.N; i++ {
+			IndexOfInt32(tt.element, tt.input)
+		}
 	}
 }
 
@@ -300,7 +310,9 @@ var indexOfBenchInt64Tests = []struct {
 
 func BenchmarkTestIndexOfInt64(b *testing.B) {
 	for _, tt := range indexOfBenchInt64Tests {
-		IndexOfInt64(tt.element, tt.input)
+	    for i := 0; i < b.N; i++ {
+			IndexOfInt64(tt.element, tt.input)
+		}
 	}
 }
 
@@ -350,7 +362,9 @@ var indexOfBenchUintTests = []struct {
 
 func BenchmarkTestIndexOfUint(b *testing.B) {
 	for _, tt := range indexOfBenchUintTests {
-		IndexOfUint(tt.element, tt.input)
+	    for i := 0; i < b.N; i++ {
+			IndexOfUint(tt.element, tt.input)
+		}
 	}
 }
 
@@ -400,7 +414,9 @@ var indexOfBenchUint8Tests = []struct {
 
 func BenchmarkTestIndexOfUint8(b *testing.B) {
 	for _, tt := range indexOfBenchUint8Tests {
-		IndexOfUint8(tt.element, tt.input)
+	    for i := 0; i < b.N; i++ {
+			IndexOfUint8(tt.element, tt.input)
+		}
 	}
 }
 
@@ -450,7 +466,9 @@ var indexOfBenchUint16Tests = []struct {
 
 func BenchmarkTestIndexOfUint16(b *testing.B) {
 	for _, tt := range indexOfBenchUint16Tests {
-		IndexOfUint16(tt.element, tt.input)
+	    for i := 0; i < b.N; i++ {
+			IndexOfUint16(tt.element, tt.input)
+		}
 	}
 }
 
@@ -500,7 +518,9 @@ var indexOfBenchUint32Tests = []struct {
 
 func BenchmarkTestIndexOfUint32(b *testing.B) {
 	for _, tt := range indexOfBenchUint32Tests {
-		IndexOfUint32(tt.element, tt.input)
+	    for i := 0; i < b.N; i++ {
+			IndexOfUint32(tt.element, tt.input)
+		}
 	}
 }
 
@@ -550,7 +570,9 @@ var indexOfBenchFloat32Tests = []struct {
 
 func BenchmarkTestIndexOfFloat32(b *testing.B) {
 	for _, tt := range indexOfBenchFloat32Tests {
-		IndexOfFloat32(tt.element, tt.input)
+	    for i := 0; i < b.N; i++ {
+			IndexOfFloat32(tt.element, tt.input)
+		}
 	}
 }
 
@@ -600,7 +622,9 @@ var indexOfBenchFloat64Tests = []struct {
 
 func BenchmarkTestIndexOfFloat64(b *testing.B) {
 	for _, tt := range indexOfBenchFloat64Tests {
-		IndexOfFloat64(tt.element, tt.input)
+	    for i := 0; i < b.N; i++ {
+			IndexOfFloat64(tt.element, tt.input)
+		}
 	}
 }
 
@@ -650,7 +674,9 @@ var indexOfBenchComplex64Tests = []struct {
 
 func BenchmarkTestIndexOfComplex64(b *testing.B) {
 	for _, tt := range indexOfBenchComplex64Tests {
-		IndexOfComplex64(tt.element, tt.input)
+	    for i := 0; i < b.N; i++ {
+			IndexOfComplex64(tt.element, tt.input)
+		}
 	}
 }
 
@@ -700,6 +726,8 @@ var indexOfBenchComplex128Tests = []struct {
 
 func BenchmarkTestIndexOfComplex128(b *testing.B) {
 	for _, tt := range indexOfBenchComplex128Tests {
-		IndexOfComplex128(tt.element, tt.input)
+	    for i := 0; i < b.N; i++ {
+			IndexOfComplex128(tt.element, tt.input)
+		}
 	}
 }

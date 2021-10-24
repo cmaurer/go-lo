@@ -53,6 +53,7 @@ func main() {
 
 	generateCode(cwd, outputDir, operations)
 	generateTests(cwd, outputDir, operations)
+	generateBenchmarks(cwd, outputDir, operations)
 
 }
 
@@ -141,6 +142,61 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+)
+		`, packageName))
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+
+		templateFile, err := ioutil.ReadFile(templateFileName)
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+
+		tmpl := template.New(operation.Name).Funcs(template.FuncMap{
+			"dataTypeGenerator": dataTypeGenerator,
+		})
+		tmpl, err = tmpl.Parse(string(templateFile))
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+
+		for _, datatype := range operation.Datatypes {
+			err = tmpl.Execute(f, datatype)
+			if err != nil {
+				fmt.Println(err)
+				return
+			}
+		}
+
+	}
+}
+
+func generateBenchmarks(cwd string, outputDir string, operations *types.Operations) {
+
+	for _, operation := range operations.Operations {
+
+		if operation.BenchTemplate == "" {
+			continue
+		}
+		templateFileName := fmt.Sprintf("%s/%s", cwd, operation.BenchTemplate)
+		outputFileName := fmt.Sprintf("%s/%s_bench_test.go", outputDir, operation.Name)
+
+		// create file
+		f, err := os.Create(outputFileName)
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+		defer f.Close()
+
+		_, err = f.WriteString(fmt.Sprintf(`package %s
+
+import (
+	"testing"
 )
 		`, packageName))
 		if err != nil {

@@ -55,7 +55,10 @@ jobs:
           go test ./slice/... -v -count 1
   go-bench:
     name: Go Benchmakr Tests
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: ['ubuntu-latest', 'ubuntu-18.04', 'macos-latest']
     env:
       GO111MODULE: on
     needs:
@@ -72,7 +75,7 @@ jobs:
         uses: actions/setup-go@v2
         with:
           go-version: ${{ matrix.go-version }}
-      - name: Test
+      - name: Benchmark
         run: |
           (cd slice && go test -bench=.)
           (cd utils && go test -bench=.)
@@ -96,6 +99,7 @@ jobs:
     needs:
       - go-tests
       - go-sec
+      - go-bench
     steps:
       - name: Checkout
         uses: actions/checkout@v2

@@ -46,9 +46,11 @@ var findBench{{.DataTypeCap}}Tests = []struct {
 
 func BenchmarkTestFind{{.DataTypeCap}}(b *testing.B) {
 	for _, tt := range find{{.DataTypeCap}}Tests {
-		Find{{.DataTypeCap}}(tt.input, func(in {{.DataType}}) bool {
-			return in == tt.equalTo
-		})
+    	for i := 0; i < b.N; i++ {
+			Find{{.DataTypeCap}}(tt.input, func(in {{.DataType}}) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }

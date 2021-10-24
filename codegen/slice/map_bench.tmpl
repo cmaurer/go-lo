@@ -24,9 +24,11 @@ var mapBench{{.DataTypeCap}}Tests = []struct {
 
 func BenchmarkTestMap{{.DataTypeCap}}(b *testing.B) {
 	for _, tt := range mapBench{{.DataTypeCap}}Tests {
-		Map{{.DataTypeCap}}(tt.input, func(in {{.DataType}}) {{.DataType}} {
-			return in + in
-		})
+	    for i := 0; i < b.N; i++ {
+			Map{{.DataTypeCap}}(tt.input, func(in {{.DataType}}) {{.DataType}} {
+				return in + in
+			})
+		}
 	}
 
 }

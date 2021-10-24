@@ -18,10 +18,12 @@ var eachBench{{.DataTypeCap}}Tests = []struct {
 
 func BenchmarkTestEach{{.DataTypeCap}}(b *testing.B) {
 	for _, tt := range eachBench{{.DataTypeCap}}Tests {
-		expectedCount := 0
-		Each{{.DataTypeCap}}(tt.input, func(in {{.DataType}}) {
-			expectedCount = expectedCount + 1
-		})
+	    for i := 0; i < b.N; i++ {
+			expectedCount := 0
+			Each{{.DataTypeCap}}(tt.input, func(in {{.DataType}}) {
+				expectedCount = expectedCount + 1
+			})
+		}
 	}
 
 }

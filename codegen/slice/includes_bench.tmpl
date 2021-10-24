@@ -28,7 +28,9 @@ var includesBench{{.DataTypeCap}}Tests = []struct {
 
 func BenchmarkTestIncludes{{.DataTypeCap}}(b *testing.B) {
 	for _, tt := range includesBench{{.DataTypeCap}}Tests {
-		Includes{{.DataTypeCap}}(tt.input, tt.included)
+		for i := 0; i < b.N; i++ {
+			Includes{{.DataTypeCap}}(tt.input, tt.included)
+		}
 	}
 
 }

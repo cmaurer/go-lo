@@ -36,9 +36,11 @@ var filterBench{{.DataTypeCap}}Tests = []struct {
 
 func BenchmarkTestFilter{{.DataTypeCap}}(b *testing.B) {
 	for _, tt := range filterBench{{.DataTypeCap}}Tests {
-		Filter{{.DataTypeCap}}(tt.input, func(in {{.DataType}}) bool {
-			return in == tt.equalTo
-		})
+	    for i := 0; i < b.N; i++ {
+			Filter{{.DataTypeCap}}(tt.input, func(in {{.DataType}}) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }

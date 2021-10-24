@@ -33,7 +33,9 @@ var includesBenchStringTests = []struct {
 
 func BenchmarkTestIncludesString(b *testing.B) {
 	for _, tt := range includesBenchStringTests {
-		IncludesString(tt.input, tt.included)
+		for i := 0; i < b.N; i++ {
+			IncludesString(tt.input, tt.included)
+		}
 	}
 
 }
@@ -67,7 +69,9 @@ var includesBenchIntTests = []struct {
 
 func BenchmarkTestIncludesInt(b *testing.B) {
 	for _, tt := range includesBenchIntTests {
-		IncludesInt(tt.input, tt.included)
+		for i := 0; i < b.N; i++ {
+			IncludesInt(tt.input, tt.included)
+		}
 	}
 
 }
@@ -101,7 +105,9 @@ var includesBenchInt8Tests = []struct {
 
 func BenchmarkTestIncludesInt8(b *testing.B) {
 	for _, tt := range includesBenchInt8Tests {
-		IncludesInt8(tt.input, tt.included)
+		for i := 0; i < b.N; i++ {
+			IncludesInt8(tt.input, tt.included)
+		}
 	}
 
 }
@@ -135,7 +141,9 @@ var includesBenchInt16Tests = []struct {
 
 func BenchmarkTestIncludesInt16(b *testing.B) {
 	for _, tt := range includesBenchInt16Tests {
-		IncludesInt16(tt.input, tt.included)
+		for i := 0; i < b.N; i++ {
+			IncludesInt16(tt.input, tt.included)
+		}
 	}
 
 }
@@ -169,7 +177,9 @@ var includesBenchInt32Tests = []struct {
 
 func BenchmarkTestIncludesInt32(b *testing.B) {
 	for _, tt := range includesBenchInt32Tests {
-		IncludesInt32(tt.input, tt.included)
+		for i := 0; i < b.N; i++ {
+			IncludesInt32(tt.input, tt.included)
+		}
 	}
 
 }
@@ -203,7 +213,9 @@ var includesBenchInt64Tests = []struct {
 
 func BenchmarkTestIncludesInt64(b *testing.B) {
 	for _, tt := range includesBenchInt64Tests {
-		IncludesInt64(tt.input, tt.included)
+		for i := 0; i < b.N; i++ {
+			IncludesInt64(tt.input, tt.included)
+		}
 	}
 
 }
@@ -237,7 +249,9 @@ var includesBenchUintTests = []struct {
 
 func BenchmarkTestIncludesUint(b *testing.B) {
 	for _, tt := range includesBenchUintTests {
-		IncludesUint(tt.input, tt.included)
+		for i := 0; i < b.N; i++ {
+			IncludesUint(tt.input, tt.included)
+		}
 	}
 
 }
@@ -271,7 +285,9 @@ var includesBenchUint8Tests = []struct {
 
 func BenchmarkTestIncludesUint8(b *testing.B) {
 	for _, tt := range includesBenchUint8Tests {
-		IncludesUint8(tt.input, tt.included)
+		for i := 0; i < b.N; i++ {
+			IncludesUint8(tt.input, tt.included)
+		}
 	}
 
 }
@@ -305,7 +321,9 @@ var includesBenchUint16Tests = []struct {
 
 func BenchmarkTestIncludesUint16(b *testing.B) {
 	for _, tt := range includesBenchUint16Tests {
-		IncludesUint16(tt.input, tt.included)
+		for i := 0; i < b.N; i++ {
+			IncludesUint16(tt.input, tt.included)
+		}
 	}
 
 }
@@ -339,7 +357,9 @@ var includesBenchUint32Tests = []struct {
 
 func BenchmarkTestIncludesUint32(b *testing.B) {
 	for _, tt := range includesBenchUint32Tests {
-		IncludesUint32(tt.input, tt.included)
+		for i := 0; i < b.N; i++ {
+			IncludesUint32(tt.input, tt.included)
+		}
 	}
 
 }
@@ -373,7 +393,9 @@ var includesBenchFloat32Tests = []struct {
 
 func BenchmarkTestIncludesFloat32(b *testing.B) {
 	for _, tt := range includesBenchFloat32Tests {
-		IncludesFloat32(tt.input, tt.included)
+		for i := 0; i < b.N; i++ {
+			IncludesFloat32(tt.input, tt.included)
+		}
 	}
 
 }
@@ -407,7 +429,9 @@ var includesBenchFloat64Tests = []struct {
 
 func BenchmarkTestIncludesFloat64(b *testing.B) {
 	for _, tt := range includesBenchFloat64Tests {
-		IncludesFloat64(tt.input, tt.included)
+		for i := 0; i < b.N; i++ {
+			IncludesFloat64(tt.input, tt.included)
+		}
 	}
 
 }
@@ -441,7 +465,9 @@ var includesBenchComplex64Tests = []struct {
 
 func BenchmarkTestIncludesComplex64(b *testing.B) {
 	for _, tt := range includesBenchComplex64Tests {
-		IncludesComplex64(tt.input, tt.included)
+		for i := 0; i < b.N; i++ {
+			IncludesComplex64(tt.input, tt.included)
+		}
 	}
 
 }
@@ -475,7 +501,9 @@ var includesBenchComplex128Tests = []struct {
 
 func BenchmarkTestIncludesComplex128(b *testing.B) {
 	for _, tt := range includesBenchComplex128Tests {
-		IncludesComplex128(tt.input, tt.included)
+		for i := 0; i < b.N; i++ {
+			IncludesComplex128(tt.input, tt.included)
+		}
 	}
 
 }

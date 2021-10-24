@@ -38,9 +38,11 @@ var removeBench{{.DataTypeCap}}Tests = []struct {
 
 func BenchmarkTestRemove{{.DataTypeCap}}(b *testing.B) {
 	for _, tt := range removeBench{{.DataTypeCap}}Tests {
-		Remove{{.DataTypeCap}}(tt.input, func(in {{.DataType}}) bool {
-			return in == tt.equalTo
-		})
+		for i := 0; i < b.N; i++ {
+			Remove{{.DataTypeCap}}(tt.input, func(in {{.DataType}}) bool {
+				return in == tt.equalTo
+			})
+		}
 	}
 
 }
