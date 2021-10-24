@@ -1,3 +1,12 @@
+# [0.9.0](https://github.com/cmaurer/go-lo/compare/v0.8.3...v0.9.0) (2021-10-24)
+
+
+### Features
+
+* reduce implemented ([7ca8949](https://github.com/cmaurer/go-lo/commit/7ca89492743fbacccab8b4417d12283c994dade4))
+
+
+
 ## [0.8.3](https://github.com/cmaurer/go-lo/compare/v0.8.2...v0.8.3) (2021-10-24)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * added includes ([14dc881](https://github.com/cmaurer/go-lo/commit/14dc8814b867b1c627c1b5766733b74528c529f2))
-
-
-
-# [0.7.0](https://github.com/cmaurer/go-lo/compare/v0.6.0...v0.7.0) (2021-10-23)
-
-
-### Features
-
-* adding ([ade6600](https://github.com/cmaurer/go-lo/commit/ade660011b06f594bb83f95d3118f594716c8289))
 
 
 
