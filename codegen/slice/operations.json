@@ -520,7 +520,7 @@
                 }
             ]
         },
-        {
+        { 
             "name": "includes",
             "template": "includes.tmpl",
             "test_template": "includes_test.tmpl",
