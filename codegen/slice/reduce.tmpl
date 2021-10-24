@@ -1,0 +1,9 @@
+
+// Reduce{{.DataTypeCap}} func
+// Returns a {{.DataType}} value by executing the accumulator function for each input value.
+func Reduce{{.DataTypeCap}}(input []{{.DataType}}, f func({{.DataType}}, {{.DataType}}) {{.DataType}}, acc {{.DataType}}) {{.DataType}} {
+	for _, s := range input {
+	   acc = f(acc, s)
+	}
+	return acc
+}

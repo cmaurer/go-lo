@@ -1,0 +1,40 @@
+
+var reduceBench{{.DataTypeCap}}Tests = []struct {
+	name     string
+	input    []{{.DataType}}
+	expected func() {{.DataType}}
+}{
+
+	{
+		name: "basic example",
+		input: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+			{{dataTypeGenerator  .DataType 2}},
+			{{dataTypeGenerator  .DataType 3}},
+		},
+		expected: func() {{.DataType}} {
+			input := []{{.DataType}}{
+				{{dataTypeGenerator  .DataType 0}},
+				{{dataTypeGenerator  .DataType 1}},
+				{{dataTypeGenerator  .DataType 2}},
+				{{dataTypeGenerator  .DataType 3}},
+			}
+			var accumulator {{.DataType}}
+			for _, in := range input {
+			  accumulator = {{.DataType}}(accumulator) + {{.DataType}}(in)
+			}
+			return accumulator
+		},
+	},
+}
+
+func BenchmarkTestReduce{{.DataTypeCap}}(b *testing.B) {
+	for _, tt := range reduceBench{{.DataTypeCap}}Tests {
+		for i := 0; i < b.N; i++ {
+			Reduce{{.DataTypeCap}}(tt.input, func(acc {{.DataType}}, elem {{.DataType}}) {{.DataType}} {
+				return acc + elem
+			}, {{dataTypeGenerator  .DataType 0}})
+		}
+	}
+
+}

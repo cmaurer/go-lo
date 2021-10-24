@@ -5,11 +5,8 @@ import (
 	"github.com/cmaurer/go-lo/slice"
 )
 
-		
-
-// String Example
+		// String Example
 func ExampleIndexOfString() {
-
     input := []string{
         "test1",
         "test2",
@@ -20,12 +17,8 @@ func ExampleIndexOfString() {
 	output := slice.IndexOfString(element, input)
 
     fmt.Printf("%+v", output)
-
-}
-
-// Int Example
+}// Int Example
 func ExampleIndexOfInt() {
-
     input := []int{
         1,
         2,
@@ -36,12 +29,8 @@ func ExampleIndexOfInt() {
 	output := slice.IndexOfInt(element, input)
 
     fmt.Printf("%+v", output)
-
-}
-
-// Int8 Example
+}// Int8 Example
 func ExampleIndexOfInt8() {
-
     input := []int8{
         1,
         2,
@@ -52,12 +41,8 @@ func ExampleIndexOfInt8() {
 	output := slice.IndexOfInt8(element, input)
 
     fmt.Printf("%+v", output)
-
-}
-
-// Int16 Example
+}// Int16 Example
 func ExampleIndexOfInt16() {
-
     input := []int16{
         1,
         2,
@@ -68,12 +53,8 @@ func ExampleIndexOfInt16() {
 	output := slice.IndexOfInt16(element, input)
 
     fmt.Printf("%+v", output)
-
-}
-
-// Int32 Example
+}// Int32 Example
 func ExampleIndexOfInt32() {
-
     input := []int32{
         1,
         2,
@@ -84,12 +65,8 @@ func ExampleIndexOfInt32() {
 	output := slice.IndexOfInt32(element, input)
 
     fmt.Printf("%+v", output)
-
-}
-
-// Int64 Example
+}// Int64 Example
 func ExampleIndexOfInt64() {
-
     input := []int64{
         1,
         2,
@@ -100,12 +77,8 @@ func ExampleIndexOfInt64() {
 	output := slice.IndexOfInt64(element, input)
 
     fmt.Printf("%+v", output)
-
-}
-
-// Uint Example
+}// Uint Example
 func ExampleIndexOfUint() {
-
     input := []uint{
         1,
         2,
@@ -116,12 +89,8 @@ func ExampleIndexOfUint() {
 	output := slice.IndexOfUint(element, input)
 
     fmt.Printf("%+v", output)
-
-}
-
-// Uint8 Example
+}// Uint8 Example
 func ExampleIndexOfUint8() {
-
     input := []uint8{
         1,
         2,
@@ -132,12 +101,8 @@ func ExampleIndexOfUint8() {
 	output := slice.IndexOfUint8(element, input)
 
     fmt.Printf("%+v", output)
-
-}
-
-// Uint16 Example
+}// Uint16 Example
 func ExampleIndexOfUint16() {
-
     input := []uint16{
         1,
         2,
@@ -148,12 +113,8 @@ func ExampleIndexOfUint16() {
 	output := slice.IndexOfUint16(element, input)
 
     fmt.Printf("%+v", output)
-
-}
-
-// Uint32 Example
+}// Uint32 Example
 func ExampleIndexOfUint32() {
-
     input := []uint32{
         1,
         2,
@@ -164,12 +125,8 @@ func ExampleIndexOfUint32() {
 	output := slice.IndexOfUint32(element, input)
 
     fmt.Printf("%+v", output)
-
-}
-
-// Float32 Example
+}// Float32 Example
 func ExampleIndexOfFloat32() {
-
     input := []float32{
         1.1,
         2.2,
@@ -180,12 +137,8 @@ func ExampleIndexOfFloat32() {
 	output := slice.IndexOfFloat32(element, input)
 
     fmt.Printf("%+v", output)
-
-}
-
-// Float64 Example
+}// Float64 Example
 func ExampleIndexOfFloat64() {
-
     input := []float64{
         1.1,
         2.2,
@@ -196,12 +149,8 @@ func ExampleIndexOfFloat64() {
 	output := slice.IndexOfFloat64(element, input)
 
     fmt.Printf("%+v", output)
-
-}
-
-// Complex64 Example
+}// Complex64 Example
 func ExampleIndexOfComplex64() {
-
     input := []complex64{
         (2.4+3.14i),
         (4.8+3.14i),
@@ -212,12 +161,8 @@ func ExampleIndexOfComplex64() {
 	output := slice.IndexOfComplex64(element, input)
 
     fmt.Printf("%+v", output)
-
-}
-
-// Complex128 Example
+}// Complex128 Example
 func ExampleIndexOfComplex128() {
-
     input := []complex128{
         (2.4+3.14i),
         (4.8+3.14i),
@@ -228,5 +173,4 @@ func ExampleIndexOfComplex128() {
 	output := slice.IndexOfComplex128(element, input)
 
     fmt.Printf("%+v", output)
-
 }

@@ -1,0 +1,15 @@
+
+// {{.DataType}} Example
+func ExampleReduce{{.DataTypeCap}}() {
+
+	input := []{{.DataType}}{
+		{{dataTypeGenerator  .DataType 1}},
+		{{dataTypeGenerator  .DataType 2}},
+		{{dataTypeGenerator  .DataType 3}},
+	}
+
+	output := {{.PackageName}}.Reduce{{.DataTypeCap}}(input, func(acc {{.DataType}}, elem {{.DataType}}) {{.DataType}} {
+		return acc + elem
+	}, {{dataTypeGenerator  .DataType 0}})
+	fmt.Printf("%+v", output)
+}

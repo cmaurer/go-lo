@@ -54,7 +54,7 @@ jobs:
         run: |
           go test ./slice/... -v -count 1
   go-bench:
-    name: Go Benchmakr Tests
+    name: Go Benchmark Tests
     runs-on: ${{ matrix.os }}
     env:
       GO111MODULE: on
