@@ -1,0 +1,37 @@
+
+var flattenBench{{.DataTypeCap}}Tests = []struct {
+	name     string
+	input1   []{{.DataType}}
+	input2   []{{.DataType}}
+	expected []{{.DataType}}
+}{
+
+	{
+		name: "basic example",
+		input1: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+			{{dataTypeGenerator  .DataType 2}},
+			{{dataTypeGenerator  .DataType 3}},
+		},
+		input2: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+			{{dataTypeGenerator  .DataType 2}},
+			{{dataTypeGenerator  .DataType 3}},
+		},
+		expected: []{{.DataType}}{
+            {{dataTypeGenerator  .DataType 1}},
+            {{dataTypeGenerator  .DataType 2}},
+            {{dataTypeGenerator  .DataType 3}},
+            {{dataTypeGenerator  .DataType 1}},
+            {{dataTypeGenerator  .DataType 2}},
+            {{dataTypeGenerator  .DataType 3}},
+        },
+	},
+}
+
+func BenchmarkTestFlatten{{.DataTypeCap}}(b *testing.B) {
+	for _, tt := range flattenBench{{.DataTypeCap}}Tests {
+		Flatten{{.DataTypeCap}}(tt.input1, tt.input2)
+	}
+
+}

@@ -2,12 +2,10 @@ package slice
 
 import (
 	"testing"
-
-	"github.com/stretchr/testify/assert"
 )
 		
 
-var indexOfStringTests = []struct {
+var indexOfBenchStringTests = []struct {
 	name     string
 	input    []string
 	element  string
@@ -50,18 +48,14 @@ var indexOfStringTests = []struct {
 	},
 }
 
-func TestIndexOfString(t *testing.T) {
-	for _, tt := range indexOfStringTests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := IndexOfString(tt.element, tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestIndexOfString(b *testing.B) {
+	for _, tt := range indexOfBenchStringTests {
+		IndexOfString(tt.element, tt.input)
 	}
-
 }
 
 
-var indexOfIntTests = []struct {
+var indexOfBenchIntTests = []struct {
 	name     string
 	input    []int
 	element  int
@@ -104,18 +98,14 @@ var indexOfIntTests = []struct {
 	},
 }
 
-func TestIndexOfInt(t *testing.T) {
-	for _, tt := range indexOfIntTests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := IndexOfInt(tt.element, tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestIndexOfInt(b *testing.B) {
+	for _, tt := range indexOfBenchIntTests {
+		IndexOfInt(tt.element, tt.input)
 	}
-
 }
 
 
-var indexOfInt8Tests = []struct {
+var indexOfBenchInt8Tests = []struct {
 	name     string
 	input    []int8
 	element  int8
@@ -158,18 +148,14 @@ var indexOfInt8Tests = []struct {
 	},
 }
 
-func TestIndexOfInt8(t *testing.T) {
-	for _, tt := range indexOfInt8Tests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := IndexOfInt8(tt.element, tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestIndexOfInt8(b *testing.B) {
+	for _, tt := range indexOfBenchInt8Tests {
+		IndexOfInt8(tt.element, tt.input)
 	}
-
 }
 
 
-var indexOfInt16Tests = []struct {
+var indexOfBenchInt16Tests = []struct {
 	name     string
 	input    []int16
 	element  int16
@@ -212,18 +198,14 @@ var indexOfInt16Tests = []struct {
 	},
 }
 
-func TestIndexOfInt16(t *testing.T) {
-	for _, tt := range indexOfInt16Tests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := IndexOfInt16(tt.element, tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestIndexOfInt16(b *testing.B) {
+	for _, tt := range indexOfBenchInt16Tests {
+		IndexOfInt16(tt.element, tt.input)
 	}
-
 }
 
 
-var indexOfInt32Tests = []struct {
+var indexOfBenchInt32Tests = []struct {
 	name     string
 	input    []int32
 	element  int32
@@ -266,18 +248,14 @@ var indexOfInt32Tests = []struct {
 	},
 }
 
-func TestIndexOfInt32(t *testing.T) {
-	for _, tt := range indexOfInt32Tests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := IndexOfInt32(tt.element, tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestIndexOfInt32(b *testing.B) {
+	for _, tt := range indexOfBenchInt32Tests {
+		IndexOfInt32(tt.element, tt.input)
 	}
-
 }
 
 
-var indexOfInt64Tests = []struct {
+var indexOfBenchInt64Tests = []struct {
 	name     string
 	input    []int64
 	element  int64
@@ -320,18 +298,14 @@ var indexOfInt64Tests = []struct {
 	},
 }
 
-func TestIndexOfInt64(t *testing.T) {
-	for _, tt := range indexOfInt64Tests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := IndexOfInt64(tt.element, tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestIndexOfInt64(b *testing.B) {
+	for _, tt := range indexOfBenchInt64Tests {
+		IndexOfInt64(tt.element, tt.input)
 	}
-
 }
 
 
-var indexOfUintTests = []struct {
+var indexOfBenchUintTests = []struct {
 	name     string
 	input    []uint
 	element  uint
@@ -374,18 +348,14 @@ var indexOfUintTests = []struct {
 	},
 }
 
-func TestIndexOfUint(t *testing.T) {
-	for _, tt := range indexOfUintTests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := IndexOfUint(tt.element, tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestIndexOfUint(b *testing.B) {
+	for _, tt := range indexOfBenchUintTests {
+		IndexOfUint(tt.element, tt.input)
 	}
-
 }
 
 
-var indexOfUint8Tests = []struct {
+var indexOfBenchUint8Tests = []struct {
 	name     string
 	input    []uint8
 	element  uint8
@@ -428,18 +398,14 @@ var indexOfUint8Tests = []struct {
 	},
 }
 
-func TestIndexOfUint8(t *testing.T) {
-	for _, tt := range indexOfUint8Tests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := IndexOfUint8(tt.element, tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestIndexOfUint8(b *testing.B) {
+	for _, tt := range indexOfBenchUint8Tests {
+		IndexOfUint8(tt.element, tt.input)
 	}
-
 }
 
 
-var indexOfUint16Tests = []struct {
+var indexOfBenchUint16Tests = []struct {
 	name     string
 	input    []uint16
 	element  uint16
@@ -482,18 +448,14 @@ var indexOfUint16Tests = []struct {
 	},
 }
 
-func TestIndexOfUint16(t *testing.T) {
-	for _, tt := range indexOfUint16Tests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := IndexOfUint16(tt.element, tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestIndexOfUint16(b *testing.B) {
+	for _, tt := range indexOfBenchUint16Tests {
+		IndexOfUint16(tt.element, tt.input)
 	}
-
 }
 
 
-var indexOfUint32Tests = []struct {
+var indexOfBenchUint32Tests = []struct {
 	name     string
 	input    []uint32
 	element  uint32
@@ -536,18 +498,14 @@ var indexOfUint32Tests = []struct {
 	},
 }
 
-func TestIndexOfUint32(t *testing.T) {
-	for _, tt := range indexOfUint32Tests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := IndexOfUint32(tt.element, tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestIndexOfUint32(b *testing.B) {
+	for _, tt := range indexOfBenchUint32Tests {
+		IndexOfUint32(tt.element, tt.input)
 	}
-
 }
 
 
-var indexOfFloat32Tests = []struct {
+var indexOfBenchFloat32Tests = []struct {
 	name     string
 	input    []float32
 	element  float32
@@ -590,18 +548,14 @@ var indexOfFloat32Tests = []struct {
 	},
 }
 
-func TestIndexOfFloat32(t *testing.T) {
-	for _, tt := range indexOfFloat32Tests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := IndexOfFloat32(tt.element, tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestIndexOfFloat32(b *testing.B) {
+	for _, tt := range indexOfBenchFloat32Tests {
+		IndexOfFloat32(tt.element, tt.input)
 	}
-
 }
 
 
-var indexOfFloat64Tests = []struct {
+var indexOfBenchFloat64Tests = []struct {
 	name     string
 	input    []float64
 	element  float64
@@ -644,18 +598,14 @@ var indexOfFloat64Tests = []struct {
 	},
 }
 
-func TestIndexOfFloat64(t *testing.T) {
-	for _, tt := range indexOfFloat64Tests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := IndexOfFloat64(tt.element, tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestIndexOfFloat64(b *testing.B) {
+	for _, tt := range indexOfBenchFloat64Tests {
+		IndexOfFloat64(tt.element, tt.input)
 	}
-
 }
 
 
-var indexOfComplex64Tests = []struct {
+var indexOfBenchComplex64Tests = []struct {
 	name     string
 	input    []complex64
 	element  complex64
@@ -698,18 +648,14 @@ var indexOfComplex64Tests = []struct {
 	},
 }
 
-func TestIndexOfComplex64(t *testing.T) {
-	for _, tt := range indexOfComplex64Tests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := IndexOfComplex64(tt.element, tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestIndexOfComplex64(b *testing.B) {
+	for _, tt := range indexOfBenchComplex64Tests {
+		IndexOfComplex64(tt.element, tt.input)
 	}
-
 }
 
 
-var indexOfComplex128Tests = []struct {
+var indexOfBenchComplex128Tests = []struct {
 	name     string
 	input    []complex128
 	element  complex128
@@ -752,12 +698,8 @@ var indexOfComplex128Tests = []struct {
 	},
 }
 
-func TestIndexOfComplex128(t *testing.T) {
-	for _, tt := range indexOfComplex128Tests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := IndexOfComplex128(tt.element, tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestIndexOfComplex128(b *testing.B) {
+	for _, tt := range indexOfBenchComplex128Tests {
+		IndexOfComplex128(tt.element, tt.input)
 	}
-
 }

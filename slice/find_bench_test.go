@@ -2,11 +2,9 @@ package slice
 
 import (
 	"testing"
-
-	"github.com/stretchr/testify/assert"
 )
 		
-var findStringTests = []struct {
+var findBenchStringTests = []struct {
 	name     	string
 	input    	[]string
 	equalTo  	string
@@ -51,23 +49,16 @@ var findStringTests = []struct {
 	},
 }
 
-func TestFindString(t *testing.T) {
+func BenchmarkTestFindString(b *testing.B) {
 	for _, tt := range findStringTests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FindString(tt.input, func(in string) bool {
-                return in == tt.equalTo
-            })
-			if tt.shouldBeNil == true {
-				assert.Nil(t, output)
-			} else {
-				assert.Equal(t, tt.expected, *output)
-			}
+		FindString(tt.input, func(in string) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var findIntTests = []struct {
+var findBenchIntTests = []struct {
 	name     	string
 	input    	[]int
 	equalTo  	int
@@ -112,23 +103,16 @@ var findIntTests = []struct {
 	},
 }
 
-func TestFindInt(t *testing.T) {
+func BenchmarkTestFindInt(b *testing.B) {
 	for _, tt := range findIntTests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FindInt(tt.input, func(in int) bool {
-                return in == tt.equalTo
-            })
-			if tt.shouldBeNil == true {
-				assert.Nil(t, output)
-			} else {
-				assert.Equal(t, tt.expected, *output)
-			}
+		FindInt(tt.input, func(in int) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var findInt8Tests = []struct {
+var findBenchInt8Tests = []struct {
 	name     	string
 	input    	[]int8
 	equalTo  	int8
@@ -173,23 +157,16 @@ var findInt8Tests = []struct {
 	},
 }
 
-func TestFindInt8(t *testing.T) {
+func BenchmarkTestFindInt8(b *testing.B) {
 	for _, tt := range findInt8Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FindInt8(tt.input, func(in int8) bool {
-                return in == tt.equalTo
-            })
-			if tt.shouldBeNil == true {
-				assert.Nil(t, output)
-			} else {
-				assert.Equal(t, tt.expected, *output)
-			}
+		FindInt8(tt.input, func(in int8) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var findInt16Tests = []struct {
+var findBenchInt16Tests = []struct {
 	name     	string
 	input    	[]int16
 	equalTo  	int16
@@ -234,23 +211,16 @@ var findInt16Tests = []struct {
 	},
 }
 
-func TestFindInt16(t *testing.T) {
+func BenchmarkTestFindInt16(b *testing.B) {
 	for _, tt := range findInt16Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FindInt16(tt.input, func(in int16) bool {
-                return in == tt.equalTo
-            })
-			if tt.shouldBeNil == true {
-				assert.Nil(t, output)
-			} else {
-				assert.Equal(t, tt.expected, *output)
-			}
+		FindInt16(tt.input, func(in int16) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var findInt32Tests = []struct {
+var findBenchInt32Tests = []struct {
 	name     	string
 	input    	[]int32
 	equalTo  	int32
@@ -295,23 +265,16 @@ var findInt32Tests = []struct {
 	},
 }
 
-func TestFindInt32(t *testing.T) {
+func BenchmarkTestFindInt32(b *testing.B) {
 	for _, tt := range findInt32Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FindInt32(tt.input, func(in int32) bool {
-                return in == tt.equalTo
-            })
-			if tt.shouldBeNil == true {
-				assert.Nil(t, output)
-			} else {
-				assert.Equal(t, tt.expected, *output)
-			}
+		FindInt32(tt.input, func(in int32) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var findInt64Tests = []struct {
+var findBenchInt64Tests = []struct {
 	name     	string
 	input    	[]int64
 	equalTo  	int64
@@ -356,23 +319,16 @@ var findInt64Tests = []struct {
 	},
 }
 
-func TestFindInt64(t *testing.T) {
+func BenchmarkTestFindInt64(b *testing.B) {
 	for _, tt := range findInt64Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FindInt64(tt.input, func(in int64) bool {
-                return in == tt.equalTo
-            })
-			if tt.shouldBeNil == true {
-				assert.Nil(t, output)
-			} else {
-				assert.Equal(t, tt.expected, *output)
-			}
+		FindInt64(tt.input, func(in int64) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var findUintTests = []struct {
+var findBenchUintTests = []struct {
 	name     	string
 	input    	[]uint
 	equalTo  	uint
@@ -417,23 +373,16 @@ var findUintTests = []struct {
 	},
 }
 
-func TestFindUint(t *testing.T) {
+func BenchmarkTestFindUint(b *testing.B) {
 	for _, tt := range findUintTests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FindUint(tt.input, func(in uint) bool {
-                return in == tt.equalTo
-            })
-			if tt.shouldBeNil == true {
-				assert.Nil(t, output)
-			} else {
-				assert.Equal(t, tt.expected, *output)
-			}
+		FindUint(tt.input, func(in uint) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var findUint8Tests = []struct {
+var findBenchUint8Tests = []struct {
 	name     	string
 	input    	[]uint8
 	equalTo  	uint8
@@ -478,23 +427,16 @@ var findUint8Tests = []struct {
 	},
 }
 
-func TestFindUint8(t *testing.T) {
+func BenchmarkTestFindUint8(b *testing.B) {
 	for _, tt := range findUint8Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FindUint8(tt.input, func(in uint8) bool {
-                return in == tt.equalTo
-            })
-			if tt.shouldBeNil == true {
-				assert.Nil(t, output)
-			} else {
-				assert.Equal(t, tt.expected, *output)
-			}
+		FindUint8(tt.input, func(in uint8) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var findUint16Tests = []struct {
+var findBenchUint16Tests = []struct {
 	name     	string
 	input    	[]uint16
 	equalTo  	uint16
@@ -539,23 +481,16 @@ var findUint16Tests = []struct {
 	},
 }
 
-func TestFindUint16(t *testing.T) {
+func BenchmarkTestFindUint16(b *testing.B) {
 	for _, tt := range findUint16Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FindUint16(tt.input, func(in uint16) bool {
-                return in == tt.equalTo
-            })
-			if tt.shouldBeNil == true {
-				assert.Nil(t, output)
-			} else {
-				assert.Equal(t, tt.expected, *output)
-			}
+		FindUint16(tt.input, func(in uint16) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var findUint32Tests = []struct {
+var findBenchUint32Tests = []struct {
 	name     	string
 	input    	[]uint32
 	equalTo  	uint32
@@ -600,23 +535,16 @@ var findUint32Tests = []struct {
 	},
 }
 
-func TestFindUint32(t *testing.T) {
+func BenchmarkTestFindUint32(b *testing.B) {
 	for _, tt := range findUint32Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FindUint32(tt.input, func(in uint32) bool {
-                return in == tt.equalTo
-            })
-			if tt.shouldBeNil == true {
-				assert.Nil(t, output)
-			} else {
-				assert.Equal(t, tt.expected, *output)
-			}
+		FindUint32(tt.input, func(in uint32) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var findFloat32Tests = []struct {
+var findBenchFloat32Tests = []struct {
 	name     	string
 	input    	[]float32
 	equalTo  	float32
@@ -661,23 +589,16 @@ var findFloat32Tests = []struct {
 	},
 }
 
-func TestFindFloat32(t *testing.T) {
+func BenchmarkTestFindFloat32(b *testing.B) {
 	for _, tt := range findFloat32Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FindFloat32(tt.input, func(in float32) bool {
-                return in == tt.equalTo
-            })
-			if tt.shouldBeNil == true {
-				assert.Nil(t, output)
-			} else {
-				assert.Equal(t, tt.expected, *output)
-			}
+		FindFloat32(tt.input, func(in float32) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var findFloat64Tests = []struct {
+var findBenchFloat64Tests = []struct {
 	name     	string
 	input    	[]float64
 	equalTo  	float64
@@ -722,23 +643,16 @@ var findFloat64Tests = []struct {
 	},
 }
 
-func TestFindFloat64(t *testing.T) {
+func BenchmarkTestFindFloat64(b *testing.B) {
 	for _, tt := range findFloat64Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FindFloat64(tt.input, func(in float64) bool {
-                return in == tt.equalTo
-            })
-			if tt.shouldBeNil == true {
-				assert.Nil(t, output)
-			} else {
-				assert.Equal(t, tt.expected, *output)
-			}
+		FindFloat64(tt.input, func(in float64) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var findComplex64Tests = []struct {
+var findBenchComplex64Tests = []struct {
 	name     	string
 	input    	[]complex64
 	equalTo  	complex64
@@ -783,23 +697,16 @@ var findComplex64Tests = []struct {
 	},
 }
 
-func TestFindComplex64(t *testing.T) {
+func BenchmarkTestFindComplex64(b *testing.B) {
 	for _, tt := range findComplex64Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FindComplex64(tt.input, func(in complex64) bool {
-                return in == tt.equalTo
-            })
-			if tt.shouldBeNil == true {
-				assert.Nil(t, output)
-			} else {
-				assert.Equal(t, tt.expected, *output)
-			}
+		FindComplex64(tt.input, func(in complex64) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var findComplex128Tests = []struct {
+var findBenchComplex128Tests = []struct {
 	name     	string
 	input    	[]complex128
 	equalTo  	complex128
@@ -844,17 +751,10 @@ var findComplex128Tests = []struct {
 	},
 }
 
-func TestFindComplex128(t *testing.T) {
+func BenchmarkTestFindComplex128(b *testing.B) {
 	for _, tt := range findComplex128Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FindComplex128(tt.input, func(in complex128) bool {
-                return in == tt.equalTo
-            })
-			if tt.shouldBeNil == true {
-				assert.Nil(t, output)
-			} else {
-				assert.Equal(t, tt.expected, *output)
-			}
+		FindComplex128(tt.input, func(in complex128) bool {
+			return in == tt.equalTo
 		})
 	}
 

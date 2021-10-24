@@ -2,11 +2,9 @@ package slice
 
 import (
 	"testing"
-
-	"github.com/stretchr/testify/assert"
 )
 		
-var flattenStringTests = []struct {
+var flattenBenchStringTests = []struct {
 	name     string
 	input1   []string
 	input2   []string
@@ -36,17 +34,14 @@ var flattenStringTests = []struct {
 	},
 }
 
-func TestFlattenString(t *testing.T) {
-	for _, tt := range flattenStringTests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FlattenString(tt.input1, tt.input2)
-			assert.Equal(t, tt.expected, output)
-		})
+func BenchmarkTestFlattenString(b *testing.B) {
+	for _, tt := range flattenBenchStringTests {
+		FlattenString(tt.input1, tt.input2)
 	}
 
 }
 
-var flattenIntTests = []struct {
+var flattenBenchIntTests = []struct {
 	name     string
 	input1   []int
 	input2   []int
@@ -76,17 +71,14 @@ var flattenIntTests = []struct {
 	},
 }
 
-func TestFlattenInt(t *testing.T) {
-	for _, tt := range flattenIntTests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FlattenInt(tt.input1, tt.input2)
-			assert.Equal(t, tt.expected, output)
-		})
+func BenchmarkTestFlattenInt(b *testing.B) {
+	for _, tt := range flattenBenchIntTests {
+		FlattenInt(tt.input1, tt.input2)
 	}
 
 }
 
-var flattenInt8Tests = []struct {
+var flattenBenchInt8Tests = []struct {
 	name     string
 	input1   []int8
 	input2   []int8
@@ -116,17 +108,14 @@ var flattenInt8Tests = []struct {
 	},
 }
 
-func TestFlattenInt8(t *testing.T) {
-	for _, tt := range flattenInt8Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FlattenInt8(tt.input1, tt.input2)
-			assert.Equal(t, tt.expected, output)
-		})
+func BenchmarkTestFlattenInt8(b *testing.B) {
+	for _, tt := range flattenBenchInt8Tests {
+		FlattenInt8(tt.input1, tt.input2)
 	}
 
 }
 
-var flattenInt16Tests = []struct {
+var flattenBenchInt16Tests = []struct {
 	name     string
 	input1   []int16
 	input2   []int16
@@ -156,17 +145,14 @@ var flattenInt16Tests = []struct {
 	},
 }
 
-func TestFlattenInt16(t *testing.T) {
-	for _, tt := range flattenInt16Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FlattenInt16(tt.input1, tt.input2)
-			assert.Equal(t, tt.expected, output)
-		})
+func BenchmarkTestFlattenInt16(b *testing.B) {
+	for _, tt := range flattenBenchInt16Tests {
+		FlattenInt16(tt.input1, tt.input2)
 	}
 
 }
 
-var flattenInt32Tests = []struct {
+var flattenBenchInt32Tests = []struct {
 	name     string
 	input1   []int32
 	input2   []int32
@@ -196,17 +182,14 @@ var flattenInt32Tests = []struct {
 	},
 }
 
-func TestFlattenInt32(t *testing.T) {
-	for _, tt := range flattenInt32Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FlattenInt32(tt.input1, tt.input2)
-			assert.Equal(t, tt.expected, output)
-		})
+func BenchmarkTestFlattenInt32(b *testing.B) {
+	for _, tt := range flattenBenchInt32Tests {
+		FlattenInt32(tt.input1, tt.input2)
 	}
 
 }
 
-var flattenInt64Tests = []struct {
+var flattenBenchInt64Tests = []struct {
 	name     string
 	input1   []int64
 	input2   []int64
@@ -236,17 +219,14 @@ var flattenInt64Tests = []struct {
 	},
 }
 
-func TestFlattenInt64(t *testing.T) {
-	for _, tt := range flattenInt64Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FlattenInt64(tt.input1, tt.input2)
-			assert.Equal(t, tt.expected, output)
-		})
+func BenchmarkTestFlattenInt64(b *testing.B) {
+	for _, tt := range flattenBenchInt64Tests {
+		FlattenInt64(tt.input1, tt.input2)
 	}
 
 }
 
-var flattenUintTests = []struct {
+var flattenBenchUintTests = []struct {
 	name     string
 	input1   []uint
 	input2   []uint
@@ -276,17 +256,14 @@ var flattenUintTests = []struct {
 	},
 }
 
-func TestFlattenUint(t *testing.T) {
-	for _, tt := range flattenUintTests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FlattenUint(tt.input1, tt.input2)
-			assert.Equal(t, tt.expected, output)
-		})
+func BenchmarkTestFlattenUint(b *testing.B) {
+	for _, tt := range flattenBenchUintTests {
+		FlattenUint(tt.input1, tt.input2)
 	}
 
 }
 
-var flattenUint8Tests = []struct {
+var flattenBenchUint8Tests = []struct {
 	name     string
 	input1   []uint8
 	input2   []uint8
@@ -316,17 +293,14 @@ var flattenUint8Tests = []struct {
 	},
 }
 
-func TestFlattenUint8(t *testing.T) {
-	for _, tt := range flattenUint8Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FlattenUint8(tt.input1, tt.input2)
-			assert.Equal(t, tt.expected, output)
-		})
+func BenchmarkTestFlattenUint8(b *testing.B) {
+	for _, tt := range flattenBenchUint8Tests {
+		FlattenUint8(tt.input1, tt.input2)
 	}
 
 }
 
-var flattenUint16Tests = []struct {
+var flattenBenchUint16Tests = []struct {
 	name     string
 	input1   []uint16
 	input2   []uint16
@@ -356,17 +330,14 @@ var flattenUint16Tests = []struct {
 	},
 }
 
-func TestFlattenUint16(t *testing.T) {
-	for _, tt := range flattenUint16Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FlattenUint16(tt.input1, tt.input2)
-			assert.Equal(t, tt.expected, output)
-		})
+func BenchmarkTestFlattenUint16(b *testing.B) {
+	for _, tt := range flattenBenchUint16Tests {
+		FlattenUint16(tt.input1, tt.input2)
 	}
 
 }
 
-var flattenUint32Tests = []struct {
+var flattenBenchUint32Tests = []struct {
 	name     string
 	input1   []uint32
 	input2   []uint32
@@ -396,17 +367,14 @@ var flattenUint32Tests = []struct {
 	},
 }
 
-func TestFlattenUint32(t *testing.T) {
-	for _, tt := range flattenUint32Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FlattenUint32(tt.input1, tt.input2)
-			assert.Equal(t, tt.expected, output)
-		})
+func BenchmarkTestFlattenUint32(b *testing.B) {
+	for _, tt := range flattenBenchUint32Tests {
+		FlattenUint32(tt.input1, tt.input2)
 	}
 
 }
 
-var flattenFloat32Tests = []struct {
+var flattenBenchFloat32Tests = []struct {
 	name     string
 	input1   []float32
 	input2   []float32
@@ -436,17 +404,14 @@ var flattenFloat32Tests = []struct {
 	},
 }
 
-func TestFlattenFloat32(t *testing.T) {
-	for _, tt := range flattenFloat32Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FlattenFloat32(tt.input1, tt.input2)
-			assert.Equal(t, tt.expected, output)
-		})
+func BenchmarkTestFlattenFloat32(b *testing.B) {
+	for _, tt := range flattenBenchFloat32Tests {
+		FlattenFloat32(tt.input1, tt.input2)
 	}
 
 }
 
-var flattenFloat64Tests = []struct {
+var flattenBenchFloat64Tests = []struct {
 	name     string
 	input1   []float64
 	input2   []float64
@@ -476,17 +441,14 @@ var flattenFloat64Tests = []struct {
 	},
 }
 
-func TestFlattenFloat64(t *testing.T) {
-	for _, tt := range flattenFloat64Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FlattenFloat64(tt.input1, tt.input2)
-			assert.Equal(t, tt.expected, output)
-		})
+func BenchmarkTestFlattenFloat64(b *testing.B) {
+	for _, tt := range flattenBenchFloat64Tests {
+		FlattenFloat64(tt.input1, tt.input2)
 	}
 
 }
 
-var flattenComplex64Tests = []struct {
+var flattenBenchComplex64Tests = []struct {
 	name     string
 	input1   []complex64
 	input2   []complex64
@@ -516,17 +478,14 @@ var flattenComplex64Tests = []struct {
 	},
 }
 
-func TestFlattenComplex64(t *testing.T) {
-	for _, tt := range flattenComplex64Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FlattenComplex64(tt.input1, tt.input2)
-			assert.Equal(t, tt.expected, output)
-		})
+func BenchmarkTestFlattenComplex64(b *testing.B) {
+	for _, tt := range flattenBenchComplex64Tests {
+		FlattenComplex64(tt.input1, tt.input2)
 	}
 
 }
 
-var flattenComplex128Tests = []struct {
+var flattenBenchComplex128Tests = []struct {
 	name     string
 	input1   []complex128
 	input2   []complex128
@@ -556,12 +515,9 @@ var flattenComplex128Tests = []struct {
 	},
 }
 
-func TestFlattenComplex128(t *testing.T) {
-	for _, tt := range flattenComplex128Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FlattenComplex128(tt.input1, tt.input2)
-			assert.Equal(t, tt.expected, output)
-		})
+func BenchmarkTestFlattenComplex128(b *testing.B) {
+	for _, tt := range flattenBenchComplex128Tests {
+		FlattenComplex128(tt.input1, tt.input2)
 	}
 
 }

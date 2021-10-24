@@ -1,0 +1,56 @@
+
+var uniqueBench{{.DataTypeCap}}Tests = []struct {
+	name     string
+	input    []{{.DataType}}
+	expected []{{.DataType}}
+}{
+	{
+		name: "no duplicates",
+		input: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType  1}},
+			{{dataTypeGenerator  .DataType  2}},
+		},
+		expected: []{{.DataType}}{
+			{{ dataTypeGenerator  .DataType 1}},
+			{{ dataTypeGenerator  .DataType 2}},
+		},
+	},
+	{
+		name: "one duplicates",
+		input: []{{.DataType}}{
+			{{ dataTypeGenerator  .DataType 1}},
+			{{ dataTypeGenerator  .DataType 1}},
+			{{ dataTypeGenerator  .DataType 2}},
+		},
+		expected: []{{.DataType}}{
+			{{ dataTypeGenerator  .DataType 1}},
+			{{ dataTypeGenerator  .DataType 2}},
+		},
+	},
+	{
+		name: "multiple duplicates",
+		input: []{{.DataType}}{
+			{{ dataTypeGenerator  .DataType 1}},
+			{{ dataTypeGenerator  .DataType 1}},
+			{{ dataTypeGenerator  .DataType 2}},
+			{{ dataTypeGenerator  .DataType 2}},
+			{{ dataTypeGenerator  .DataType 2}},
+			{{ dataTypeGenerator  .DataType 1}},
+			{{ dataTypeGenerator  .DataType 1}},
+			{{ dataTypeGenerator  .DataType 2}},
+			{{ dataTypeGenerator  .DataType 1}},
+		},
+		expected: []{{.DataType}}{
+			{{ dataTypeGenerator  .DataType 1}},
+			{{ dataTypeGenerator  .DataType 2}},
+		},
+	},
+}
+
+func BenchmarkTestUnique{{.DataTypeCap}}(b *testing.B) {
+    for i := 0; i < b.N; i++ {
+		for _, tt := range uniqueBench{{.DataTypeCap}}Tests {
+			Unique{{.DataTypeCap}}(tt.input)
+		}
+	}
+}

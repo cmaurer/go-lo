@@ -24,6 +24,11 @@ test:
 		(echo $$dir && cd $$dir && go test . -coverpkg=./... -covermode=atomic -coverprofile=./coverage.txt -v -count 1;) \
 	done
 
+bench:
+	@for dir in $(SRC_DIRS); do \
+		(echo $$dir && cd $$dir && go test -bench=.;) \
+	done
+
 tidy:
 	@go mod tidy -v
 

@@ -1,0 +1,54 @@
+
+var findBench{{.DataTypeCap}}Tests = []struct {
+	name     	string
+	input    	[]{{.DataType}}
+	equalTo  	{{.DataType}}
+	expected 	{{.DataType}}
+	shouldBeNil bool
+}{
+
+	{
+		name: "basic example",
+		input: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+			{{dataTypeGenerator  .DataType 2}},
+			{{dataTypeGenerator  .DataType 3}},
+		},
+        equalTo: {{dataTypeGenerator  .DataType 2}},
+		expected: {{dataTypeGenerator  .DataType 2}},
+		shouldBeNil: false,
+	},
+	{
+		name: "more than one element",
+		input: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+			{{dataTypeGenerator  .DataType 2}},
+			{{dataTypeGenerator  .DataType 3}},
+			{{dataTypeGenerator  .DataType 2}},
+		},
+        equalTo: {{dataTypeGenerator  .DataType 2}},
+		expected: {{dataTypeGenerator  .DataType 2}},
+		shouldBeNil: false,
+	},
+	{
+		name: "not found",
+		input: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+			{{dataTypeGenerator  .DataType 2}},
+			{{dataTypeGenerator  .DataType 3}},
+			{{dataTypeGenerator  .DataType 2}},
+		},
+        equalTo: {{dataTypeGenerator  .DataType 8}},
+		expected: {{dataTypeGenerator  .DataType 8}},
+		shouldBeNil: true,
+	},
+}
+
+func BenchmarkTestFind{{.DataTypeCap}}(b *testing.B) {
+	for _, tt := range find{{.DataTypeCap}}Tests {
+		Find{{.DataTypeCap}}(tt.input, func(in {{.DataType}}) bool {
+			return in == tt.equalTo
+		})
+	}
+
+}

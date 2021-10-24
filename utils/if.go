@@ -1,5 +1,6 @@
 package utils
 
+
 // IfString func
 // If the `b` parameter is true, then the p1 value will be returned, otherwise the p2 value will be returned.
 func IfString(b bool, p1 string, p2 string) string {

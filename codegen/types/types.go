@@ -20,6 +20,7 @@ type Operation struct {
 	Name            string     `json:"name"`
 	Template        string     `json:"template"`
 	TestTemplate    string     `json:"test_template"`
+	BenchTemplate   string     `json:"bench_template"`
 	ExampleTemplate string     `json:"example_template"`
 	Datatypes       []Datatype `json:"datatypes"`
 	Imports         []string   `json:"imports"`

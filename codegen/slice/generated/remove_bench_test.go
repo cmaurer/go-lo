@@ -2,11 +2,9 @@ package slice
 
 import (
 	"testing"
-
-	"github.com/stretchr/testify/assert"
 )
 		
-var removeStringTests = []struct {
+var removeBenchStringTests = []struct {
 	name     	string
 	input    	[]string
 	equalTo  	string
@@ -43,19 +41,16 @@ var removeStringTests = []struct {
 
 }
 
-func TestRemoveString(t *testing.T) {
-	for _, tt := range removeStringTests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := RemoveString(tt.input, func(in string) bool {
-                return in == tt.equalTo
-            })
-            assert.Equal(t, tt.expected, output)
+func BenchmarkTestRemoveString(b *testing.B) {
+	for _, tt := range removeBenchStringTests {
+		RemoveString(tt.input, func(in string) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var removeIntTests = []struct {
+var removeBenchIntTests = []struct {
 	name     	string
 	input    	[]int
 	equalTo  	int
@@ -92,19 +87,16 @@ var removeIntTests = []struct {
 
 }
 
-func TestRemoveInt(t *testing.T) {
-	for _, tt := range removeIntTests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := RemoveInt(tt.input, func(in int) bool {
-                return in == tt.equalTo
-            })
-            assert.Equal(t, tt.expected, output)
+func BenchmarkTestRemoveInt(b *testing.B) {
+	for _, tt := range removeBenchIntTests {
+		RemoveInt(tt.input, func(in int) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var removeInt8Tests = []struct {
+var removeBenchInt8Tests = []struct {
 	name     	string
 	input    	[]int8
 	equalTo  	int8
@@ -141,19 +133,16 @@ var removeInt8Tests = []struct {
 
 }
 
-func TestRemoveInt8(t *testing.T) {
-	for _, tt := range removeInt8Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := RemoveInt8(tt.input, func(in int8) bool {
-                return in == tt.equalTo
-            })
-            assert.Equal(t, tt.expected, output)
+func BenchmarkTestRemoveInt8(b *testing.B) {
+	for _, tt := range removeBenchInt8Tests {
+		RemoveInt8(tt.input, func(in int8) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var removeInt16Tests = []struct {
+var removeBenchInt16Tests = []struct {
 	name     	string
 	input    	[]int16
 	equalTo  	int16
@@ -190,19 +179,16 @@ var removeInt16Tests = []struct {
 
 }
 
-func TestRemoveInt16(t *testing.T) {
-	for _, tt := range removeInt16Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := RemoveInt16(tt.input, func(in int16) bool {
-                return in == tt.equalTo
-            })
-            assert.Equal(t, tt.expected, output)
+func BenchmarkTestRemoveInt16(b *testing.B) {
+	for _, tt := range removeBenchInt16Tests {
+		RemoveInt16(tt.input, func(in int16) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var removeInt32Tests = []struct {
+var removeBenchInt32Tests = []struct {
 	name     	string
 	input    	[]int32
 	equalTo  	int32
@@ -239,19 +225,16 @@ var removeInt32Tests = []struct {
 
 }
 
-func TestRemoveInt32(t *testing.T) {
-	for _, tt := range removeInt32Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := RemoveInt32(tt.input, func(in int32) bool {
-                return in == tt.equalTo
-            })
-            assert.Equal(t, tt.expected, output)
+func BenchmarkTestRemoveInt32(b *testing.B) {
+	for _, tt := range removeBenchInt32Tests {
+		RemoveInt32(tt.input, func(in int32) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var removeInt64Tests = []struct {
+var removeBenchInt64Tests = []struct {
 	name     	string
 	input    	[]int64
 	equalTo  	int64
@@ -288,19 +271,16 @@ var removeInt64Tests = []struct {
 
 }
 
-func TestRemoveInt64(t *testing.T) {
-	for _, tt := range removeInt64Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := RemoveInt64(tt.input, func(in int64) bool {
-                return in == tt.equalTo
-            })
-            assert.Equal(t, tt.expected, output)
+func BenchmarkTestRemoveInt64(b *testing.B) {
+	for _, tt := range removeBenchInt64Tests {
+		RemoveInt64(tt.input, func(in int64) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var removeUintTests = []struct {
+var removeBenchUintTests = []struct {
 	name     	string
 	input    	[]uint
 	equalTo  	uint
@@ -337,19 +317,16 @@ var removeUintTests = []struct {
 
 }
 
-func TestRemoveUint(t *testing.T) {
-	for _, tt := range removeUintTests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := RemoveUint(tt.input, func(in uint) bool {
-                return in == tt.equalTo
-            })
-            assert.Equal(t, tt.expected, output)
+func BenchmarkTestRemoveUint(b *testing.B) {
+	for _, tt := range removeBenchUintTests {
+		RemoveUint(tt.input, func(in uint) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var removeUint8Tests = []struct {
+var removeBenchUint8Tests = []struct {
 	name     	string
 	input    	[]uint8
 	equalTo  	uint8
@@ -386,19 +363,16 @@ var removeUint8Tests = []struct {
 
 }
 
-func TestRemoveUint8(t *testing.T) {
-	for _, tt := range removeUint8Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := RemoveUint8(tt.input, func(in uint8) bool {
-                return in == tt.equalTo
-            })
-            assert.Equal(t, tt.expected, output)
+func BenchmarkTestRemoveUint8(b *testing.B) {
+	for _, tt := range removeBenchUint8Tests {
+		RemoveUint8(tt.input, func(in uint8) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var removeUint16Tests = []struct {
+var removeBenchUint16Tests = []struct {
 	name     	string
 	input    	[]uint16
 	equalTo  	uint16
@@ -435,19 +409,16 @@ var removeUint16Tests = []struct {
 
 }
 
-func TestRemoveUint16(t *testing.T) {
-	for _, tt := range removeUint16Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := RemoveUint16(tt.input, func(in uint16) bool {
-                return in == tt.equalTo
-            })
-            assert.Equal(t, tt.expected, output)
+func BenchmarkTestRemoveUint16(b *testing.B) {
+	for _, tt := range removeBenchUint16Tests {
+		RemoveUint16(tt.input, func(in uint16) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var removeUint32Tests = []struct {
+var removeBenchUint32Tests = []struct {
 	name     	string
 	input    	[]uint32
 	equalTo  	uint32
@@ -484,19 +455,16 @@ var removeUint32Tests = []struct {
 
 }
 
-func TestRemoveUint32(t *testing.T) {
-	for _, tt := range removeUint32Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := RemoveUint32(tt.input, func(in uint32) bool {
-                return in == tt.equalTo
-            })
-            assert.Equal(t, tt.expected, output)
+func BenchmarkTestRemoveUint32(b *testing.B) {
+	for _, tt := range removeBenchUint32Tests {
+		RemoveUint32(tt.input, func(in uint32) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var removeFloat32Tests = []struct {
+var removeBenchFloat32Tests = []struct {
 	name     	string
 	input    	[]float32
 	equalTo  	float32
@@ -533,19 +501,16 @@ var removeFloat32Tests = []struct {
 
 }
 
-func TestRemoveFloat32(t *testing.T) {
-	for _, tt := range removeFloat32Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := RemoveFloat32(tt.input, func(in float32) bool {
-                return in == tt.equalTo
-            })
-            assert.Equal(t, tt.expected, output)
+func BenchmarkTestRemoveFloat32(b *testing.B) {
+	for _, tt := range removeBenchFloat32Tests {
+		RemoveFloat32(tt.input, func(in float32) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var removeFloat64Tests = []struct {
+var removeBenchFloat64Tests = []struct {
 	name     	string
 	input    	[]float64
 	equalTo  	float64
@@ -582,19 +547,16 @@ var removeFloat64Tests = []struct {
 
 }
 
-func TestRemoveFloat64(t *testing.T) {
-	for _, tt := range removeFloat64Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := RemoveFloat64(tt.input, func(in float64) bool {
-                return in == tt.equalTo
-            })
-            assert.Equal(t, tt.expected, output)
+func BenchmarkTestRemoveFloat64(b *testing.B) {
+	for _, tt := range removeBenchFloat64Tests {
+		RemoveFloat64(tt.input, func(in float64) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var removeComplex64Tests = []struct {
+var removeBenchComplex64Tests = []struct {
 	name     	string
 	input    	[]complex64
 	equalTo  	complex64
@@ -631,19 +593,16 @@ var removeComplex64Tests = []struct {
 
 }
 
-func TestRemoveComplex64(t *testing.T) {
-	for _, tt := range removeComplex64Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := RemoveComplex64(tt.input, func(in complex64) bool {
-                return in == tt.equalTo
-            })
-            assert.Equal(t, tt.expected, output)
+func BenchmarkTestRemoveComplex64(b *testing.B) {
+	for _, tt := range removeBenchComplex64Tests {
+		RemoveComplex64(tt.input, func(in complex64) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var removeComplex128Tests = []struct {
+var removeBenchComplex128Tests = []struct {
 	name     	string
 	input    	[]complex128
 	equalTo  	complex128
@@ -680,13 +639,10 @@ var removeComplex128Tests = []struct {
 
 }
 
-func TestRemoveComplex128(t *testing.T) {
-	for _, tt := range removeComplex128Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := RemoveComplex128(tt.input, func(in complex128) bool {
-                return in == tt.equalTo
-            })
-            assert.Equal(t, tt.expected, output)
+func BenchmarkTestRemoveComplex128(b *testing.B) {
+	for _, tt := range removeBenchComplex128Tests {
+		RemoveComplex128(tt.input, func(in complex128) bool {
+			return in == tt.equalTo
 		})
 	}
 

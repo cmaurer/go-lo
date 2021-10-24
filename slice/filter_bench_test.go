@@ -2,11 +2,9 @@ package slice
 
 import (
 	"testing"
-
-	"github.com/stretchr/testify/assert"
 )
 		
-var filterStringTests = []struct {
+var filterBenchStringTests = []struct {
 	name     string
 	input    []string
 	equalTo  string
@@ -41,19 +39,16 @@ var filterStringTests = []struct {
 	},
 }
 
-func TestFilterString(t *testing.T) {
-	for _, tt := range filterStringTests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FilterString(tt.input, func(in string) bool {
-                return in == tt.equalTo
-            })
-			assert.Equal(t, tt.expected, output)
+func BenchmarkTestFilterString(b *testing.B) {
+	for _, tt := range filterBenchStringTests {
+		FilterString(tt.input, func(in string) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var filterIntTests = []struct {
+var filterBenchIntTests = []struct {
 	name     string
 	input    []int
 	equalTo  int
@@ -88,19 +83,16 @@ var filterIntTests = []struct {
 	},
 }
 
-func TestFilterInt(t *testing.T) {
-	for _, tt := range filterIntTests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FilterInt(tt.input, func(in int) bool {
-                return in == tt.equalTo
-            })
-			assert.Equal(t, tt.expected, output)
+func BenchmarkTestFilterInt(b *testing.B) {
+	for _, tt := range filterBenchIntTests {
+		FilterInt(tt.input, func(in int) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var filterInt8Tests = []struct {
+var filterBenchInt8Tests = []struct {
 	name     string
 	input    []int8
 	equalTo  int8
@@ -135,19 +127,16 @@ var filterInt8Tests = []struct {
 	},
 }
 
-func TestFilterInt8(t *testing.T) {
-	for _, tt := range filterInt8Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FilterInt8(tt.input, func(in int8) bool {
-                return in == tt.equalTo
-            })
-			assert.Equal(t, tt.expected, output)
+func BenchmarkTestFilterInt8(b *testing.B) {
+	for _, tt := range filterBenchInt8Tests {
+		FilterInt8(tt.input, func(in int8) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var filterInt16Tests = []struct {
+var filterBenchInt16Tests = []struct {
 	name     string
 	input    []int16
 	equalTo  int16
@@ -182,19 +171,16 @@ var filterInt16Tests = []struct {
 	},
 }
 
-func TestFilterInt16(t *testing.T) {
-	for _, tt := range filterInt16Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FilterInt16(tt.input, func(in int16) bool {
-                return in == tt.equalTo
-            })
-			assert.Equal(t, tt.expected, output)
+func BenchmarkTestFilterInt16(b *testing.B) {
+	for _, tt := range filterBenchInt16Tests {
+		FilterInt16(tt.input, func(in int16) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var filterInt32Tests = []struct {
+var filterBenchInt32Tests = []struct {
 	name     string
 	input    []int32
 	equalTo  int32
@@ -229,19 +215,16 @@ var filterInt32Tests = []struct {
 	},
 }
 
-func TestFilterInt32(t *testing.T) {
-	for _, tt := range filterInt32Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FilterInt32(tt.input, func(in int32) bool {
-                return in == tt.equalTo
-            })
-			assert.Equal(t, tt.expected, output)
+func BenchmarkTestFilterInt32(b *testing.B) {
+	for _, tt := range filterBenchInt32Tests {
+		FilterInt32(tt.input, func(in int32) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var filterInt64Tests = []struct {
+var filterBenchInt64Tests = []struct {
 	name     string
 	input    []int64
 	equalTo  int64
@@ -276,19 +259,16 @@ var filterInt64Tests = []struct {
 	},
 }
 
-func TestFilterInt64(t *testing.T) {
-	for _, tt := range filterInt64Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FilterInt64(tt.input, func(in int64) bool {
-                return in == tt.equalTo
-            })
-			assert.Equal(t, tt.expected, output)
+func BenchmarkTestFilterInt64(b *testing.B) {
+	for _, tt := range filterBenchInt64Tests {
+		FilterInt64(tt.input, func(in int64) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var filterUintTests = []struct {
+var filterBenchUintTests = []struct {
 	name     string
 	input    []uint
 	equalTo  uint
@@ -323,19 +303,16 @@ var filterUintTests = []struct {
 	},
 }
 
-func TestFilterUint(t *testing.T) {
-	for _, tt := range filterUintTests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FilterUint(tt.input, func(in uint) bool {
-                return in == tt.equalTo
-            })
-			assert.Equal(t, tt.expected, output)
+func BenchmarkTestFilterUint(b *testing.B) {
+	for _, tt := range filterBenchUintTests {
+		FilterUint(tt.input, func(in uint) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var filterUint8Tests = []struct {
+var filterBenchUint8Tests = []struct {
 	name     string
 	input    []uint8
 	equalTo  uint8
@@ -370,19 +347,16 @@ var filterUint8Tests = []struct {
 	},
 }
 
-func TestFilterUint8(t *testing.T) {
-	for _, tt := range filterUint8Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FilterUint8(tt.input, func(in uint8) bool {
-                return in == tt.equalTo
-            })
-			assert.Equal(t, tt.expected, output)
+func BenchmarkTestFilterUint8(b *testing.B) {
+	for _, tt := range filterBenchUint8Tests {
+		FilterUint8(tt.input, func(in uint8) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var filterUint16Tests = []struct {
+var filterBenchUint16Tests = []struct {
 	name     string
 	input    []uint16
 	equalTo  uint16
@@ -417,19 +391,16 @@ var filterUint16Tests = []struct {
 	},
 }
 
-func TestFilterUint16(t *testing.T) {
-	for _, tt := range filterUint16Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FilterUint16(tt.input, func(in uint16) bool {
-                return in == tt.equalTo
-            })
-			assert.Equal(t, tt.expected, output)
+func BenchmarkTestFilterUint16(b *testing.B) {
+	for _, tt := range filterBenchUint16Tests {
+		FilterUint16(tt.input, func(in uint16) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var filterUint32Tests = []struct {
+var filterBenchUint32Tests = []struct {
 	name     string
 	input    []uint32
 	equalTo  uint32
@@ -464,19 +435,16 @@ var filterUint32Tests = []struct {
 	},
 }
 
-func TestFilterUint32(t *testing.T) {
-	for _, tt := range filterUint32Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FilterUint32(tt.input, func(in uint32) bool {
-                return in == tt.equalTo
-            })
-			assert.Equal(t, tt.expected, output)
+func BenchmarkTestFilterUint32(b *testing.B) {
+	for _, tt := range filterBenchUint32Tests {
+		FilterUint32(tt.input, func(in uint32) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var filterFloat32Tests = []struct {
+var filterBenchFloat32Tests = []struct {
 	name     string
 	input    []float32
 	equalTo  float32
@@ -511,19 +479,16 @@ var filterFloat32Tests = []struct {
 	},
 }
 
-func TestFilterFloat32(t *testing.T) {
-	for _, tt := range filterFloat32Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FilterFloat32(tt.input, func(in float32) bool {
-                return in == tt.equalTo
-            })
-			assert.Equal(t, tt.expected, output)
+func BenchmarkTestFilterFloat32(b *testing.B) {
+	for _, tt := range filterBenchFloat32Tests {
+		FilterFloat32(tt.input, func(in float32) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var filterFloat64Tests = []struct {
+var filterBenchFloat64Tests = []struct {
 	name     string
 	input    []float64
 	equalTo  float64
@@ -558,19 +523,16 @@ var filterFloat64Tests = []struct {
 	},
 }
 
-func TestFilterFloat64(t *testing.T) {
-	for _, tt := range filterFloat64Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FilterFloat64(tt.input, func(in float64) bool {
-                return in == tt.equalTo
-            })
-			assert.Equal(t, tt.expected, output)
+func BenchmarkTestFilterFloat64(b *testing.B) {
+	for _, tt := range filterBenchFloat64Tests {
+		FilterFloat64(tt.input, func(in float64) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var filterComplex64Tests = []struct {
+var filterBenchComplex64Tests = []struct {
 	name     string
 	input    []complex64
 	equalTo  complex64
@@ -605,19 +567,16 @@ var filterComplex64Tests = []struct {
 	},
 }
 
-func TestFilterComplex64(t *testing.T) {
-	for _, tt := range filterComplex64Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FilterComplex64(tt.input, func(in complex64) bool {
-                return in == tt.equalTo
-            })
-			assert.Equal(t, tt.expected, output)
+func BenchmarkTestFilterComplex64(b *testing.B) {
+	for _, tt := range filterBenchComplex64Tests {
+		FilterComplex64(tt.input, func(in complex64) bool {
+			return in == tt.equalTo
 		})
 	}
 
 }
 
-var filterComplex128Tests = []struct {
+var filterBenchComplex128Tests = []struct {
 	name     string
 	input    []complex128
 	equalTo  complex128
@@ -652,13 +611,10 @@ var filterComplex128Tests = []struct {
 	},
 }
 
-func TestFilterComplex128(t *testing.T) {
-	for _, tt := range filterComplex128Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            output := FilterComplex128(tt.input, func(in complex128) bool {
-                return in == tt.equalTo
-            })
-			assert.Equal(t, tt.expected, output)
+func BenchmarkTestFilterComplex128(b *testing.B) {
+	for _, tt := range filterBenchComplex128Tests {
+		FilterComplex128(tt.input, func(in complex128) bool {
+			return in == tt.equalTo
 		})
 	}
 

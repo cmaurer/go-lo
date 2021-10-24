@@ -2,11 +2,9 @@ package slice
 
 import (
 	"testing"
-
-	"github.com/stretchr/testify/assert"
 )
 		
-var includesStringTests = []struct {
+var includesBenchStringTests = []struct {
 	name     	string
 	input    	[]string
 	included  	string
@@ -33,17 +31,14 @@ var includesStringTests = []struct {
 	},
 }
 
-func TestIncludesString(t *testing.T) {
-	for _, tt := range includesStringTests {
-		t.Run(tt.name, func(t *testing.T) {
-            included := IncludesString(tt.input, tt.included)
-            assert.Equal(t, tt.expected, included)
-		})
+func BenchmarkTestIncludesString(b *testing.B) {
+	for _, tt := range includesBenchStringTests {
+		IncludesString(tt.input, tt.included)
 	}
 
 }
 
-var includesIntTests = []struct {
+var includesBenchIntTests = []struct {
 	name     	string
 	input    	[]int
 	included  	int
@@ -70,17 +65,14 @@ var includesIntTests = []struct {
 	},
 }
 
-func TestIncludesInt(t *testing.T) {
-	for _, tt := range includesIntTests {
-		t.Run(tt.name, func(t *testing.T) {
-            included := IncludesInt(tt.input, tt.included)
-            assert.Equal(t, tt.expected, included)
-		})
+func BenchmarkTestIncludesInt(b *testing.B) {
+	for _, tt := range includesBenchIntTests {
+		IncludesInt(tt.input, tt.included)
 	}
 
 }
 
-var includesInt8Tests = []struct {
+var includesBenchInt8Tests = []struct {
 	name     	string
 	input    	[]int8
 	included  	int8
@@ -107,17 +99,14 @@ var includesInt8Tests = []struct {
 	},
 }
 
-func TestIncludesInt8(t *testing.T) {
-	for _, tt := range includesInt8Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            included := IncludesInt8(tt.input, tt.included)
-            assert.Equal(t, tt.expected, included)
-		})
+func BenchmarkTestIncludesInt8(b *testing.B) {
+	for _, tt := range includesBenchInt8Tests {
+		IncludesInt8(tt.input, tt.included)
 	}
 
 }
 
-var includesInt16Tests = []struct {
+var includesBenchInt16Tests = []struct {
 	name     	string
 	input    	[]int16
 	included  	int16
@@ -144,17 +133,14 @@ var includesInt16Tests = []struct {
 	},
 }
 
-func TestIncludesInt16(t *testing.T) {
-	for _, tt := range includesInt16Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            included := IncludesInt16(tt.input, tt.included)
-            assert.Equal(t, tt.expected, included)
-		})
+func BenchmarkTestIncludesInt16(b *testing.B) {
+	for _, tt := range includesBenchInt16Tests {
+		IncludesInt16(tt.input, tt.included)
 	}
 
 }
 
-var includesInt32Tests = []struct {
+var includesBenchInt32Tests = []struct {
 	name     	string
 	input    	[]int32
 	included  	int32
@@ -181,17 +167,14 @@ var includesInt32Tests = []struct {
 	},
 }
 
-func TestIncludesInt32(t *testing.T) {
-	for _, tt := range includesInt32Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            included := IncludesInt32(tt.input, tt.included)
-            assert.Equal(t, tt.expected, included)
-		})
+func BenchmarkTestIncludesInt32(b *testing.B) {
+	for _, tt := range includesBenchInt32Tests {
+		IncludesInt32(tt.input, tt.included)
 	}
 
 }
 
-var includesInt64Tests = []struct {
+var includesBenchInt64Tests = []struct {
 	name     	string
 	input    	[]int64
 	included  	int64
@@ -218,17 +201,14 @@ var includesInt64Tests = []struct {
 	},
 }
 
-func TestIncludesInt64(t *testing.T) {
-	for _, tt := range includesInt64Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            included := IncludesInt64(tt.input, tt.included)
-            assert.Equal(t, tt.expected, included)
-		})
+func BenchmarkTestIncludesInt64(b *testing.B) {
+	for _, tt := range includesBenchInt64Tests {
+		IncludesInt64(tt.input, tt.included)
 	}
 
 }
 
-var includesUintTests = []struct {
+var includesBenchUintTests = []struct {
 	name     	string
 	input    	[]uint
 	included  	uint
@@ -255,17 +235,14 @@ var includesUintTests = []struct {
 	},
 }
 
-func TestIncludesUint(t *testing.T) {
-	for _, tt := range includesUintTests {
-		t.Run(tt.name, func(t *testing.T) {
-            included := IncludesUint(tt.input, tt.included)
-            assert.Equal(t, tt.expected, included)
-		})
+func BenchmarkTestIncludesUint(b *testing.B) {
+	for _, tt := range includesBenchUintTests {
+		IncludesUint(tt.input, tt.included)
 	}
 
 }
 
-var includesUint8Tests = []struct {
+var includesBenchUint8Tests = []struct {
 	name     	string
 	input    	[]uint8
 	included  	uint8
@@ -292,17 +269,14 @@ var includesUint8Tests = []struct {
 	},
 }
 
-func TestIncludesUint8(t *testing.T) {
-	for _, tt := range includesUint8Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            included := IncludesUint8(tt.input, tt.included)
-            assert.Equal(t, tt.expected, included)
-		})
+func BenchmarkTestIncludesUint8(b *testing.B) {
+	for _, tt := range includesBenchUint8Tests {
+		IncludesUint8(tt.input, tt.included)
 	}
 
 }
 
-var includesUint16Tests = []struct {
+var includesBenchUint16Tests = []struct {
 	name     	string
 	input    	[]uint16
 	included  	uint16
@@ -329,17 +303,14 @@ var includesUint16Tests = []struct {
 	},
 }
 
-func TestIncludesUint16(t *testing.T) {
-	for _, tt := range includesUint16Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            included := IncludesUint16(tt.input, tt.included)
-            assert.Equal(t, tt.expected, included)
-		})
+func BenchmarkTestIncludesUint16(b *testing.B) {
+	for _, tt := range includesBenchUint16Tests {
+		IncludesUint16(tt.input, tt.included)
 	}
 
 }
 
-var includesUint32Tests = []struct {
+var includesBenchUint32Tests = []struct {
 	name     	string
 	input    	[]uint32
 	included  	uint32
@@ -366,17 +337,14 @@ var includesUint32Tests = []struct {
 	},
 }
 
-func TestIncludesUint32(t *testing.T) {
-	for _, tt := range includesUint32Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            included := IncludesUint32(tt.input, tt.included)
-            assert.Equal(t, tt.expected, included)
-		})
+func BenchmarkTestIncludesUint32(b *testing.B) {
+	for _, tt := range includesBenchUint32Tests {
+		IncludesUint32(tt.input, tt.included)
 	}
 
 }
 
-var includesFloat32Tests = []struct {
+var includesBenchFloat32Tests = []struct {
 	name     	string
 	input    	[]float32
 	included  	float32
@@ -403,17 +371,14 @@ var includesFloat32Tests = []struct {
 	},
 }
 
-func TestIncludesFloat32(t *testing.T) {
-	for _, tt := range includesFloat32Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            included := IncludesFloat32(tt.input, tt.included)
-            assert.Equal(t, tt.expected, included)
-		})
+func BenchmarkTestIncludesFloat32(b *testing.B) {
+	for _, tt := range includesBenchFloat32Tests {
+		IncludesFloat32(tt.input, tt.included)
 	}
 
 }
 
-var includesFloat64Tests = []struct {
+var includesBenchFloat64Tests = []struct {
 	name     	string
 	input    	[]float64
 	included  	float64
@@ -440,17 +405,14 @@ var includesFloat64Tests = []struct {
 	},
 }
 
-func TestIncludesFloat64(t *testing.T) {
-	for _, tt := range includesFloat64Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            included := IncludesFloat64(tt.input, tt.included)
-            assert.Equal(t, tt.expected, included)
-		})
+func BenchmarkTestIncludesFloat64(b *testing.B) {
+	for _, tt := range includesBenchFloat64Tests {
+		IncludesFloat64(tt.input, tt.included)
 	}
 
 }
 
-var includesComplex64Tests = []struct {
+var includesBenchComplex64Tests = []struct {
 	name     	string
 	input    	[]complex64
 	included  	complex64
@@ -477,17 +439,14 @@ var includesComplex64Tests = []struct {
 	},
 }
 
-func TestIncludesComplex64(t *testing.T) {
-	for _, tt := range includesComplex64Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            included := IncludesComplex64(tt.input, tt.included)
-            assert.Equal(t, tt.expected, included)
-		})
+func BenchmarkTestIncludesComplex64(b *testing.B) {
+	for _, tt := range includesBenchComplex64Tests {
+		IncludesComplex64(tt.input, tt.included)
 	}
 
 }
 
-var includesComplex128Tests = []struct {
+var includesBenchComplex128Tests = []struct {
 	name     	string
 	input    	[]complex128
 	included  	complex128
@@ -514,12 +473,9 @@ var includesComplex128Tests = []struct {
 	},
 }
 
-func TestIncludesComplex128(t *testing.T) {
-	for _, tt := range includesComplex128Tests {
-		t.Run(tt.name, func(t *testing.T) {
-            included := IncludesComplex128(tt.input, tt.included)
-            assert.Equal(t, tt.expected, included)
-		})
+func BenchmarkTestIncludesComplex128(b *testing.B) {
+	for _, tt := range includesBenchComplex128Tests {
+		IncludesComplex128(tt.input, tt.included)
 	}
 
 }

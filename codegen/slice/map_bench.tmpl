@@ -1,0 +1,32 @@
+
+
+
+var mapBench{{.DataTypeCap}}Tests = []struct {
+	name     string
+	input    []{{.DataType}}
+	expected []{{.DataType}}
+}{
+
+	{
+		name: "basic example",
+		input: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+			{{dataTypeGenerator  .DataType 2}},
+			{{dataTypeGenerator  .DataType 3}},
+		},
+		expected: []{{.DataType}}{
+            {{dataTypeGenerator  .DataType 1}}+{{dataTypeGenerator  .DataType 1}},
+            {{dataTypeGenerator  .DataType 2}}+{{dataTypeGenerator  .DataType 2}},
+            {{dataTypeGenerator  .DataType 3}}+{{dataTypeGenerator  .DataType 3}},
+        },
+	},
+}
+
+func BenchmarkTestMap{{.DataTypeCap}}(b *testing.B) {
+	for _, tt := range mapBench{{.DataTypeCap}}Tests {
+		Map{{.DataTypeCap}}(tt.input, func(in {{.DataType}}) {{.DataType}} {
+			return in + in
+		})
+	}
+
+}

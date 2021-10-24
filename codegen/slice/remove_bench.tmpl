@@ -1,0 +1,46 @@
+
+var removeBench{{.DataTypeCap}}Tests = []struct {
+	name     	string
+	input    	[]{{.DataType}}
+	equalTo  	{{.DataType}}
+	expected 	[]{{.DataType}}
+}{
+
+	{
+		name: "basic example",
+		input: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+			{{dataTypeGenerator  .DataType 2}},
+			{{dataTypeGenerator  .DataType 3}},
+		},
+        equalTo: {{dataTypeGenerator  .DataType 2}},
+		expected: []{{.DataType}}{ {{dataTypeGenerator  .DataType 1}}, {{dataTypeGenerator  .DataType 3}} },
+	},
+	{
+		name: "remove all",
+		input: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+		},
+        equalTo: {{dataTypeGenerator  .DataType 1}},
+		expected: []{{.DataType}}{},
+	},
+	{
+		name: "remove none",
+		input: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+			{{dataTypeGenerator  .DataType 2}},
+		},
+        equalTo: {{dataTypeGenerator  .DataType 3}},
+		expected: []{{.DataType}}{ {{dataTypeGenerator  .DataType 1}}, {{dataTypeGenerator  .DataType 2}} },
+	},
+
+}
+
+func BenchmarkTestRemove{{.DataTypeCap}}(b *testing.B) {
+	for _, tt := range removeBench{{.DataTypeCap}}Tests {
+		Remove{{.DataTypeCap}}(tt.input, func(in {{.DataType}}) bool {
+			return in == tt.equalTo
+		})
+	}
+
+}

@@ -1,0 +1,50 @@
+
+
+var indexOfBench{{.DataTypeCap}}Tests = []struct {
+	name     string
+	input    []{{.DataType}}
+	element  {{.DataType}}
+	expected int
+}{
+
+	{
+		name: "basic example",
+		input: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType  1}},
+			{{dataTypeGenerator  .DataType  2}},
+			{{dataTypeGenerator  .DataType  3}},
+		},
+		element:  {{dataTypeGenerator  .DataType  2}},
+		expected: 1,
+	},
+	{
+		name: "basic example with more elements",
+		input: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+			{{dataTypeGenerator  .DataType 2}},
+			{{dataTypeGenerator  .DataType 3}},
+			{{dataTypeGenerator  .DataType 4}},
+			{{dataTypeGenerator  .DataType 5}},
+		},
+		element:  {{dataTypeGenerator  .DataType 5}},
+		expected: 4,
+	},
+	{
+		name: "not found",
+		input: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+			{{dataTypeGenerator  .DataType 2}},
+			{{dataTypeGenerator  .DataType 3}},
+			{{dataTypeGenerator  .DataType 4}},
+			{{dataTypeGenerator  .DataType 5}},
+		},
+		element:  {{dataTypeGenerator  .DataType 10}},
+		expected: -1,
+	},
+}
+
+func BenchmarkTestIndexOf{{.DataTypeCap}}(b *testing.B) {
+	for _, tt := range indexOfBench{{.DataTypeCap}}Tests {
+		IndexOf{{.DataTypeCap}}(tt.element, tt.input)
+	}
+}

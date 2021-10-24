@@ -2,11 +2,9 @@ package slice
 
 import (
 	"testing"
-
-	"github.com/stretchr/testify/assert"
 )
 		
-var uniqueStringTests = []struct {
+var uniqueBenchStringTests = []struct {
 	name     string
 	input    []string
 	expected []string
@@ -54,16 +52,15 @@ var uniqueStringTests = []struct {
 	},
 }
 
-func TestUniqueString(t *testing.T) {
-	for _, tt := range uniqueStringTests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := UniqueString(tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestUniqueString(b *testing.B) {
+    for i := 0; i < b.N; i++ {
+		for _, tt := range uniqueBenchStringTests {
+			UniqueString(tt.input)
+		}
 	}
 }
 
-var uniqueIntTests = []struct {
+var uniqueBenchIntTests = []struct {
 	name     string
 	input    []int
 	expected []int
@@ -111,16 +108,15 @@ var uniqueIntTests = []struct {
 	},
 }
 
-func TestUniqueInt(t *testing.T) {
-	for _, tt := range uniqueIntTests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := UniqueInt(tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestUniqueInt(b *testing.B) {
+    for i := 0; i < b.N; i++ {
+		for _, tt := range uniqueBenchIntTests {
+			UniqueInt(tt.input)
+		}
 	}
 }
 
-var uniqueInt8Tests = []struct {
+var uniqueBenchInt8Tests = []struct {
 	name     string
 	input    []int8
 	expected []int8
@@ -168,16 +164,15 @@ var uniqueInt8Tests = []struct {
 	},
 }
 
-func TestUniqueInt8(t *testing.T) {
-	for _, tt := range uniqueInt8Tests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := UniqueInt8(tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestUniqueInt8(b *testing.B) {
+    for i := 0; i < b.N; i++ {
+		for _, tt := range uniqueBenchInt8Tests {
+			UniqueInt8(tt.input)
+		}
 	}
 }
 
-var uniqueInt16Tests = []struct {
+var uniqueBenchInt16Tests = []struct {
 	name     string
 	input    []int16
 	expected []int16
@@ -225,16 +220,15 @@ var uniqueInt16Tests = []struct {
 	},
 }
 
-func TestUniqueInt16(t *testing.T) {
-	for _, tt := range uniqueInt16Tests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := UniqueInt16(tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestUniqueInt16(b *testing.B) {
+    for i := 0; i < b.N; i++ {
+		for _, tt := range uniqueBenchInt16Tests {
+			UniqueInt16(tt.input)
+		}
 	}
 }
 
-var uniqueInt32Tests = []struct {
+var uniqueBenchInt32Tests = []struct {
 	name     string
 	input    []int32
 	expected []int32
@@ -282,16 +276,15 @@ var uniqueInt32Tests = []struct {
 	},
 }
 
-func TestUniqueInt32(t *testing.T) {
-	for _, tt := range uniqueInt32Tests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := UniqueInt32(tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestUniqueInt32(b *testing.B) {
+    for i := 0; i < b.N; i++ {
+		for _, tt := range uniqueBenchInt32Tests {
+			UniqueInt32(tt.input)
+		}
 	}
 }
 
-var uniqueInt64Tests = []struct {
+var uniqueBenchInt64Tests = []struct {
 	name     string
 	input    []int64
 	expected []int64
@@ -339,16 +332,15 @@ var uniqueInt64Tests = []struct {
 	},
 }
 
-func TestUniqueInt64(t *testing.T) {
-	for _, tt := range uniqueInt64Tests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := UniqueInt64(tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestUniqueInt64(b *testing.B) {
+    for i := 0; i < b.N; i++ {
+		for _, tt := range uniqueBenchInt64Tests {
+			UniqueInt64(tt.input)
+		}
 	}
 }
 
-var uniqueUintTests = []struct {
+var uniqueBenchUintTests = []struct {
 	name     string
 	input    []uint
 	expected []uint
@@ -396,16 +388,15 @@ var uniqueUintTests = []struct {
 	},
 }
 
-func TestUniqueUint(t *testing.T) {
-	for _, tt := range uniqueUintTests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := UniqueUint(tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestUniqueUint(b *testing.B) {
+    for i := 0; i < b.N; i++ {
+		for _, tt := range uniqueBenchUintTests {
+			UniqueUint(tt.input)
+		}
 	}
 }
 
-var uniqueUint8Tests = []struct {
+var uniqueBenchUint8Tests = []struct {
 	name     string
 	input    []uint8
 	expected []uint8
@@ -453,16 +444,15 @@ var uniqueUint8Tests = []struct {
 	},
 }
 
-func TestUniqueUint8(t *testing.T) {
-	for _, tt := range uniqueUint8Tests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := UniqueUint8(tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestUniqueUint8(b *testing.B) {
+    for i := 0; i < b.N; i++ {
+		for _, tt := range uniqueBenchUint8Tests {
+			UniqueUint8(tt.input)
+		}
 	}
 }
 
-var uniqueUint16Tests = []struct {
+var uniqueBenchUint16Tests = []struct {
 	name     string
 	input    []uint16
 	expected []uint16
@@ -510,16 +500,15 @@ var uniqueUint16Tests = []struct {
 	},
 }
 
-func TestUniqueUint16(t *testing.T) {
-	for _, tt := range uniqueUint16Tests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := UniqueUint16(tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestUniqueUint16(b *testing.B) {
+    for i := 0; i < b.N; i++ {
+		for _, tt := range uniqueBenchUint16Tests {
+			UniqueUint16(tt.input)
+		}
 	}
 }
 
-var uniqueUint32Tests = []struct {
+var uniqueBenchUint32Tests = []struct {
 	name     string
 	input    []uint32
 	expected []uint32
@@ -567,16 +556,15 @@ var uniqueUint32Tests = []struct {
 	},
 }
 
-func TestUniqueUint32(t *testing.T) {
-	for _, tt := range uniqueUint32Tests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := UniqueUint32(tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestUniqueUint32(b *testing.B) {
+    for i := 0; i < b.N; i++ {
+		for _, tt := range uniqueBenchUint32Tests {
+			UniqueUint32(tt.input)
+		}
 	}
 }
 
-var uniqueFloat32Tests = []struct {
+var uniqueBenchFloat32Tests = []struct {
 	name     string
 	input    []float32
 	expected []float32
@@ -624,16 +612,15 @@ var uniqueFloat32Tests = []struct {
 	},
 }
 
-func TestUniqueFloat32(t *testing.T) {
-	for _, tt := range uniqueFloat32Tests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := UniqueFloat32(tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestUniqueFloat32(b *testing.B) {
+    for i := 0; i < b.N; i++ {
+		for _, tt := range uniqueBenchFloat32Tests {
+			UniqueFloat32(tt.input)
+		}
 	}
 }
 
-var uniqueFloat64Tests = []struct {
+var uniqueBenchFloat64Tests = []struct {
 	name     string
 	input    []float64
 	expected []float64
@@ -681,16 +668,15 @@ var uniqueFloat64Tests = []struct {
 	},
 }
 
-func TestUniqueFloat64(t *testing.T) {
-	for _, tt := range uniqueFloat64Tests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := UniqueFloat64(tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestUniqueFloat64(b *testing.B) {
+    for i := 0; i < b.N; i++ {
+		for _, tt := range uniqueBenchFloat64Tests {
+			UniqueFloat64(tt.input)
+		}
 	}
 }
 
-var uniqueComplex64Tests = []struct {
+var uniqueBenchComplex64Tests = []struct {
 	name     string
 	input    []complex64
 	expected []complex64
@@ -738,16 +724,15 @@ var uniqueComplex64Tests = []struct {
 	},
 }
 
-func TestUniqueComplex64(t *testing.T) {
-	for _, tt := range uniqueComplex64Tests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := UniqueComplex64(tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestUniqueComplex64(b *testing.B) {
+    for i := 0; i < b.N; i++ {
+		for _, tt := range uniqueBenchComplex64Tests {
+			UniqueComplex64(tt.input)
+		}
 	}
 }
 
-var uniqueComplex128Tests = []struct {
+var uniqueBenchComplex128Tests = []struct {
 	name     string
 	input    []complex128
 	expected []complex128
@@ -795,11 +780,10 @@ var uniqueComplex128Tests = []struct {
 	},
 }
 
-func TestUniqueComplex128(t *testing.T) {
-	for _, tt := range uniqueComplex128Tests {
-		t.Run(tt.name, func(t *testing.T) {
-			output := UniqueComplex128(tt.input)
-			assert.Equal(t, output, tt.expected)
-		})
+func BenchmarkTestUniqueComplex128(b *testing.B) {
+    for i := 0; i < b.N; i++ {
+		for _, tt := range uniqueBenchComplex128Tests {
+			UniqueComplex128(tt.input)
+		}
 	}
 }

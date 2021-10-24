@@ -1,0 +1,34 @@
+
+var includesBench{{.DataTypeCap}}Tests = []struct {
+	name     	string
+	input    	[]{{.DataType}}
+	included  	{{.DataType}}
+	expected 	bool
+}{
+	{
+		name: "should be true",
+		input: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+			{{dataTypeGenerator  .DataType 2}},
+			{{dataTypeGenerator  .DataType 3}},
+		},
+        included: {{dataTypeGenerator  .DataType 2}},
+		expected: true,
+	},
+	{
+		name: "should be false",
+		input: []{{.DataType}}{
+			{{dataTypeGenerator  .DataType 1}},
+			{{dataTypeGenerator  .DataType 2}},
+		},
+        included: {{dataTypeGenerator  .DataType 3}},
+		expected: false,
+	},
+}
+
+func BenchmarkTestIncludes{{.DataTypeCap}}(b *testing.B) {
+	for _, tt := range includesBench{{.DataTypeCap}}Tests {
+		Includes{{.DataTypeCap}}(tt.input, tt.included)
+	}
+
+}
