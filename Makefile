@@ -2,6 +2,8 @@
 .EXPORT_ALL_VARIABLES:
 GO111MODULE := on
 SRC_DIRS := slice utils
+VERSION := $(shell git describe --tags --abbrev=0)
+GOPROXY := https://proxy.golang.org
 
 all: generate copy-generated lint fmt sec test
 
@@ -56,4 +58,7 @@ go-mark-doc:
 		gomarkdoc ./$$dir > $$dir.md; \
 	done
 
-.PHONY: get generate copy-generated test build lint fmt sec cyclo-top-10 tidy go-mark-doc
+update-pkg-cache:
+	@go get github.com/cmaurer/go-lo@v$(VERSION)
+
+.PHONY: get generate copy-generated test build lint fmt sec cyclo-top-10 tidy go-mark-doc update-pkg-cache

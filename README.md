@@ -4,6 +4,7 @@ A collection of common datatype functions for slices.
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/cmaurer/go-lo)](https://goreportcard.com/report/github.com/cmaurer/go-lo)
 [![Tests](https://github.com/cmaurer/go-lo/workflows/tests/badge.svg)](https://goreportcard.com/report/github.com/cmaurer/go-lo)
+[![Go Reference](https://pkg.go.dev/badge/github.com/cmaurer/go-lo.svg)](https://pkg.go.dev/github.com/cmaurer/go-lo)
 
 ## Each
 
@@ -23,7 +24,7 @@ Iterates over each element in a slice, invoking a function on each element.
     })
 
     // expectedCount == 3
-    
+
 ```
 
 ## Filter
@@ -125,7 +126,7 @@ Combines two slices into one slice
 
     output := FlattenString(input1, input2)
 
-    /* output == 
+    /* output ==
     []string{
         "test1",
         "test2",
@@ -152,7 +153,7 @@ Combines two slices into one slice
         return in + in
     })
 
-    /* output == 
+    /* output ==
     []string{
         "test1test1",
         "test2test2",
