@@ -1,0 +1,16 @@
+
+// {{.DataTypeCap}} Example
+func ExampleUnique{{.DataTypeCap}}() {
+
+    input := []{{.DataType}}{
+        {{dataTypeGenerator  .DataType 1}},
+        {{dataTypeGenerator  .DataType 2}},
+        {{dataTypeGenerator  .DataType 3}},
+        {{dataTypeGenerator  .DataType 2}},
+    }
+
+    output := {{.PackageName}}.Unique{{.DataTypeCap}}(input)
+
+    fmt.Printf("%+v", output)
+
+}

@@ -1,0 +1,18 @@
+
+// {{.DataTypeCap}} Example
+func ExampleIncludes{{.DataTypeCap}}() {
+
+    input := []{{.DataType}}{
+        {{dataTypeGenerator  .DataType 1}},
+        {{dataTypeGenerator  .DataType 2}},
+        {{dataTypeGenerator  .DataType 3}},
+        {{dataTypeGenerator  .DataType 2}},
+    }
+
+	included := {{.DataType}}({{dataTypeGenerator  .DataType 3}})
+
+	output := {{.PackageName}}.Includes{{.DataTypeCap}}(input, included)
+
+    fmt.Printf("%+v", output)
+
+}

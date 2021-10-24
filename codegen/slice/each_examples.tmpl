@@ -1,0 +1,20 @@
+
+// {{.DataTypeCap}} Example
+func ExampleEach{{.DataTypeCap}}() {
+
+    input := []{{.DataType}}{
+        {{dataTypeGenerator  .DataType 1}},
+        {{dataTypeGenerator  .DataType 2}},
+        {{dataTypeGenerator  .DataType 3}},
+        {{dataTypeGenerator  .DataType 2}},
+    }
+
+    expectedCount := 0
+
+    {{.PackageName}}.Each{{.DataTypeCap}}(input, func(in {{.DataType}}) {
+        expectedCount = expectedCount + 1
+    })
+
+    fmt.Printf("%+v", expectedCount)
+
+}

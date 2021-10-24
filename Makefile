@@ -24,6 +24,9 @@ test:
 		(echo $$dir && cd $$dir && go test . -coverpkg=./... -covermode=atomic -coverprofile=./coverage.txt -v -count 1;) \
 	done
 
+tidy:
+	@go mod tidy -v
+
 fmt:
 	@for dir in $(SRC_DIRS); do \
 		gofmt -s -w ./$$dir/*.go; \
@@ -43,4 +46,9 @@ sec:
 cyclo-top-10:
 	@gocyclo -top 10 -ignore "codegen" .
 
-.PHONY: get generate copy-generated test build lint fmt sec cyclo-top-10
+go-mark-doc:
+	@for dir in $(SRC_DIRS); do \
+		gomarkdoc ./$$dir > $$dir.md; \
+	done
+
+.PHONY: get generate copy-generated test build lint fmt sec cyclo-top-10 tidy go-mark-doc

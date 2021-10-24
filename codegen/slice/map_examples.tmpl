@@ -1,0 +1,19 @@
+
+
+// {{.DataTypeCap}} Example
+func ExampleMap{{.DataTypeCap}}() {
+
+    input := []{{.DataType}}{
+        {{dataTypeGenerator  .DataType 1}},
+        {{dataTypeGenerator  .DataType 2}},
+        {{dataTypeGenerator  .DataType 3}},
+        {{dataTypeGenerator  .DataType 2}},
+    }
+
+    output := {{.PackageName}}.Map{{.DataTypeCap}}(input, func(in {{.DataType}}) {{.DataType}} {
+        return in + in
+    })
+
+    fmt.Printf("%+v", output)
+
+}

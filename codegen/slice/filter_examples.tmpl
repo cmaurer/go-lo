@@ -1,0 +1,20 @@
+
+// {{.DataTypeCap}} Example
+func ExampleFilter{{.DataTypeCap}}() {
+
+    input := []{{.DataType}}{
+        {{dataTypeGenerator  .DataType 1}},
+        {{dataTypeGenerator  .DataType 2}},
+        {{dataTypeGenerator  .DataType 3}},
+        {{dataTypeGenerator  .DataType 2}},
+    }
+
+    equalTo := {{.DataType}}({{dataTypeGenerator  .DataType 8}})
+
+    output := {{.PackageName}}.Filter{{.DataTypeCap}}(input, func(in {{.DataType}}) bool {
+        return in == equalTo
+    })
+
+    fmt.Printf("%+v", output)
+
+}

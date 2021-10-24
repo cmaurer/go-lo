@@ -53,13 +53,16 @@ func main() {
 
 	generateCode(cwd, outputDir, operations)
 	generateTests(cwd, outputDir, operations)
+	generateExamples(cwd, outputDir, operations)
 
 }
 
 func generateCode(cwd string, outputDir string, operations *types.Operations) {
 
 	for _, operation := range operations.Operations {
-
+		if operation.Template == "" {
+			continue
+		}
 		templateFileName := fmt.Sprintf("%s/%s", cwd, operation.Template)
 		outputFileName := fmt.Sprintf("%s/%s.go", outputDir, operation.Name)
 
@@ -124,6 +127,9 @@ func generateTests(cwd string, outputDir string, operations *types.Operations) {
 
 	for _, operation := range operations.Operations {
 
+		if operation.TestTemplate == "" {
+			continue
+		}
 		templateFileName := fmt.Sprintf("%s/%s", cwd, operation.TestTemplate)
 		outputFileName := fmt.Sprintf("%s/%s_test.go", outputDir, operation.Name)
 
@@ -164,6 +170,64 @@ import (
 		}
 
 		for _, datatype := range operation.Datatypes {
+			err = tmpl.Execute(f, datatype)
+			if err != nil {
+				fmt.Println(err)
+				return
+			}
+		}
+
+	}
+}
+
+func generateExamples(cwd string, outputDir string, operations *types.Operations) {
+
+	for _, operation := range operations.Operations {
+
+		if operation.ExampleTemplate == "" {
+			continue
+		}
+		templateFileName := fmt.Sprintf("%s/%s", cwd, operation.ExampleTemplate)
+		outputFileName := fmt.Sprintf("%s/%s_example_test.go", outputDir, operation.Name)
+
+		// create file
+		f, err := os.Create(outputFileName)
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+		defer f.Close()
+
+		_, err = f.WriteString(fmt.Sprintf(`package %s_test
+
+import (
+	"fmt"
+	"github.com/cmaurer/go-lo/%s"
+)
+
+		`, packageName, packageName))
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+
+		templateFile, err := ioutil.ReadFile(templateFileName)
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+
+		tmpl := template.New(operation.Name).Funcs(template.FuncMap{
+			"dataTypeGenerator": dataTypeGenerator,
+		})
+		tmpl, err = tmpl.Parse(string(templateFile))
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+
+		for _, datatype := range operation.Datatypes {
+			datatype.PackageName = packageName
 			err = tmpl.Execute(f, datatype)
 			if err != nil {
 				fmt.Println(err)

@@ -1,6 +1,6 @@
 
-// Find{{.DataTypeCap}} func
-// Returns a pointer to the first element that the function returns truthy for, otherwise returns nil if the element is not found.
+//Find{{.DataTypeCap}} func
+//Returns a pointer to the first element that the function returns truthy for, otherwise returns nil if the element is not found.
 func Find{{.DataTypeCap}}(input []{{.DataType}}, f func({{.DataType}}) bool) *{{.DataType}} {
     for _, value := range input {
         if f(value) {

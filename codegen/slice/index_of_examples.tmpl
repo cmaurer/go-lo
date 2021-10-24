@@ -1,0 +1,17 @@
+
+
+// {{.DataTypeCap}} Example
+func ExampleIndexOf{{.DataTypeCap}}() {
+
+    input := []{{.DataType}}{
+        {{dataTypeGenerator  .DataType 1}},
+        {{dataTypeGenerator  .DataType 2}},
+        {{dataTypeGenerator  .DataType 3}},
+        {{dataTypeGenerator  .DataType 2}},
+    }
+	element := {{.DataType}}({{dataTypeGenerator  .DataType 3}})
+	output := {{.PackageName}}.IndexOf{{.DataTypeCap}}(element, input)
+
+    fmt.Printf("%+v", output)
+
+}

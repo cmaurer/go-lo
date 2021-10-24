@@ -4,6 +4,7 @@
             "name": "unique",
             "template": "unique.tmpl",
             "test_template": "unique_test.tmpl",
+            "example_template": "unique_examples.tmpl",
             "datatypes": [
                 {
                     "data_type_cap": "String",
@@ -67,6 +68,7 @@
             "name": "index_of",
             "template": "index_of.tmpl",
             "test_template": "index_of_test.tmpl",
+            "example_template": "index_of_examples.tmpl",
             "datatypes": [
                 {
                     "data_type_cap": "String",
@@ -130,6 +132,7 @@
             "name": "map",
             "template": "map.tmpl",
             "test_template": "map_test.tmpl",
+            "example_template": "map_examples.tmpl",
             "datatypes": [
                 {
                     "data_type_cap": "String",
@@ -193,6 +196,7 @@
             "name": "filter",
             "template": "filter.tmpl",
             "test_template": "filter_test.tmpl",
+            "example_template": "filter_examples.tmpl",
             "datatypes": [
                 {
                     "data_type_cap": "String",
@@ -256,6 +260,7 @@
             "name": "each",
             "template": "each.tmpl",
             "test_template": "each_test.tmpl",
+            "example_template": "each_examples.tmpl",
             "datatypes": [
                 {
                     "data_type_cap": "String",
@@ -319,6 +324,7 @@
             "name": "find",
             "template": "find.tmpl",
             "test_template": "find_test.tmpl",
+            "example_template": "find_examples.tmpl",
             "datatypes": [
                 {
                     "data_type_cap": "String",
@@ -382,6 +388,7 @@
             "name": "flatten",
             "template": "flatten.tmpl",
             "test_template": "flatten_test.tmpl",
+            "example_template": "flatten_examples.tmpl",
             "datatypes": [
                 {
                     "data_type_cap": "String",
@@ -445,6 +452,7 @@
             "name": "remove",
             "template": "remove.tmpl",
             "test_template": "remove_test.tmpl",
+            "example_template": "remove_examples.tmpl",
             "datatypes": [
                 {
                     "data_type_cap": "String",
@@ -508,6 +516,7 @@
             "name": "includes",
             "template": "includes.tmpl",
             "test_template": "includes_test.tmpl",
+            "example_template": "includes_examples.tmpl",
             "datatypes": [
                 {
                     "data_type_cap": "String",
